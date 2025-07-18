@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meals 2 Share - Project Details</title>
+
+  <!-- 你原本的 CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -20,8 +25,10 @@
   </header>
 
   <main>
-    <section class="project-detail">
-      <div class="project-text">
+    <section class="project-detail d-flex flex-wrap align-items-start justify-content-center p-4" style="gap: 2rem;">
+
+      <!-- 左邊：文字內容 -->
+      <div class="project-text" style="flex: 1 1 400px; max-width: 600px;">
         <h2>Project Overview</h2>
         <p><strong>Theme:</strong> Pay As You Feel Restaurant</p>
         <p>This project involved branding and designing a fictional restaurant experience, including:</p>
@@ -32,21 +39,54 @@
           <li>Storefront Mockup</li>
           <li>Responsive Website</li>
         </ul>
-
         <p><strong>Tools:</strong> Adobe Illustrator, Photoshop, HTML/CSS, GitHub Pages</p>
 
-        <p><a href="https://wtlam01.github.io/Meals-2-Share/" target="_blank" class="project-link">🔗 Visit Website</a></p>
+        <a href="https://wtlam01.github.io/Meals-2-Share/" target="_blank" class="project-link">🔗 Visit Website</a>
       </div>
 
-      <div class="project-image">
-        <img src="assets/images/meals2share-banner.jpg" alt="Meals 2 Share Website Screenshot" />
+      <!-- 右邊：圖片輪播 -->
+      <div class="project-image" style="flex: 1 1 300px; max-width: 500px;">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <img src="assets/images/Billboard.png" class="d-block w-100" alt="Billboard">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/foodbox.jpeg" class="d-block w-100" alt="Food Box">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/Logo1.png" class="d-block w-100" alt="Logo 1">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/Logosign.png" class="d-block w-100" alt="Logo Sign">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/PaperBag.png" class="d-block w-100" alt="Paper Bag">
+            </div>
+            <div class="carousel-item">
+              <img src="assets/images/Storefront.jpeg" class="d-block w-100" alt="Storefront">
+            </div>
+
+          </div>
+          <!-- 左右控制按鈕 -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
+
     </section>
   </main>
 
-  <footer>
+  <footer class="text-center p-3">
     <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email Me</a></p>
   </footer>
 
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
