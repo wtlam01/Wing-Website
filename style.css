@@ -46,23 +46,50 @@ nav a:hover {
 }
 
 /* Main Content */
-main {
+.intro.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
 }
 
-/* Intro Section */
-.intro {
+.intro-text {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.intro-photo {
+  flex: 1 1 300px;
+  max-width: 400px;
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .profile-img {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  border: 4px solid #b2ebf2;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+
+main {
+  padding: 2rem;
+}
+.inline-link {
+  color: #00796b;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid #00796b;
+  transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+  color: #004d40;
+  border-bottom-color: #004d40;
+}
+
 
 /* Project Highlight */
 .highlight {
@@ -317,4 +344,73 @@ footer a:hover {
 .project-media {
   flex: 1 1 400px;
   min-width: 300px;
+}
+
+
+/* animal-testing page */
+.project-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.project-info {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.project-media {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.watch-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.watch-button:hover {
+  background-color: #1e3a8a;
+}
+
+.storyboard-preview {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.storyboard-preview h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.storyboard-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #0d9488;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.download-button:hover {
+  background-color: #0f766e;
 }
