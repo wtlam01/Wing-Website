@@ -233,3 +233,46 @@ footer a:hover {
 .project-link:hover {
   background-color: #007b8f;
 }
+
+.carousel-item img {
+  height: 350px;
+  width: 100%;
+  object-fit: contain;      /* 重點：顯示整張圖不裁切 */
+  background-color: white;  /* 留白區域用白色填補 */
+  padding: 10px;            /* 可選：內縮讓圖不貼邊 */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* sketch page */
+.gallery {
+  padding: 2rem;
+  text-align: center;
+}
+
+.gallery-grid {
+  column-count: 3;
+  column-gap: 1.5rem;
+  padding: 2rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  break-inside: avoid;
+}
+
+
+
+.gallery-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* 特別放大第一張 */
+.featured-grid-img {
+  grid-column: span 3;
+  grid-row: span 3;
+  object-fit: contain;
+}
