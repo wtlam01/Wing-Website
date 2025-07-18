@@ -142,3 +142,52 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+
+/* 背景-海洋生物 */
+.ocean-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* ✅ 關鍵：在所有內容背後 */
+  pointer-events: none; /* ✅ 不擋住你點按按鈕或連結 */
+  overflow: hidden;
+}
+
+.fish {
+  position: absolute;
+  width: 80px;
+  opacity: 0.85;
+}
+
+.fish1 {
+  top: 30px;
+  animation: swimRight 22s linear infinite;
+}
+
+.fish2 {
+  top: 90px;
+  animation: swimLeft 26s linear infinite;
+}
+
+@keyframes swimRight {
+  from {
+    left: -120px;
+  }
+  to {
+    left: 110%;
+  }
+}
+
+@keyframes swimLeft {
+  from {
+    left: 110%;
+    transform: scaleX(1);
+  }
+  to {
+    left: -120px;
+    transform: scaleX(-1); /* 左右翻轉 */
+  }
+}
