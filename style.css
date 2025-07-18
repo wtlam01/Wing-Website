@@ -276,3 +276,45 @@ footer a:hover {
   grid-row: span 3;
   object-fit: contain;
 }
+
+
+/* 3d modelling ----- video */
+.project-detail {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-description {
+  margin-bottom: 3rem;
+}
+
+.project-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.project-gallery img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.project-side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.project-text {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+
+.project-media {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
