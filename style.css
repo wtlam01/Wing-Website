@@ -191,3 +191,45 @@ footer a:hover {
     transform: scaleX(-1); /* 左右翻轉 */
   }
 }
+
+
+/* meals 2 share page */
+.project-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.project-text {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.project-image {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.project-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #00acc1;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.project-link:hover {
+  background-color: #007b8f;
+}
