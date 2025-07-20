@@ -1,104 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meals 2 Share - Project Details</title>
-
-    <!-- 你原本的 CSS -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InMotion App - UX Project</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
 
-    <header>
-        <h1>Meals 2 Share</h1>
-        <p>Branding, Web Design, Packaging</p>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <h1>InMotion App</h1>
+    <p>UX/UI Design for Body Positivity & Movement</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <main>
-        <section class="project-detail d-flex flex-wrap align-items-start justify-content-center p-4"
-            style="gap: 2rem;">
+  <main class="project-section d-flex flex-wrap justify-content-center" style="gap: 2rem; padding: 2rem;">
+    
+    <!-- Left: Text -->
+    <div class="project-info" style="flex: 1 1 400px; max-width: 600px;">
+      <h2>Project Overview</h2>
+      <p><strong>InMotion</strong> is a well-being mobile app designed for university students to stay active and boost body positivity. The app encourages users to join movement challenges, track emotions, and celebrate progress.</p>
 
-            <!-- 左邊：文字內容 -->
-            <div class="project-text" style="flex: 1 1 400px; max-width: 600px;">
-                <h2>Project Overview</h2>
-                <p><strong>Theme:</strong> Pay As You Feel Restaurant</p>
-                <p>This project involved branding and designing a fictional restaurant experience, including:</p>
-                <ul>
-                    <li>Logo Design</li>
-                    <li>Packaging for Takeaway</li>
-                    <li>Menu & Billboard</li>
-                    <li>Storefront Mockup</li>
-                    <li>Responsive Website</li>
-                </ul>
-                <p><strong>Tools:</strong> Adobe Illustrator, Photoshop, HTML/CSS, GitHub Pages</p>
+      <h3>🎯 Goals</h3>
+      <ul>
+        <li>Enhance body confidence through non-weight-related movement</li>
+        <li>Motivate students to stay active in fun, stress-free ways</li>
+        <li>Promote emotional awareness alongside physical activity</li>
+      </ul>
 
-                <a href="https://wtlam01.github.io/Meals-2-Share/" target="_blank" class="project-link">🔗 Visit
-                    Website</a>
-            </div>
+      <h3>🛠️ Tools Used</h3>
+      <p>Figma, Procreate</p>
 
-            <!-- 右邊：圖片輪播 -->
-            <div class="project-image" style="flex: 1 1 300px; max-width: 500px;">
-                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
+      <a href="https://www.figma.com/proto/VAbLRs6BFsXkW8dqq9SG2h/Wing-Lam--23070630----Prototype--NEW-?node-id=0-1" 
+         target="_blank" class="watch-button btn btn-primary mt-3">🔗 View Prototype on Figma</a>
+    </div>
 
-                        <div class="carousel-item active">
-                            <img src="assets/restaurant/Logo1.png" class="d-block w-100" alt="Logo 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/restaurant/Billboard.jpeg" class="d-block w-100" alt="Billboard">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/restaurant/foodbox.jpeg" class="d-block w-100" alt="Food Box">
-                        </div>
+   <!-- Right: Image Carousel with captions -->
+<div class="project-image" style="flex: 1 1 300px; max-width: 500px;">
+  <div id="figmaCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
 
-                        <div class="carousel-item">
-                            <img src="assets/restaurant/Logosign.png" class="d-block w-100" alt="Logo Sign">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/restaurant/PaperBag.png" class="d-block w-100" alt="Paper Bag">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/restaurant/Storefront.jpeg" class="d-block w-100" alt="Storefront">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/restaurant/menu.jpeg" class="d-block w-100" alt="menu">
-                        </div>
-                    </div>
-                    <!-- 左右控制按鈕 -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    </button>
-                </div>
-            </div>
+      <div class="carousel-item active">
+        <img src="assets/figma/cover.png" class="d-block w-100" alt="Cover">
+        <div class="carousel-caption d-none d-md-block">
+          <p>Project Cover</p>
+        </div>
+      </div>
 
-        </section>
-    </main>
-  <footer>
-    <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a>
-    </p>
+      <div class="carousel-item">
+        <img src="assets/figma/brandidentity.png" class="d-block w-100" alt="Brand Identity">
+        <div class="carousel-caption d-none d-md-block">
+          <p>Brand Identity</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/figma/data.png" class="d-block w-100" alt="Data">
+        <div class="carousel-caption d-none d-md-block">
+          <p>User Research Data</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/figma/desginprocess.png" class="d-block w-100" alt="Design Process">
+        <div class="carousel-caption d-none d-md-block">
+          <p>Design Process</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/figma/userflow1.png" class="d-block w-100" alt="User Flow 1">
+        <div class="carousel-caption d-none d-md-block">
+          <p>User Flow - Homepage Navigation</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/figma/userflow2.png" class="d-block w-100" alt="User Flow 2">
+        <div class="carousel-caption d-none d-md-block">
+          <p>User Flow - Task Completion</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/figma/userjourney.png" class="d-block w-100" alt="User Journey">
+        <div class="carousel-caption d-none d-md-block">
+          <p>User Journey Map</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/figma/wireframe.png" class="d-block w-100" alt="Wireframe">
+        <div class="carousel-caption d-none d-md-block">
+          <p>Initial Wireframe</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#figmaCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#figmaCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
+
+  </main>
+
+  <footer class="text-center p-3">
+    <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email Me</a></p>
   </footer>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
