@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>3D Robot Modelling - Wing Tung Lam</title>
 
-  <!-- CSS -->
+  <!-- Only your site CSS (no Bootstrap) -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -25,13 +22,16 @@
   </header>
 
   <main>
-    <section class="project-detail d-flex flex-wrap align-items-start justify-content-center p-4" style="gap: 2rem;">
+    <section class="project-detail">
 
-      <!-- 左邊文字介紹 -->
+      <!-- Left: text -->
       <div class="project-text">
         <h2>Overview</h2>
-        <p>This project focused on 3D robot modelling using Autodesk Maya. I explored hard surface modelling techniques and rendering, experimenting with materials and lighting.</p>
-        
+        <p>
+          This project focused on 3D robot modelling using Autodesk Maya. I explored hard-surface
+          techniques, clean topology, and simple look-dev, experimenting with materials and lighting.
+        </p>
+
         <h3>🎯 Key Goals</h3>
         <ul>
           <li>Design a unique robot character</li>
@@ -41,38 +41,32 @@
 
         <h3>🛠️ Tools Used</h3>
         <p>Maya, Arnold Renderer</p>
+      </div>
 
-        <div class="storyboard-preview">
+      <!-- Right: carousel + screenshot stacked -->
+      <div class="project-image">
+
+        <!-- Vanilla carousel -->
+        <div class="wm-carousel" id="robotCarousel">
+          <div class="wm-carousel-track">
+            <div class="wm-slide"><img src="assets/3drobot/render1.jpg" alt="Robot render 1"></div>
+            <div class="wm-slide"><img src="assets/3drobot/render2.jpg" alt="Robot render 2"></div>
+            <div class="wm-slide"><img src="assets/3drobot/render3.jpg" alt="Robot render 3"></div>
+          </div>
+
+          <button class="wm-nav wm-prev" aria-label="Previous">&#10094;</button>
+          <button class="wm-nav wm-next" aria-label="Next">&#10095;</button>
+
+          <div class="wm-dots" aria-label="carousel pagination"></div>
+        </div>
+
+        <!-- Screenshot under the carousel (still on the right column) -->
+        <div class="storyboard-preview" style="margin-top: 1.25rem;">
           <h4>📸 Screenshot from Maya</h4>
           <img src="assets/3drobot/screenshort.jpg" alt="Maya Screenshot" class="storyboard-img">
         </div>
+
       </div>
-
-      <!-- 右邊輪播 -->
-      <div class="project-image">
-        <div id="carouselRobot" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-
-            <div class="carousel-item active">
-              <img src="assets/3drobot/render1.jpg" class="d-block w-100" alt="Render 1">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/3drobot/render2.jpg" class="d-block w-100" alt="Render 2">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/3drobot/render3.jpg" class="d-block w-100" alt="Render 3">
-            </div>
-
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselRobot" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselRobot" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
-
     </section>
   </main>
 
@@ -80,8 +74,45 @@
     <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email Me</a></p>
   </footer>
 
-  <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Tiny vanilla carousel JS -->
+  <script>
+    (function(){
+      const root = document.getElementById('robotCarousel');
+      const track = root.querySelector('.wm-carousel-track');
+      const slides = Array.from(root.querySelectorAll('.wm-slide'));
+      const prev = root.querySelector('.wm-prev');
+      const next = root.querySelector('.wm-next');
+      const dotsWrap = root.querySelector('.wm-dots');
 
+      let index = 0;
+
+      // build dots
+      slides.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.setAttribute('aria-label', 'Go to slide ' + (i+1));
+        b.addEventListener('click', () => go(i));
+        dotsWrap.appendChild(b);
+      });
+
+      function update() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dotsWrap.querySelectorAll('button').forEach((b, i) => {
+          b.classList.toggle('active', i === index);
+        });
+      }
+
+      function go(i) {
+        index = (i + slides.length) % slides.length;
+        update();
+      }
+
+      prev.addEventListener('click', () => go(index - 1));
+      next.addEventListener('click', () => go(index + 1));
+
+      // init
+      update();
+      window.addEventListener('resize', update);
+    })();
+  </script>
 </body>
 </html>
