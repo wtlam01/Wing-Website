@@ -96,20 +96,64 @@ main {
   margin-top: 2rem;
   text-align: center;
 }
+.highlight h2 { font-size: 2rem; }
 
-.highlight h2 {
-  font-size: 2rem;
+.project-cards{
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  flex-wrap:wrap;
+  margin:1rem auto 0;
+  max-width:1200px;   /* center the grid with a readable width */
 }
+.is-hidden{ display:none !important; }
 
-.project-cards {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;          /* make the whole card clickable */
 }
 
 .card {
+  position: relative;      /* <-- needed for absolute child */
+  background-color: #fff;  /* fallback */
+  border-radius: 12px;
+  width: 300px;            /* rectangle size */
+  height: 250px;           /* rectangle height */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;        /* clip corners */
+  transition: transform 0.3s ease;
+  background-size: cover;  /* bg image behavior */
+  background-position: center;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: calc(100% - 24px);  /* small side padding visually */
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+.card-text h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.card-text p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+
+
+/* .card {
   background: #ffffff;
   border-radius: 12px;
   padding: 1.5rem 1rem;
@@ -120,36 +164,36 @@ main {
 
 .card:hover {
   transform: translateY(-5px);
-}
+} */
 
-.card img {
+/* .card img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 0.5rem;
-}
+} */
 
-.card h3 {
+/* .card h3 {
   font-size: 1.2rem;
   color: #006064;
   margin: 0.5rem 0;
-}
+} */
 
-.card p {
+/* .card p {
   font-size: 1rem;
   color: #333;
   margin-bottom: 0.5rem;
-}
+} */
 
-.card a {
+/* .card a {
   display: inline-block;
   color: #00796b;
   text-decoration: none;
   font-weight: bold;
-}
+} */
 
-.card a:hover {
+/* .card a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Footer */
 footer {
@@ -573,6 +617,9 @@ footer a:hover {
 /* hidden state for filter */
 .is-hidden { display: none !important; }
 
+
+
+/* intern ---------------- page */
 .project-side-by-side {
   display: flex;
   flex-wrap: wrap;
