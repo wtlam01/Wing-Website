@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snowman Winter Game — Easy & Hard Modes</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* tiny extras just for this page */
+    .level-chips {
+      margin-top: .75rem;
+      display: flex;
+      gap: .5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .level-chip {
+      display: inline-block;
+      padding: .35rem .7rem;
+      border-radius: 999px;
+      background: #006064;
+      color: #fff;
+      font-weight: 600;
+      font-size: .9rem;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,.15);
+      transition: transform .1s ease;
+    }
+    .level-chip:hover { transform: translateY(-1px); }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+      width: 100%;
+    }
+    .mode-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: .75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      text-align: center;
+    }
+    .mode-card h4 { margin: .4rem 0 .6rem; color:#006064; }
+    .mode-img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+      background:#fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Snowman Winter Game</h1>
+    <p>Two levels • Easy (collect & dodge) • Hard (reflect falling snowballs)</p>
+
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="project-section">
+      <div class="project-info">
+        <h2>Web-Based Interactive Audio-Visual Game</h2>
+        <p>
+          A winter-themed game with two difficulties. In <strong>Easy</strong>, the snowman
+          collects snow while dodging growing trees. In <strong>Hard</strong>, you control a bouncing
+          bar to reflect falling snowballs. Sound effects (Mario-style) keep it lively.
+        </p>
+
+        <h3>🔧 Technologies Used</h3>
+        <ul>
+          <li>p5.js (creative coding)</li>
+          <li>Object-Oriented Programming (classes for Snowman & Game Objects)</li>
+          <li>VS Code & GitHub Pages</li>
+        </ul>
+
+        <a href="https://editor.p5js.org/lamwt01/full/giMTms6Tb" target="_blank" class="watch-button">▶ Play the Game</a>
+      </div>
+
+      <div class="project-media">
+        <!-- overview image (your existing one) -->
+        <img src="assets/webgame/game2.png" alt="Game overview" class="mode-img" />
+      </div>
+    </section>
+
+    <!-- Easy / Hard images -->
+    <section class="project-section" id="modes">
+      <div class="project-info" style="flex:1 1 100%">
+        <div class="mode-grid">
+          <div class="mode-card" id="easy">
+            <h4>Easy Mode</h4>
+            <img src="assets/webgame/easy.png" alt="Easy mode screenshot" class="mode-img">
+          </div>
+          <div class="mode-card" id="hard">
+            <h4>Hard Mode</h4>
+            <img src="assets/webgame/hard.png" alt="Hard mode screenshot" class="mode-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
+      <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
+      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a>
+    </p>
+  </footer>
+</body>
+</html>
