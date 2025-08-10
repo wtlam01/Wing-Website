@@ -537,3 +537,84 @@ footer a:hover {
   margin-bottom: 1rem;
   line-height: 1.6;
 }
+
+
+/* --- Portfolio filter bar --- */
+.filter-wrap {
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.filter-bar {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0 auto 0.5rem;
+}
+
+.filter-btn {
+  border: none;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #006064;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform .15s ease, background .2s ease, color .2s ease;
+}
+
+.filter-btn:hover { transform: translateY(-2px); }
+.filter-btn.active { background: #00acc1; color: #fff; }
+
+/* reuse your existing .project-cards (grid) */
+/* hidden state for filter */
+.is-hidden { display: none !important; }
+
+.project-side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.project-image-grid.narrow {
+  flex: 1 1 30%; /* 1/3 width */
+  min-width: 220px;
+}
+
+.project-videos.wide {
+  flex: 1 1 65%; /* 2/3 width */
+  min-width: 300px;
+}
+
+/* Beer can photo grid */
+.grid-photos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+}
+
+.grid-photos img {
+  width: 100%;
+  border-radius: 6px;
+  background: white;
+  padding: 3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Square videos in 2 columns */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.video-grid iframe {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
