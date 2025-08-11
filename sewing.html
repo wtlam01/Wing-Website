@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sewing & Fabric Creations - Wing Tung Lam</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Page-specific style -->
+  <style>
+    .gallery {
+  max-width: 1200px;   /* limit content width */
+  margin: 0 auto;      /* center horizontally */
+  padding: 0 1.5rem;   /* space on left & right */
+}
+
+    /* Remove hover effect for this page only */
+.gallery-grid img {
+  transition: none !important;
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  object-fit: cover;
+  width: 100%;
+  height: 250px; /* fixed rectangle height */
+}
+
+
+    .gallery-grid img:hover {
+      transform: none !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sewing & Fabric Creations</h1>
+    <p>Handmade bags, plush toys, and soft goods</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="gallery">
+    <h2>Selected Works</h2>
+    <p style="max-width:800px;margin:0 auto 1rem;">
+A collection of handmade fabric creations — from bags to plush items — all carefully sewn and finished with personal touches.
+    </p>
+
+    <div class="gallery-grid">
+      <img src="assets/crafts/sewing1.jpeg"  alt="Sewing project 1"  loading="lazy">
+      <img src="assets/crafts/sewing2.JPG"   alt="Sewing project 2"  loading="lazy">
+      <img src="assets/crafts/sewing3.jpeg"  alt="Sewing project 3"  loading="lazy">
+      <img src="assets/crafts/sewing4.jpeg"  alt="Sewing project 4"  loading="lazy">
+      <img src="assets/crafts/sewing5.jpeg"  alt="Sewing project 5"  loading="lazy">
+      <img src="assets/crafts/sewing6.jpeg"  alt="Sewing project 6"  loading="lazy">
+      <img src="assets/crafts/sewing7.jpeg"  alt="Sewing project 7"  loading="lazy">
+      <img src="assets/crafts/sewing8.jpeg"  alt="Sewing project 8"  loading="lazy">
+      <img src="assets/crafts/sewing9.jpeg"  alt="Sewing project 9"  loading="lazy">
+      <img src="assets/crafts/sewing10.jpeg" alt="Sewing project 10" loading="lazy">
+      <img src="assets/crafts/sewing11.jpeg" alt="Sewing project 11" loading="lazy">
+      <img src="assets/crafts/sewing12.jpeg" alt="Sewing project 12" loading="lazy">
+      <img src="assets/crafts/sewing13.jpeg" alt="Sewing project 13" loading="lazy">
+      <img src="assets/crafts/sewing14.jpeg" alt="Sewing project 14" loading="lazy">
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> |
+      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a>
+    </p>
+  </footer>
+
+</body>
+</html>
