@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Embroidery — Wing Tung Lam</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Page-specific style (exactly same as Sewing page) -->
+<style>
+  .gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  /* Force identical tiles */
+  .gallery-grid img {
+    display: block; /* remove baseline gap */
+    width: 100% !important;
+    height: 250px !important;      /* fixed rectangle height */
+    object-fit: cover !important;
+    transition: none !important;
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border-radius: 6px;
+  }
+
+  .gallery-grid img:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>Embroidery</h1>
+  <p>Hand-stitched hoops and fabric details</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="gallery">
+  <h2>Selected Works</h2>
+  <p style="max-width:800px;margin:0 auto 1rem;">
+    Small hoops, text stitches, and simple pattern fills.
+  </p>
+
+  <div class="gallery-grid">
+    <img src="assets/crafts/embroidery1.jpeg" alt="Embroidery 1" loading="lazy">
+    <img src="assets/crafts/embroidery2.jpeg" alt="Embroidery 2" loading="lazy">
+    <img src="assets/crafts/embroidery3.jpeg" alt="Embroidery 3" loading="lazy">
+    <!-- add more images here if you like, it will stay identical -->
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> |
+    <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> |
+    <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a>
+  </p>
+</footer>
+
+</body>
+</html>
