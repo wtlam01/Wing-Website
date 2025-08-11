@@ -28,6 +28,7 @@
         <li><button class="filter-btn active" data-filter="all">All</button></li>
         <li><button class="filter-btn" data-filter="graphic">Graphic / Web</button></li>
         <li><button class="filter-btn" data-filter="animation">Animation</button></li>
+         <li><button class="filter-btn" data-filter="video">Video</button></li>
         <li><button class="filter-btn" data-filter="interactive">Interactive</button></li>
         <li><button class="filter-btn" data-filter="ux">UX / UI</button></li>
         <li><button class="filter-btn" data-filter="immersive">3D / Immersive</button></li>
@@ -105,12 +106,14 @@
         </a>
 
 
-        <article class="card" data-cat="animation">
-          <img src="assets/images/stopmotion.jpg" alt="Stop Motion">
-          <h3>Stop Motion: Cookies</h3>
-          <p>Handmade animation + sound</p>
-          <a href="https://youtu.be/0qMmFiwrNZA" target="_blank" rel="noopener">Watch Video</a>
-        </article>
+<a href="ms.html" class="card-link">
+  <article class="card" data-cat="video" style="background-image:url('assets/ms.png'); background-size:cover; background-position:center;">
+    <div class="card-text">
+      <h3>Making It — Origami Mini Film</h3>
+      <p>30-second craft storytelling</p>
+    </div>
+  </article>
+</a>
 
         <article class="card" data-cat="animation">
           <img src="assets/images/video-making.jpg" alt="30s Creative Clip">
@@ -132,7 +135,7 @@
           </article>
         </a>
 
-       <a href="webgame2.html" class="card-link">
+        <a href="webgame2.html" class="card-link">
           <article class="card" data-cat="interactive web"
             style="background-image:url('assets/webgame/2.png'); background-size:cover; background-position:center;">
             <div class="card-text">
@@ -174,34 +177,37 @@
           </article>
         </a>
 
-<a href="xd.html" class="card-link">
-  <article class="card" data-cat="ux ui" style="background-image:url('assets/bears/cover.png'); background-size:cover; background-position:center;">
-    <div class="card-text">
-      <h3>Adobe XD Prototypes</h3>
-      <p>Interactive flows and micro-interactions</p>
-    </div>
-  </article>
-</a>
+        <a href="xd.html" class="card-link">
+          <article class="card" data-cat="ux ui"
+            style="background-image:url('assets/bears/cover.png'); background-size:cover; background-position:center;">
+            <div class="card-text">
+              <h3>Bears Factory - Adobe XD</h3>
+              <p>Interactive flows and micro-interactions</p>
+            </div>
+          </article>
+        </a>
 
 
         <!-- 3D / Immersive -->
-<a href="3d-robot.html" class="card-link">
-  <article class="card" data-cat="immersive 3d" style="background-image:url('assets/3drobot/render1.jpg'); background-size:cover; background-position:center;">
-    <div class="card-text">
-      <h3>3D Robot Modelling</h3>
-      <p>Hard-surface robots in Maya</p>
-    </div>
-  </article>
-</a>
+        <a href="3d-robot.html" class="card-link">
+          <article class="card" data-cat="immersive 3d"
+            style="background-image:url('assets/3drobot/render1.jpg'); background-size:cover; background-position:center;">
+            <div class="card-text">
+              <h3>3D Robot Modelling</h3>
+              <p>Hard-surface robots in Maya</p>
+            </div>
+          </article>
+        </a>
 
-<a href="unity-world.html" class="card-link">
-  <article class="card" data-cat="immersive 3d interactive" style="background-image:url('assets/unity/1.png'); background-size:cover; background-position:center;">
-    <div class="card-text">
-      <h3>Immersive Unity World</h3>
-      <p>Interactive environment in Unity</p>
-    </div>
-  </article>
-</a>
+        <a href="unity-world.html" class="card-link">
+          <article class="card" data-cat="immersive 3d interactive"
+            style="background-image:url('assets/unity/1.png'); background-size:cover; background-position:center;">
+            <div class="card-text">
+              <h3>Immersive Unity World</h3>
+              <p>Interactive environment in Unity</p>
+            </div>
+          </article>
+        </a>
 
       </div>
     </section>
@@ -214,32 +220,32 @@
     </p>
   </footer>
 
-<script>
-  // grab outer items: either <a.card-link> or <article.card> directly under #grid
-  const buttons = document.querySelectorAll('.filter-btn');
-  const items = Array.from(document.querySelectorAll('#grid > a.card-link, #grid > article.card'));
+  <script>
+    // grab outer items: either <a.card-link> or <article.card> directly under #grid
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = Array.from(document.querySelectorAll('#grid > a.card-link, #grid > article.card'));
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-      const key = btn.dataset.filter;
+        const key = btn.dataset.filter;
 
-      items.forEach(item => {
-        // get the data-cat from the inner .card element
-        const card = item.matches('article.card') ? item : item.querySelector('.card');
-        const bag = (card?.dataset.cat || '').toLowerCase();
+        items.forEach(item => {
+          // get the data-cat from the inner .card element
+          const card = item.matches('article.card') ? item : item.querySelector('.card');
+          const bag = (card?.dataset.cat || '').toLowerCase();
 
-        if (key === 'all' || bag.includes(key)) {
-          item.classList.remove('is-hidden');
-        } else {
-          item.classList.add('is-hidden');
-        }
+          if (key === 'all' || bag.includes(key)) {
+            item.classList.remove('is-hidden');
+          } else {
+            item.classList.add('is-hidden');
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
 
 </body>
 
