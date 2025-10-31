@@ -172,3 +172,39 @@
     height: 90vh;
   }
 }
+
+
+/* contact page - form */
+.contact-form {
+  margin-top: 3rem;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.contact-form button {
+  background-color: #0074d9;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background-color: #005fa3;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #e0f7fa;
+  margin-top: 0.5rem;
+  font-weight: 400;
+}

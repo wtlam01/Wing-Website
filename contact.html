@@ -5,9 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact - Wing Tung Lam</title>
   <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+  <style>
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
 
+    .contact-form {
+      margin-top: 3rem;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background-color: #0074d9;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #005fa3;
+    }
+
+    .work-together {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
   <header>
     <h1>Contact Me</h1>
     <p>Let's connect and create something meaningful together!</p>
@@ -19,20 +63,39 @@
     </nav>
   </header>
 
-<main style="max-width: 800px; margin: 0 auto; padding: 2rem;">
-  <section class="intro">
-    <h2>Reach Out</h2>
-    <p>Whether it's a collaboration, a freelance project, or just to say hi — feel free to drop me a message!</p>
+  <main>
+    <section class="intro">
+      <h2>Reach Out</h2>
+      <p>Whether it's a collaboration, a freelance project, or just to say hi — feel free to drop me a message!</p>
 
-    <ul style="list-style-type: none; padding: 0; margin-top: 1.5rem; font-size: 1.1rem; line-height: 1.8;">
-      <li><strong>Email:</strong> <a href="mailto:wingtung0101@gmail.com">wingtung0101@gmail.com</a></li>
-      <li><strong>Instagram:</strong> <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">@chestnut.nutsss</a></li>
-      <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@Coco-corner0" target="_blank">@Coco-corner0</a></li>
-    </ul>
-  </section>
-</main>
+      <ul style="list-style-type: none; padding: 0; margin-top: 1.5rem; font-size: 1.1rem; line-height: 1.8;">
+        <li><strong>Email:</strong> <a href="mailto:wingtung0101@gmail.com">wingtung0101@gmail.com</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">@chestnut.nutsss</a></li>
+        <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@Coco-corner0" target="_blank">@Coco-corner0</a></li>
+      </ul>
+    </section>
 
+    <section class="work-together">
+      <h2>Let’s Work Together</h2>
+      <p>I’m open to collaborations, freelance animation and interactive design projects, or creative research opportunities. 
+      Please fill in the form below — I’d love to hear from you!</p>
+    </section>
 
+    <section class="contact-form">
+      <form action="https://formspree.io/f/xvgvwywp" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
@@ -40,6 +103,5 @@
       <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a>
     </p>
   </footer>
-
 </body>
 </html>
