@@ -208,3 +208,12 @@
   margin-top: 0.5rem;
   font-weight: 400;
 }
+
+/* Force Fragile Bonds photos to same height */
+.project-media .interface-images img {
+  width: 100%;
+  height: 220px;      /* 🔧 可以改 200 / 240 / 260 看你喜歡的比例 */
+  object-fit: cover;  /* 自動裁切，保持構圖好看 */
+  border-radius: 10px;
+  display: block;
+}
