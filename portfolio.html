@@ -7,7 +7,7 @@
   <title>Portfolio - Wing Tung Lam</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style2.css" />
-  <link rel="stylesheet" href="script.js" />
+  <!-- <link rel="stylesheet" href="script.js" /> -->
 </head>
 
 <body>
@@ -316,33 +316,50 @@
   const buttons = document.querySelectorAll('.filter-btn');
   const items = Array.from(document.querySelectorAll('#grid > a.card-link, #grid > article.card'));
 
+  function applyFilter(key) {
+    items.forEach(item => {
+      const card = item.matches('article.card') ? item : item.querySelector('.card');
+      const cats = (card?.dataset.cat || '').toLowerCase().split(' ');
+
+      let show = false;
+
+      if (key === 'all') {
+        // In "All", show everything EXCEPT craft
+        show = !cats.includes('craft');
+      } else {
+        // Other filters: normal match
+        show = cats.includes(key);
+      }
+
+      if (show) {
+        item.classList.remove('is-hidden');
+      } else {
+        item.classList.add('is-hidden');
+      }
+    });
+  }
+
+  // click handlers
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const key = btn.dataset.filter;
-
-      items.forEach(item => {
-        const card = item.matches('article.card') ? item : item.querySelector('.card');
-        const cats = (card?.dataset.cat || '').toLowerCase().split(' ');
-
-        let show = false;
-
-        if (key === 'all') {
-          // ⭐ All mode → show everything EXCEPT craft
-          show = !cats.includes('craft');
-        } else {
-          // ⭐ Other filters → normal match
-          show = cats.includes(key);
-        }
-
-        if (show) item.classList.remove('is-hidden');
-        else item.classList.add('is-hidden');
-      });
+      applyFilter(key);
     });
   });
+
+  // ⭐ apply "all" filter once on initial load
+  document.addEventListener('DOMContentLoaded', () => {
+    const defaultBtn = document.querySelector('.filter-btn[data-filter="all"]');
+    if (defaultBtn) {
+      defaultBtn.classList.add('active');
+    }
+    applyFilter('all');
+  });
 </script>
+
 
 
 
