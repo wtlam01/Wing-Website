@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Wing Tung Lam</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="script.js" />
 </head>
 
 <body>
@@ -32,7 +34,9 @@
         <li><button class="filter-btn" data-filter="interactive">Interactive</button></li>
         <li><button class="filter-btn" data-filter="ux">UX / UI</button></li>
         <li><button class="filter-btn" data-filter="immersive">3D / Immersive</button></li>
+        <li><button class="filter-btn" data-filter="installation">Installation</button></li>
         <li><button class="filter-btn" data-filter="craft">Crafts</button></li>
+
       </ul>
     </section>
 
@@ -166,17 +170,6 @@
           </article>
         </a>
 
-        <a href="fragile-bonds.html" class="card-link">
-          <article class="card" data-cat="interactive immersive"
-            style="background-image:url('assets/fragile/3.png'); background-size:cover; background-position:center;">
-            <span class="card-year">2023</span>
-            <div class="card-text">
-              <h3>Fragile Bonds</h3>
-              <p>Interdisciplinary Installation</p>
-            </div>
-          </article>
-        </a>
-
 
         <a href="ar.html" class="card-link">
           <article class="card" data-cat="interactive ar immersive"
@@ -248,6 +241,33 @@
           </article>
         </a>
 
+
+        <!--Installation -->
+<!--Installation -->
+<a href="whack-a-mole.html" class="card-link">
+  <article class="card" data-cat="installation interactive ux animation"
+    style="background-image:url('assets/whack/7.png'); background-size:cover; background-position:center;">
+    <span class="card-year">2023</span>
+    <div class="card-text">
+      <h3>Whac-A-Mole Reconstruction</h3>
+      <p>Installation • Game Prototype • Animation</p>
+    </div>
+  </article>
+</a>
+
+<a href="fragile-bonds.html" class="card-link">
+  <article class="card" data-cat="interactive installation"
+    style="background-image:url('assets/fragile/3.png'); background-size:cover; background-position:center;">
+    <span class="card-year">2023</span>
+    <div class="card-text">
+      <h3>Fragile Bonds</h3>
+      <p>Interdisciplinary Installation</p>
+    </div>
+  </article>
+</a>
+
+
+
         <!-- Crafts, handmake -->
         <a href="sewing.html" class="card-link">
           <article class="card" data-cat="craft"
@@ -280,6 +300,7 @@
         </a>
 
 
+
       </div>
     </section>
   </main>
@@ -308,7 +329,17 @@
           const card = item.matches('article.card') ? item : item.querySelector('.card');
           const bag = (card?.dataset.cat || '').toLowerCase();
 
-          if (key === 'all' || bag.includes(key)) {
+          let show = false;
+
+          if (key === 'all') {
+            // ⭐ In "All", show everything EXCEPT craft
+            show = !bag.includes('craft');
+          } else {
+            // ⭐ Normal behaviour for other filters
+            show = bag.includes(key);
+          }
+
+          if (show) {
             item.classList.remove('is-hidden');
           } else {
             item.classList.add('is-hidden');
@@ -317,6 +348,7 @@
       });
     });
   </script>
+
 
 </body>
 
