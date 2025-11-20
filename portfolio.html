@@ -312,42 +312,38 @@
     </p>
   </footer>
 
-  <script>
-    // grab outer items: either <a.card-link> or <article.card> directly under #grid
-    const buttons = document.querySelectorAll('.filter-btn');
-    const items = Array.from(document.querySelectorAll('#grid > a.card-link, #grid > article.card'));
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const items = Array.from(document.querySelectorAll('#grid > a.card-link, #grid > article.card'));
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-        const key = btn.dataset.filter;
+      const key = btn.dataset.filter;
 
-        items.forEach(item => {
-          // get the data-cat from the inner .card element
-          const card = item.matches('article.card') ? item : item.querySelector('.card');
-          const bag = (card?.dataset.cat || '').toLowerCase();
+      items.forEach(item => {
+        const card = item.matches('article.card') ? item : item.querySelector('.card');
+        const cats = (card?.dataset.cat || '').toLowerCase().split(' ');
 
-          let show = false;
+        let show = false;
 
-          if (key === 'all') {
-            // ⭐ In "All", show everything EXCEPT craft
-            show = !bag.includes('craft');
-          } else {
-            // ⭐ Normal behaviour for other filters
-            show = bag.includes(key);
-          }
+        if (key === 'all') {
+          // ⭐ All mode → show everything EXCEPT craft
+          show = !cats.includes('craft');
+        } else {
+          // ⭐ Other filters → normal match
+          show = cats.includes(key);
+        }
 
-          if (show) {
-            item.classList.remove('is-hidden');
-          } else {
-            item.classList.add('is-hidden');
-          }
-        });
+        if (show) item.classList.remove('is-hidden');
+        else item.classList.add('is-hidden');
       });
     });
-  </script>
+  });
+</script>
+
 
 
 </body>
