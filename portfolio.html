@@ -7,7 +7,8 @@
   <title>Portfolio - Wing Tung Lam</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style2.css" />
-  <!-- <link rel="stylesheet" href="script.js" /> -->
+  <script src="script.js" defer></script>
+
 </head>
 
 <body>
@@ -243,38 +244,37 @@
 
 
         <!--Installation -->
-<a href="ocean-silent.html" class="card-link">
-  <article class="card" data-cat="installation interactive immersive"
-    style="background-image:url('assets/ocean/ocean.png'); background-size:cover; background-position:center;">
-    <span class="card-year">2025</span>
-    <div class="card-text">
-      <h3>When the Ocean Fell Silent</h3>
-      <p>Embodied Projection • Sound Interaction</p>
-    </div>
-  </article>
-</a>
+        <a href="ocean-silent.html" class="card-link">
+          <article class="card" data-cat="installation interactive immersive"
+            style="background-image:url('assets/ocean/ocean.png'); background-size:cover; background-position:center;">
+            <span class="card-year">2025</span>
+            <div class="card-text">
+              <h3>When the Ocean Fell Silent</h3>
+              <p>Embodied Projection • Sound Interaction</p>
+            </div>
+          </article>
+        </a>
 
-<a href="whack-a-mole.html" class="card-link">
-  <article class="card" data-cat="installation interactive ux animation"
-    style="background-image:url('assets/whack/7.png'); background-size:cover; background-position:center;">
-    <span class="card-year">2023</span>
-    <div class="card-text">
-      <h3>Whac-A-Mole Reconstruction</h3>
-      <p>Installation • Game Prototype • Animation</p>
-    </div>
-  </article>
-</a>
+        <article class="card" data-cat="installation interactive ux animation"
+          style="background-image:url('assets/whack/7.png'); background-size:cover; background-position:center;">
+          <span class="card-year">2023</span>
+          <div class="card-text">
+            <h3>Whac-A-Mole Reconstruction</h3>
+            <p>Installation • Game Prototype • Animation</p>
+          </div>
+        </article>
 
-<a href="fragile-bonds.html" class="card-link">
-  <article class="card" data-cat="interactive installation"
-    style="background-image:url('assets/fragile/3.png'); background-size:cover; background-position:center;">
-    <span class="card-year">2023</span>
-    <div class="card-text">
-      <h3>Fragile Bonds</h3>
-      <p>Interdisciplinary Installation</p>
-    </div>
-  </article>
-</a>
+
+        <a href="fragile-bonds.html" class="card-link">
+          <article class="card" data-cat="interactive installation"
+            style="background-image:url('assets/fragile/3.png'); background-size:cover; background-position:center;">
+            <span class="card-year">2023</span>
+            <div class="card-text">
+              <h3>Fragile Bonds</h3>
+              <p>Interdisciplinary Installation</p>
+            </div>
+          </article>
+        </a>
 
 
 
@@ -322,53 +322,67 @@
     </p>
   </footer>
 
-<script>
-  const buttons = document.querySelectorAll('.filter-btn');
-  const items = Array.from(document.querySelectorAll('#grid > a.card-link, #grid > article.card'));
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = Array.from(document.querySelectorAll('#grid > a.card-link, #grid > article.card'));
 
-  function applyFilter(key) {
-    items.forEach(item => {
-      const card = item.matches('article.card') ? item : item.querySelector('.card');
-      const cats = (card?.dataset.cat || '').toLowerCase().split(' ');
+    function applyFilter(key) {
+      items.forEach(item => {
+        const card = item.matches('article.card') ? item : item.querySelector('.card');
+        const cats = (card?.dataset.cat || '').toLowerCase().split(' ');
 
-      let show = false;
+        let show = false;
 
-      if (key === 'all') {
-        // In "All", show everything EXCEPT craft
-        show = !cats.includes('craft');
-      } else {
-        // Other filters: normal match
-        show = cats.includes(key);
-      }
+        if (key === 'all') {
+          // In "All", show everything EXCEPT craft
+          show = !cats.includes('craft');
+        } else {
+          // Other filters: normal match
+          show = cats.includes(key);
+        }
 
-      if (show) {
-        item.classList.remove('is-hidden');
-      } else {
-        item.classList.add('is-hidden');
-      }
-    });
-  }
-
-  // click handlers
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const key = btn.dataset.filter;
-      applyFilter(key);
-    });
-  });
-
-  // ⭐ apply "all" filter once on initial load
-  document.addEventListener('DOMContentLoaded', () => {
-    const defaultBtn = document.querySelector('.filter-btn[data-filter="all"]');
-    if (defaultBtn) {
-      defaultBtn.classList.add('active');
+        if (show) {
+          item.classList.remove('is-hidden');
+        } else {
+          item.classList.add('is-hidden');
+        }
+      });
     }
-    applyFilter('all');
-  });
-</script>
+
+    // click handlers
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const key = btn.dataset.filter;
+        applyFilter(key);
+      });
+    });
+
+    // ⭐ apply "all" filter once on initial load
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("grid");
+      if (!grid) return;
+
+      // Get top-level items (your cards are wrapped by <a.card-link>)
+      const items = Array.from(grid.querySelectorAll(":scope > a.card-link, :scope > article.card"));
+
+      const getYear = (item) => {
+        const card = item.matches("article.card") ? item : item.querySelector(".card");
+        const yearEl = card ? card.querySelector(".card-year") : null;
+        const year = parseInt((yearEl?.textContent || "").trim(), 10);
+        return Number.isFinite(year) ? year : 0;
+      };
+
+      // Sort descending: newest first
+      items.sort((a, b) => getYear(b) - getYear(a));
+
+      // Re-append in sorted order
+      items.forEach((item) => grid.appendChild(item));
+    });
+
+  </script>
 
 
 
