@@ -255,14 +255,17 @@
           </article>
         </a>
 
-        <article class="card" data-cat="installation interactive ux animation"
-          style="background-image:url('assets/whack/7.png'); background-size:cover; background-position:center;">
-          <span class="card-year">2023</span>
-          <div class="card-text">
-            <h3>Whac-A-Mole Reconstruction</h3>
-            <p>Installation • Game Prototype • Animation</p>
-          </div>
-        </article>
+        <a href="whack-a-mole.html" class="card-link">
+          <article class="card" data-cat="installation interactive ux animation"
+            style="background-image:url('assets/whack/7.png'); background-size:cover; background-position:center;">
+            <span class="card-year">2023</span>
+            <div class="card-text">
+              <h3>Whac-A-Mole Reconstruction</h3>
+              <p>Installation • Game Prototype • Animation</p>
+            </div>
+          </article>
+        </a>
+
 
 
         <a href="fragile-bonds.html" class="card-link">
@@ -324,65 +327,72 @@
 
   <script>
     const buttons = document.querySelectorAll('.filter-btn');
-    const items = Array.from(document.querySelectorAll('#grid > a.card-link, #grid > article.card'));
+
+    function getItems() {
+      const grid = document.getElementById("grid");
+      if (!grid) return [];
+      return Array.from(grid.querySelectorAll(":scope > a.card-link, :scope > article.card"));
+    }
+
+    function getCard(item) {
+      return item.matches("article.card") ? item : item.querySelector(".card");
+    }
+
+    function getYear(item) {
+      const card = getCard(item);
+      const yearEl = card ? card.querySelector(".card-year") : null;
+      const year = parseInt((yearEl?.textContent || "").trim(), 10);
+      return Number.isFinite(year) ? year : 0;
+    }
 
     function applyFilter(key) {
+      const items = getItems();
+
       items.forEach(item => {
-        const card = item.matches('article.card') ? item : item.querySelector('.card');
-        const cats = (card?.dataset.cat || '').toLowerCase().split(' ');
+        const card = getCard(item);
+        const cats = (card?.dataset.cat || '').toLowerCase().split(/\s+/);
 
         let show = false;
 
         if (key === 'all') {
-          // In "All", show everything EXCEPT craft
+          // In "All", hide crafts
           show = !cats.includes('craft');
         } else {
-          // Other filters: normal match
           show = cats.includes(key);
         }
 
-        if (show) {
-          item.classList.remove('is-hidden');
-        } else {
-          item.classList.add('is-hidden');
-        }
+        item.classList.toggle('is-hidden', !show);
       });
     }
 
-    // click handlers
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const key = btn.dataset.filter;
-        applyFilter(key);
-      });
-    });
-
-    // ⭐ apply "all" filter once on initial load
     document.addEventListener("DOMContentLoaded", () => {
       const grid = document.getElementById("grid");
       if (!grid) return;
 
-      // Get top-level items (your cards are wrapped by <a.card-link>)
-      const items = Array.from(grid.querySelectorAll(":scope > a.card-link, :scope > article.card"));
-
-      const getYear = (item) => {
-        const card = item.matches("article.card") ? item : item.querySelector(".card");
-        const yearEl = card ? card.querySelector(".card-year") : null;
-        const year = parseInt((yearEl?.textContent || "").trim(), 10);
-        return Number.isFinite(year) ? year : 0;
-      };
-
-      // Sort descending: newest first
+      // 1) Sort newest -> oldest
+      const items = getItems();
       items.sort((a, b) => getYear(b) - getYear(a));
+      items.forEach(item => grid.appendChild(item));
 
-      // Re-append in sorted order
-      items.forEach((item) => grid.appendChild(item));
+      // 2) Apply "All" filter immediately (hide crafts)
+      applyFilter('all');
+
+      // 3) Ensure "All" button looks active on load
+      buttons.forEach(b => b.classList.remove('active'));
+      const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+      if (allBtn) allBtn.classList.add('active');
     });
 
+    // Click handlers
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(btn.dataset.filter);
+      });
+    });
   </script>
+
 
 
 
