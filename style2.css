@@ -233,16 +233,6 @@
 }
 
 
-/* Hrb Intern */
-/* HRB video list */
-.video-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
 
-.video-item h3 {
-  margin-bottom: 0.6rem;
-  font-size: 1.2rem;
-  color: #034d56;
-}
+
+
