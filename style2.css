@@ -218,8 +218,7 @@
   display: block;
 }
 
-
-/* Make the last two images appear side by side */
+/* mMake the last two images appear side by side */
 .two-column {
   display: flex;
   gap: 10px;
