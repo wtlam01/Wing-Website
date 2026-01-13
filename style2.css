@@ -219,6 +219,19 @@
 }
 
 
+/*Make the last two images appear side by side */
+.two-column {
+  display: flex;
+  gap: 10px;
+}
+
+.two-column img {
+  width: 50%;
+  height: 220px;      /* adjust height as needed */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 
 
 
