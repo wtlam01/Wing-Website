@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Wing Tung Lam</title>
-  <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style2.css" />
 </head>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('cvModal');
-  const openBtn = document.querySelector('.view-cv');
-  if (!modal || !openBtn) return; // guard if markup missing
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('cvModal');
+    const openBtn = document.querySelector('.view-cv');
+    if (!modal || !openBtn) return; // guard if markup missing
 
-  const closeBtn = modal.querySelector('.cv-close');
+    const closeBtn = modal.querySelector('.cv-close');
 
-  function openModal(e) {
-    e?.preventDefault();
-    modal.removeAttribute('hidden');     // show
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    modal.setAttribute('hidden', '');    // hide
-    document.body.style.overflow = '';
-  }
+    function openModal(e) {
+      e?.preventDefault();
+      modal.removeAttribute('hidden');     // show
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.setAttribute('hidden', '');    // hide
+      document.body.style.overflow = '';
+    }
 
-  openBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal(); // click backdrop to close
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal(); // click backdrop to close
+    });
+    document.addEventListener('keydown', (e) => {
+      if (!modal.hasAttribute('hidden') && e.key === 'Escape') closeModal();
+    });
   });
-  document.addEventListener('keydown', (e) => {
-    if (!modal.hasAttribute('hidden') && e.key === 'Escape') closeModal();
-  });
-});
 </script>
 
 
@@ -55,130 +56,160 @@ document.addEventListener('DOMContentLoaded', () => {
   <a href="assets/WingTungLam_CV.pdf" download class="cv-button">📄 Download CV (PDF)</a>
 </p> -->
 
-<!-- CV Card -->
-<section class="cv-wrap">
-  <div class="cv-card">
-    <div class="cv-thumb" aria-hidden="true">📄</div>
-    <div class="cv-info">
-      <h2 class="cv-title">Wing - Curriculum Vitae</h2>
-      <p class="cv-sub">PDF · Updated 2025</p>
-      <div class="cv-actions">
-        <button class="cv-btn view-cv" aria-haspopup="dialog" aria-controls="cvModal">View</button>
-        <a class="cv-btn outline" href="assets/WingTungLam_CV.pdf" download>Download</a>
+  <!-- CV Card -->
+  <section class="cv-wrap">
+    <div class="cv-card">
+      <div class="cv-thumb" aria-hidden="true">📄</div>
+      <div class="cv-info">
+        <h2 class="cv-title">Wing - Curriculum Vitae</h2>
+        <p class="cv-sub">PDF · Updated 2025</p>
+        <div class="cv-actions">
+          <button class="cv-btn view-cv" aria-haspopup="dialog" aria-controls="cvModal">View</button>
+          <a class="cv-btn outline" href="assets/WingTungLam_CV.pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal: inline PDF viewer -->
+  <div class="cv-modal" id="cvModal" role="dialog" aria-modal="true" aria-label="CV preview" hidden>
+    <div class="cv-modal__dialog">
+      <button class="cv-close" aria-label="Close CV preview">×</button>
+      <div class="cv-frame">
+        <!-- 方式A：使用 <embed> -->
+        <embed src="assets/WingTungLam_CV.pdf" type="application/pdf" />
+        <!-- 若某些瀏覽器不支援，可改用方式B：<iframe src="assets/WingTungLam_CV.pdf"></iframe> -->
+      </div>
+      <div class="cv-modal__bar">
+        <a class="cv-btn outline" href="assets/WingTungLam_CV.pdf" download>Download PDF</a>
+        <a class="cv-btn" href="assets/WingTungLam_CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
       </div>
     </div>
   </div>
-</section>
 
-<!-- Modal: inline PDF viewer -->
-<div class="cv-modal" id="cvModal" role="dialog" aria-modal="true" aria-label="CV preview" hidden>
-  <div class="cv-modal__dialog">
-    <button class="cv-close" aria-label="Close CV preview">×</button>
-    <div class="cv-frame">
-      <!-- 方式A：使用 <embed> -->
-      <embed src="assets/WingTungLam_CV.pdf" type="application/pdf" />
-      <!-- 若某些瀏覽器不支援，可改用方式B：<iframe src="assets/WingTungLam_CV.pdf"></iframe> -->
+
+  <main class="about-layout">
+    <!-- Left Column: Education + Experience -->
+    <div class="about-left">
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li><strong>BSc (Hons) Digital Media</strong> — UWE Bristol (2023–2026).
+            <!-- :contentReference[oaicite:0]{index=0} --></li>
+          <li><strong>BSc Creative Media</strong> — City University of Hong Kong (2022–2023).
+            <!-- :contentReference[oaicite:1]{index=1} --></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <ul>
+          <li>
+            <strong>Animation Intern</strong> — HRB Education, London (Nov 2025 - Present)
+            <!-- :contentReference[oaicite:2]{index=2} --><br>
+            Created educational animation videos for YouTube channel, supporting visual learners by contributing across
+            the full animation workflow.
+          </li>
+          <li>
+            <strong>Adobe Student Ambassador</strong> — Global (Nov 2025–Present)
+            <!-- :contentReference[oaicite:3]{index=3} --><br>
+            Promoted Adobe Express through workshops and events while creating digital content to support student
+            creativity and engagement.
+          </li>
+          <strong>Animation & Marketing Summer Intern</strong> — Moor Beer Company, Bristol (May–Aug 2025)
+          <!-- :contentReference[oaicite:2]{index=2} --><br>
+          Produced animated promotional videos and branded social assets; supported event/product visuals and content
+          workflows.
+          </li>
+          <li>
+            <strong>Student Ambassador & Student Representative</strong> — UWE Bristol (2025–Present)
+            <!-- :contentReference[oaicite:3]{index=3} --><br>
+            Led campus tours and outreach; supported talks/workshops; liaised between students and staff to improve
+            learning experience.
+          </li>
+          <li>
+            <strong>Auditing Project Student Intern</strong> — UWE Bristol (Oct 2025–Present)
+            <!-- :contentReference[oaicite:4]{index=4} --><br>
+            Evaluated internal digital comms; provided UX insights; contributed to reports with actionable
+            recommendations.
+          </li>
+          <li>
+            <strong>Design Assistant</strong> — CommMiniBus, Northamptonshire (Jan 2024–May 2025)
+            <!-- :contentReference[oaicite:5]{index=5} --><br>
+            Designed digital/print materials; supported campaigns; coordinated stakeholders to meet brand standards.
+          </li>
+          <li>
+            <strong>Social Media Designer</strong> — BCCC, Living Water Fellowship, Bristol (2024–Present)
+            <!-- :contentReference[oaicite:6]{index=6} --><br>
+            Created graphics/motion for events; kept a cohesive brand tone; collaborated on content scheduling.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Certifications & Trainings</h2>
+        <ul>
+          <li>Adobe Animate Essential Training (Oct 2025). <!-- :contentReference[oaicite:10]{index=10} --></li>
+          <li>Moving from Blender to Maya: Layered Animation Workflow (Oct 2025).
+            <!-- :contentReference[oaicite:11]{index=11} --></li>
+          <li>Unity 2023 Essential Training (Oct 2025). <!-- :contentReference[oaicite:12]{index=12} --></li>
+          <li>After Effects CC 2023 Essential Training (Feb 2025). <!-- :contentReference[oaicite:13]{index=13} --></li>
+          <li>Figma Essential Training: The Basics; Figma for UX Design (Feb 2025).
+            <!-- :contentReference[oaicite:14]{index=14} --></li>
+          <li>InDesign 2022 Essential Training; Photoshop 2024 Essential Training (Feb 2025).
+            <!-- :contentReference[oaicite:15]{index=15} --></li>
+          <li>Premiere Pro Essential Training 2022–2024 (Feb 2025). <!-- :contentReference[oaicite:16]{index=16} -->
+          </li>
+        </ul>
+      </section>
+
     </div>
-    <div class="cv-modal__bar">
-      <a class="cv-btn outline" href="assets/WingTungLam_CV.pdf" download>Download PDF</a>
-      <a class="cv-btn" href="assets/WingTungLam_CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
+
+    <!-- Right Column: Skills + Certifications + Languages + Other -->
+    <div class="about-right">
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li><strong>Creative Tools:</strong> Premiere Pro, After Effects, Photoshop, Illustrator, InDesign, Animate,
+            Figma, Adobe XD, Procreate, Canva, Maya, Blender, Unity. <!-- :contentReference[oaicite:7]{index=7} --></li>
+          <li><strong>Technical:</strong> Video Editing; 2D/3D Animation; UX/UI Design; Graphic & Web Design; Coding
+            (HTML, CSS, JavaScript); Modelling. <!-- :contentReference[oaicite:8]{index=8} --></li>
+          <li><strong>Soft:</strong> Team Collaboration; Visual Storytelling; Time Management; Cross-Cultural
+            Communication. <!-- :contentReference[oaicite:9]{index=9} --></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <ul>
+          <li>Cantonese — Native</li>
+          <li>Mandarin — Fluent</li>
+          <li>English — Fluent</li><!-- :contentReference[oaicite:17]{index=17} -->
+        </ul>
+      </section>
+
+      <section>
+        <h2>Additional Qualifications</h2>
+        <ul>
+          <li>Emergency First Aid Certificate (May 2025). <!-- :contentReference[oaicite:18]{index=18} --></li>
+          <li>Grade 8 Piano (ABRSM). <!-- :contentReference[oaicite:19]{index=19} --></li>
+        </ul>
+      </section>
     </div>
-  </div>
-</div>
-
-
-<main class="about-layout">
-  <!-- Left Column: Education + Experience -->
-  <div class="about-left">
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li><strong>BSc (Hons) Digital Media</strong> — UWE Bristol (2023–2026). <!-- :contentReference[oaicite:0]{index=0} --></li>
-        <li><strong>BSc Creative Media</strong> — City University of Hong Kong (2022–2023). <!-- :contentReference[oaicite:1]{index=1} --></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Experience</h2>
-      <ul>
-        <li>
-          <strong>Animation & Marketing Summer Intern</strong> — Moor Beer Company, Bristol (May–Aug 2025) <!-- :contentReference[oaicite:2]{index=2} --><br>
-          Produced animated promotional videos and branded social assets; supported event/product visuals and content workflows.
-        </li>
-        <li>
-          <strong>Student Ambassador & Student Representative</strong> — UWE Bristol (2025–Present) <!-- :contentReference[oaicite:3]{index=3} --><br>
-          Led campus tours and outreach; supported talks/workshops; liaised between students and staff to improve learning experience.
-        </li>
-        <li>
-          <strong>Auditing Project Student Intern</strong> — UWE Bristol (Oct 2025–Present) <!-- :contentReference[oaicite:4]{index=4} --><br>
-          Evaluated internal digital comms; provided UX insights; contributed to reports with actionable recommendations.
-        </li>
-        <li>
-          <strong>Design Assistant</strong> — CommMiniBus, Northamptonshire (Jan 2024–May 2025) <!-- :contentReference[oaicite:5]{index=5} --><br>
-          Designed digital/print materials; supported campaigns; coordinated stakeholders to meet brand standards.
-        </li>
-        <li>
-          <strong>Social Media Designer</strong> — BCCC, Living Water Fellowship, Bristol (2024–Present) <!-- :contentReference[oaicite:6]{index=6} --><br>
-          Created graphics/motion for events; kept a cohesive brand tone; collaborated on content scheduling.
-        </li>
-      </ul>
-    </section>
-
-        <section>
-      <h2>Certifications & Trainings</h2>
-      <ul>
-        <li>Adobe Animate Essential Training (Oct 2025). <!-- :contentReference[oaicite:10]{index=10} --></li>
-        <li>Moving from Blender to Maya: Layered Animation Workflow (Oct 2025). <!-- :contentReference[oaicite:11]{index=11} --></li>
-        <li>Unity 2023 Essential Training (Oct 2025). <!-- :contentReference[oaicite:12]{index=12} --></li>
-        <li>After Effects CC 2023 Essential Training (Feb 2025). <!-- :contentReference[oaicite:13]{index=13} --></li>
-        <li>Figma Essential Training: The Basics; Figma for UX Design (Feb 2025). <!-- :contentReference[oaicite:14]{index=14} --></li>
-        <li>InDesign 2022 Essential Training; Photoshop 2024 Essential Training (Feb 2025). <!-- :contentReference[oaicite:15]{index=15} --></li>
-        <li>Premiere Pro Essential Training 2022–2024 (Feb 2025). <!-- :contentReference[oaicite:16]{index=16} --></li>
-      </ul>
-    </section>
-
-  </div>
-
-  <!-- Right Column: Skills + Certifications + Languages + Other -->
-  <div class="about-right">
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Creative Tools:</strong> Premiere Pro, After Effects, Photoshop, Illustrator, InDesign, Animate, Figma, Adobe XD, Procreate, Canva, Maya, Blender, Unity. <!-- :contentReference[oaicite:7]{index=7} --></li>
-        <li><strong>Technical:</strong> Video Editing; 2D/3D Animation; UX/UI Design; Graphic & Web Design; Coding (HTML, CSS, JavaScript); Modelling. <!-- :contentReference[oaicite:8]{index=8} --></li>
-        <li><strong>Soft:</strong> Team Collaboration; Visual Storytelling; Time Management; Cross-Cultural Communication. <!-- :contentReference[oaicite:9]{index=9} --></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Languages</h2>
-      <ul>
-        <li>Cantonese — Native</li>
-        <li>Mandarin — Fluent</li>
-        <li>English — Fluent</li><!-- :contentReference[oaicite:17]{index=17} -->
-      </ul>
-    </section>
-
-    <section>
-      <h2>Additional Qualifications</h2>
-      <ul>
-        <li>Emergency First Aid Certificate (May 2025). <!-- :contentReference[oaicite:18]{index=18} --></li>
-        <li>Grade 8 Piano (ABRSM). <!-- :contentReference[oaicite:19]{index=19} --></li>
-      </ul>
-    </section>
-  </div>
-</main>
+  </main>
 
 
 
 
 
-  <footer>
-    <p>© 2025 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a>
+    <footer>
+    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
+      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
+      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
     </p>
   </footer>
 
 </body>
+
 </html>
