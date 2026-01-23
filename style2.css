@@ -235,3 +235,56 @@
 
 
 
+/* Hrb education */
+/* ===== More videos section ===== */
+.more-videos {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.more-videos h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* two videos per row */
+.video-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* keep 16:9 */
+/* .video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+} */
+
+.video-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* coming soon placeholder */
+.placeholder {
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coming-soon {
+  color: #777;
+  font-style: italic;
+}
+
+/* mobile: one per row */
+@media (max-width: 768px) {
+  .video-grid-two {
+    grid-template-columns: 1fr;
+  }
+}
