@@ -2,6 +2,9 @@
    HOME ONLY (style3.css)
    Video hero + fixed top nav
    ========================= */
+:root{
+  --edge: clamp(22px, 4vw, 72px);  /* 左右安全邊距：你可調 22px */
+}
 
 body.home{
   background: #000;
@@ -56,16 +59,16 @@ body.home{
 /* Inner container (fix "too wide" feeling) */
 .hero-top-inner{
   width: 100%;
-  max-width: none;         /* ✅ 取消 1100px 限制 */
-  margin: 0;               /* ✅ 取消置中 */
+  margin: 0;
 
-  /* ✅ 靠邊：細 padding + 自適應 */
-  padding: 16px clamp(10px, 1.6vw, 22px);
+  padding: 16px var(--edge); /* ✅ 左右同一個 inset */
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+
 
 /* logo */
 .hero-logo a{
@@ -101,15 +104,14 @@ body.home{
 .hero-content{
   position: relative;
   z-index: 2;
-
   min-height: 100vh;
 
-  /* 1) 整個內容 block 不要太寬 */
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 
-  /* 2) 左邊多啲 inset（視覺更「靠左」） */
-  padding: 90px clamp(18px, 6vw, 96px) 0;
+  padding-left: var(--edge);   /* ✅ 同 nav 對齊 */
+  padding-right: var(--edge);
+  padding-top: 120px;          /* 避開 fixed nav */
 
   display: flex;
   flex-direction: column;
@@ -117,6 +119,7 @@ body.home{
   align-items: flex-start;
   text-align: left;
 }
+
 
 
 .hero-kicker{
@@ -222,9 +225,6 @@ body.home{
     font-size: 18px;
   }
 
-  .hero-nav{
-    gap: 14px;
-  }
 
   .hero-nav a{
     font-size: 14px;
@@ -236,4 +236,228 @@ body.home{
 
   .hero-kicker{ font-size: 24px; }
   .hero-sub{ font-size: 16px; }
+}
+
+
+/* ===== Home Featured Projects (1 big + 2 small) ===== */
+.featured-work{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.featured-work p{
+  color: rgba(184,199,217,0.95);
+  max-width: 72ch;
+}
+
+.featured-grid{
+  margin-top: 28px;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Big card spans 2 columns */
+.fcard.big{
+  grid-column: 1 / -1;
+  min-height: 420px;
+}
+
+/* Two small cards */
+.fcard.small{
+  min-height: 280px;
+}
+
+/* Card base */
+.fcard{
+  position: relative;
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+
+  background-size: cover;
+  background-position: center;
+
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+
+  transform: translateY(0);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.fcard:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+}
+
+/* Overlay (keep text readable but not too dark) */
+.fcard-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.08) 0%,
+    rgba(0,0,0,0.55) 100%
+  );
+}
+
+/* Text bottom */
+.fcard-text{
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  z-index: 1;
+
+  text-shadow: 0 2px 10px rgba(0,0,0,0.75);
+}
+
+.fcard-text h3{
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.2px;
+}
+
+.fcard.small .fcard-text h3{
+  font-size: 1.25rem;
+}
+
+.fcard-text p{
+  margin: 6px 0 0;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* More projects button */
+.more-wrap{
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+.more-btn{
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.92);
+
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  transition: transform .15s ease, opacity .2s ease;
+}
+
+.more-btn:hover{
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Responsive: stack */
+@media (max-width: 900px){
+  .featured-grid{
+    grid-template-columns: 1fr;
+  }
+  .fcard.big{
+    min-height: 360px;
+  }
+  .fcard.small{
+    min-height: 240px;
+  }
+}
+
+.scroll-hint{
+  position: absolute;            /* 如果你 hero 有 position:relative */
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  border: 0;
+  background: transparent;
+  color: rgba(255,255,255,.9);
+  cursor: pointer;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  /* mobile tap highlight */
+  -webkit-tap-highlight-color: transparent;
+
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.scroll-hint:focus-visible{
+  outline: 2px solid rgba(255,255,255,.9);
+  outline-offset: 4px;
+}
+
+.scroll-hint__label{
+  font-size: 14px;
+  letter-spacing: .08em;
+  text-transform: none;
+  opacity: .9;
+  transition: opacity .2s ease;
+}
+
+/* icon default: subtle chevron animation */
+.scroll-hint__icon{
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+}
+
+/* Draw chevron using borders */
+.scroll-hint__icon::before{
+  content:"";
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid rgba(255,255,255,.9);
+  border-bottom: 3px solid rgba(255,255,255,.9);
+  transform: rotate(45deg);
+  display: block;
+
+  /* LATE-ish bounce */
+  animation: scrollHintBounce 1.4s infinite;
+  transition: transform .2s ease, opacity .2s ease, border-color .2s ease;
+}
+
+/* Hover / active -> turn into a clearer arrow icon vibe */
+.scroll-hint:hover,
+.scroll-hint.is-active{
+  background: rgba(0,0,0,.22);
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.scroll-hint:hover .scroll-hint__label,
+.scroll-hint.is-active .scroll-hint__label{
+  opacity: .0; /* hide text like LATE */
+}
+
+/* make chevron bigger + stop bounce when “touched/hovered” */
+.scroll-hint:hover .scroll-hint__icon::before,
+.scroll-hint.is-active .scroll-hint__icon::before{
+  animation: none;
+  transform: rotate(45deg) scale(1.25);
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .scroll-hint__icon::before{ animation: none; }
+}
+
+@keyframes scrollHintBounce{
+  0%, 100% { transform: rotate(45deg) translateY(0); opacity: .9; }
+  50%      { transform: rotate(45deg) translateY(6px); opacity: .75; }
 }
