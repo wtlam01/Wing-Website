@@ -3,20 +3,12 @@
    Video hero + fixed top nav
    ========================= */
 
-/* Prevent horizontal scroll */
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-body.home {
+body.home{
   background: #000;
 }
 
 /* HERO wrapper */
-.hero {
+.hero{
   position: relative;
   min-height: 100vh;
   width: 100%;
@@ -24,8 +16,8 @@ body.home {
   color: #fff;
 }
 
-/* Background video: always cover viewport */
-.hero-video {
+/* Background video */
+.hero-video{
   position: absolute;
   inset: 0;
   width: 100vw;
@@ -34,148 +26,160 @@ body.home {
   object-position: center;
 }
 
-/* Overlay shade for readability */
-.hero-shade {
+/* Overlay shade */
+.hero-shade{
   position: absolute;
   inset: 0;
   z-index: 1;
   background: radial-gradient(circle at 30% 35%,
-    rgba(0,0,0,0.20),
-    rgba(0,0,0,0.78)
+    rgba(0,0,0,0.18),
+    rgba(0,0,0,0.82)
   );
 }
 
 /* =========================
-   FIXED TOP NAV (stays on scroll)
+   FIXED TOP NAV
    ========================= */
-.hero-top {
+.hero-top{
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 
+  background: rgba(0,0,0,0.28);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Inner container (fix "too wide" feeling) */
+.hero-top-inner{
+  width: 100%;
+  max-width: none;         /* ✅ 取消 1100px 限制 */
+  margin: 0;               /* ✅ 取消置中 */
+
+  /* ✅ 靠邊：細 padding + 自適應 */
+  padding: 16px clamp(10px, 1.6vw, 22px);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 22px 42px;
-
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
-.hero-logo a {
+/* logo */
+.hero-logo a{
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.4px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
-.hero-nav {
+/* nav */
+.hero-nav{
   display: flex;
-  gap: 26px;
+  gap: 22px;
 }
 
-.hero-nav a {
+.hero-nav a{
   color: rgba(255,255,255,0.92);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
 }
 
-.hero-nav a:hover {
-  opacity: 0.75;
-}
+.hero-nav a:hover{ opacity: 0.78; }
 
-.hero-nav a[aria-current="page"] {
+.hero-nav a[aria-current="page"]{
   text-decoration: underline;
 }
 
 /* =========================
-   HERO CONTENT (left aligned, on top of video)
+   HERO CONTENT
    ========================= */
-.hero-content {
+.hero-content{
   position: relative;
   z-index: 2;
 
   min-height: 100vh;
-  width: 100%;
-  max-width: 1100px;
+
+  /* 1) 整個內容 block 不要太寬 */
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* 2) 左邊多啲 inset（視覺更「靠左」） */
+  padding: 90px clamp(18px, 6vw, 96px) 0;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-
-  padding: 0 42px;
-  margin: 0;
 }
 
-/* Optional: keep content from sitting under fixed nav on small screens */
-.hero-content {
-  padding-top: 70px;
-}
 
-.hero-kicker {
+.hero-kicker{
   margin: 0 0 14px;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 500;
   opacity: 0.95;
+  max-width: 52ch;
 }
 
-.hero-title {
+.hero-title{
   margin: 0;
-  font-size: clamp(64px, 10vw, 140px);
+  font-size: clamp(56px, 9vw, 128px);
   font-weight: 800;
-  letter-spacing: 1.5px;
   line-height: 0.95;
+  letter-spacing: 1px;
+
+  /* 關鍵：用字數寬度控制斷行 */
+  max-width: 11ch;   /* 10–12ch 都可以試 */
 }
 
-.hero-sub {
+.hero-sub{
   margin: 18px 0 26px;
-  max-width: 680px;
   font-size: 18px;
   line-height: 1.6;
   opacity: 0.9;
+  max-width: 52ch;
 }
 
 /* CTA buttons */
-.hero-ctas {
+.hero-ctas{
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
 }
 
-.hero-btn {
+.hero-btn{
   display: inline-block;
   padding: 12px 18px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.92);
-  color: #000;
+  background: rgba(79,209,197,0.95);
+  color: #022c2a;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 900;
 }
 
-.hero-btn:hover {
-  background: #fff;
+.hero-btn:hover{
+  opacity: 0.92;
 }
 
-.hero-btn.ghost {
+.hero-btn.ghost{
   background: transparent;
   border: 1px solid rgba(255,255,255,0.75);
   color: #fff;
+  font-weight: 800;
 }
 
-.hero-btn.ghost:hover {
+.hero-btn.ghost:hover{
   border-color: #fff;
 }
 
 /* Scroll hint */
-.hero-scroll {
+.hero-scroll{
   position: absolute;
   left: 50%;
   bottom: 28px;
@@ -186,45 +190,50 @@ body.home {
 }
 
 /* =========================
-   BELOW HERO (optional section)
+   BELOW HERO
    ========================= */
-.home-main {
-  background: #e0f7fa; /* match your site theme */
-  padding: 2.5rem 0;
+.home-main{
+  background: #102a43; /* dark section */
+  padding: 110px 0 2.5rem; /* avoid nav overlap */
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Avoid nav overlap on content under hero */
-.home-main {
-  padding-top: 110px;
+.home-section{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.home-section h2{
+  margin-top: 0;
+}
+
+.home-section p{
+  color: rgba(184,199,217,0.95);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .hero-top {
-    padding: 16px 18px;
+@media (max-width: 768px){
+  .hero-top-inner{
+    padding: 14px 16px;
   }
 
-  .hero-logo a {
+  .hero-logo a{
     font-size: 18px;
   }
 
-  .hero-nav {
+  .hero-nav{
     gap: 14px;
   }
 
-  .hero-nav a {
+  .hero-nav a{
     font-size: 14px;
   }
 
-  .hero-content {
-    padding: 90px 18px 0;
+  .hero-content{
+    padding: 88px 16px 0;
   }
 
-  .hero-kicker {
-    font-size: 24px;
-  }
-
-  .hero-sub {
-    font-size: 16px;
-  }
+  .hero-kicker{ font-size: 24px; }
+  .hero-sub{ font-size: 16px; }
 }
