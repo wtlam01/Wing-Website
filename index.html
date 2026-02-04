@@ -3,63 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wing Tung Lam - Digital Media Portfolio</title>
+  <title>Wing Tung Lam</title>
+  <meta name="description" content="Wing Tung Lam — Digital Media portfolio in UX/UI, animation, interactive, and immersive projects.">
   <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="style2.css"/>
-  <meta name="description" content="Portfolio of Wing Tung Lam — Digital Media Designer specializing in animation, interactive storytelling, and UX.">
-
+  <link rel="stylesheet" href="style2.css"/>
+  
+    <!-- style3.css is only for home page css -->
+       <link rel="stylesheet" href="style3.css"/> 
 </head>
-<body>
+
+<body class="home">
+
+  <!-- HERO (full-screen video background) -->
+  <header class="hero">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/homevideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- dark overlay for readability -->
+    <div class="hero-shade"></div>
+
+<!-- Top nav -->
+<div class="hero-top">
+  <div class="hero-logo">
+    <a href="index.html" aria-label="Home">Wing's Website</a>
+  </div>
+
+  <nav class="hero-nav">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="portfolio.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
 
 
-  <header>
-    <h1>Hello, I'm Wing Tung Lam</h1>
-    <p>Creative Technologies Designer | Interactive Storytelling</p>
-     <p class="tagline">
-    Designing gentle, joyful experiences through animation and interaction.
-  </p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <!-- Main hero content -->
+    <div class="hero-content">
+      <p class="hero-kicker">Designing</p>
+      <h1 class="hero-title">Interactive Experiences</h1>
+
+      <p class="hero-sub">
+        Digital Media Designer working across UX/UI, animation, and immersive interaction
+      </p>
+
+      <div class="hero-ctas">
+        <a class="hero-btn" href="portfolio.html">View Projects</a>
+        <a class="hero-btn ghost" href="about.html">About Me</a>
+      </div>
+
+      <div class="hero-scroll">Scroll Down</div>
+    </div>
   </header>
 
+  <!-- optional: content under hero -->
+  <main class="home-main">
+    <section class="home-section">
+      <h2>Selected Work</h2>
+      <p>
+        A curated selection of projects across interaction design, motion graphics, and immersive media.
+      </p>
 
-  <main>
-<section class="intro d-flex">
-  <!-- Left: Text -->
-  <div class="intro-text">
-    <h2>Welcome to My Creative World!</h2>
-    <p>I’m an empathetic and observant designer who notices <strong>emotions and small details</strong>.
-Through <strong>animation, coding, and interactive storytelling</strong>, I transform vulnerability into creativity...
-</p>
+      <div class="project-cards">
+        <a href="ocean-silent.html" class="card-link">
+          <article class="card" style="background-image:url('assets/ocean/ocean.png')">
+            <span class="card-year">2025</span>
+            <div class="card-text">
+              <h3>When the Ocean Fell Silent</h3>
+              <p>Embodied Projection • Sound Interaction</p>
+            </div>
+          </article>
+        </a>
 
-     <a href="portfolio.html" class="inline-link">View My Work</a>
+        <a href="internhrb.html" class="card-link">
+          <article class="card" style="background-image:url('assets/intern/6.png')">
+            <span class="card-year">2026</span>
+            <div class="card-text">
+              <h3>HRB Education Internship</h3>
+              <p>Educational Animation • Motion Graphics</p>
+            </div>
+          </article>
+        </a>
 
-
-  </div>
-
-  
-
-  <!-- Right: Image -->
-  <div class="intro-photo">
-    <img src="assets/photo2.png" alt="Wing's photo" class="profile-img"/>
-  </div>
-</section>
-
-
-
+        <a href="fragile-bonds.html" class="card-link">
+          <article class="card" style="background-image:url('assets/fragile/3.png')">
+            <span class="card-year">2023</span>
+            <div class="card-text">
+              <h3>Fragile Bonds</h3>
+              <p>Interdisciplinary Installation</p>
+            </div>
+          </article>
+        </a>
+      </div>
+    </section>
   </main>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 
 </body>
 </html>
+
+
