@@ -6,6 +6,10 @@
   --edge: clamp(22px, 4vw, 72px);  /* 左右安全邊距：你可調 22px */
 }
 
+/* ✅ Fix: prevent padding making elements wider than viewport */
+*, *::before, *::after { box-sizing: border-box; }
+
+
 body.home{
   background: #000;
 }
@@ -13,7 +17,7 @@ body.home{
 /* HERO wrapper */
 .hero{
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   color: #fff;
@@ -23,8 +27,8 @@ body.home{
 .hero-video{
   position: absolute;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -59,14 +63,13 @@ body.home{
 /* Inner container (fix "too wide" feeling) */
 .hero-top-inner{
   width: 100%;
-  margin: 0;
-
-  padding: 16px var(--edge); /* ✅ 左右同一個 inset */
-
+  padding: 16px var(--edge);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box; /* ✅ double-safe */
 }
+
 
 
 
@@ -104,21 +107,25 @@ body.home{
 .hero-content{
   position: relative;
   z-index: 2;
-  min-height: 100vh;
 
-  max-width: none;
+  min-height: 100vh;
+  width: 100%;
   margin: 0;
 
-  padding-left: var(--edge);   /* ✅ 同 nav 對齊 */
+  padding-left: var(--edge);
   padding-right: var(--edge);
-  padding-top: 120px;          /* 避開 fixed nav */
+
+  /* ✅ 關鍵：唔好垂直置中，改為靠上 */
+  padding-top: 150px;         /* 想再高：130px；想再低：170px */
+  padding-bottom: 90px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* ✅ 原本 center 改成 flex-start */
   align-items: flex-start;
   text-align: left;
 }
+
 
 
 
@@ -146,7 +153,7 @@ body.home{
   font-size: 18px;
   line-height: 1.6;
   opacity: 0.9;
-  max-width: 52ch;
+  max-width: 75ch;
 }
 
 /* CTA buttons */
@@ -370,16 +377,19 @@ body.home{
     min-height: 240px;
   }
 }
-
+/* Scroll hint — default = text only, hover = arrow */
 .scroll-hint{
-  position: absolute;            /* 如果你 hero 有 position:relative */
+  position: absolute;
   left: 50%;
-  bottom: 28px;
+  bottom: 56px;
   transform: translateX(-50%);
   z-index: 10;
 
   border: 0;
-  background: transparent;
+  background: transparent;   /* ✅ 永遠唔要盒 */
+  padding: 0;                /* ✅ 移除 padding 造成的「bar/box」 */
+  margin: 0;
+
   color: rgba(255,255,255,.9);
   cursor: pointer;
 
@@ -388,38 +398,42 @@ body.home{
   align-items: center;
   gap: 10px;
 
-  padding: 10px 14px;
-  border-radius: 999px;
-
-  /* mobile tap highlight */
   -webkit-tap-highlight-color: transparent;
-
-  transition: transform .2s ease, background-color .2s ease;
-}
-
-.scroll-hint:focus-visible{
-  outline: 2px solid rgba(255,255,255,.9);
-  outline-offset: 4px;
 }
 
 .scroll-hint__label{
   font-size: 14px;
   letter-spacing: .08em;
-  text-transform: none;
   opacity: .9;
   transition: opacity .2s ease;
 }
 
-/* icon default: subtle chevron animation */
+/* ✅ 預設：箭咀唔顯示 */
 .scroll-hint__icon{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* ✅ Hover/Active：文字消失 -> 出箭咀 */
+.scroll-hint:hover .scroll-hint__label,
+.scroll-hint.is-active .scroll-hint__label{
+  opacity: 0;
+}
+
+/* Hover 才建立 icon 尺寸 */
+.scroll-hint:hover .scroll-hint__icon,
+.scroll-hint.is-active .scroll-hint__icon{
   width: 34px;
   height: 34px;
+  overflow: visible;
   display: grid;
   place-items: center;
 }
 
-/* Draw chevron using borders */
-.scroll-hint__icon::before{
+/* 畫箭咀 */
+.scroll-hint:hover .scroll-hint__icon::before,
+.scroll-hint.is-active .scroll-hint__icon::before{
   content:"";
   width: 12px;
   height: 12px;
@@ -427,37 +441,24 @@ body.home{
   border-bottom: 3px solid rgba(255,255,255,.9);
   transform: rotate(45deg);
   display: block;
-
-  /* LATE-ish bounce */
-  animation: scrollHintBounce 1.4s infinite;
-  transition: transform .2s ease, opacity .2s ease, border-color .2s ease;
 }
 
-/* Hover / active -> turn into a clearer arrow icon vibe */
-.scroll-hint:hover,
-.scroll-hint.is-active{
-  background: rgba(0,0,0,.22);
-  transform: translateX(-50%) translateY(-2px);
+.scroll-hint:focus-visible{
+  outline: 2px solid rgba(255,255,255,.9);
+  outline-offset: 6px;
 }
 
-.scroll-hint:hover .scroll-hint__label,
-.scroll-hint.is-active .scroll-hint__label{
-  opacity: .0; /* hide text like LATE */
-}
 
-/* make chevron bigger + stop bounce when “touched/hovered” */
-.scroll-hint:hover .scroll-hint__icon::before,
-.scroll-hint.is-active .scroll-hint__icon::before{
-  animation: none;
-  transform: rotate(45deg) scale(1.25);
-}
+/* remove default margins that create “gaps” */
+body { margin: 0; }
 
-/* respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .scroll-hint__icon::before{ animation: none; }
-}
+/* make the whole page consistent dark-blue, not body black */
+body.home { background: #102a43; }   /* 跟你 home-main 一樣 */
 
-@keyframes scrollHintBounce{
-  0%, 100% { transform: rotate(45deg) translateY(0); opacity: .9; }
-  50%      { transform: rotate(45deg) translateY(6px); opacity: .75; }
+/* ensure footer has same background */
+footer{
+  background: #102a43;
+  margin: 0;
+  padding: 24px var(--edge);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }

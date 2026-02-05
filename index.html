@@ -10,6 +10,8 @@
   
     <!-- style3.css is only for home page css -->
        <link rel="stylesheet" href="style3.css"/> 
+
+
 </head>
 
 <body class="home">
@@ -48,22 +50,24 @@
         Digital Media Designer working across UX/UI, animation, and immersive interaction
       </p>
 
-      <div class="hero-ctas">
-        <a class="hero-btn" href="portfolio.html">View Projects</a>
-        <a class="hero-btn ghost" href="about.html">About Me</a>
-      </div>
+<div class="hero-ctas">
+  <a class="hero-btn" href="portfolio.html">View Projects</a>
+  <a class="hero-btn ghost" href="about.html">About Me</a>
+</div>
 
-      <!-- Scroll hint -->
+
+    </div>
+    <!-- ✅ Scroll hint 放呢度：在 hero-content 之後，仍在 header.hero 內 -->
 <button class="scroll-hint" type="button" aria-label="Scroll down">
   <span class="scroll-hint__label">Scroll Down</span>
   <span class="scroll-hint__icon" aria-hidden="true"></span>
 </button>
 
-    </div>
   </header>
 
   <!-- optional: content under hero -->
-<main class="home-main">
+<main class="home-main" id="home-main">
+
   <section class="home-section featured-work">
     <h2>Selected Work</h2>
     <p>
@@ -71,9 +75,10 @@
     </p>
 
     <div class="featured-grid">
+      
 
       <!-- BIG featured project -->
-      <a href="ocean-silent.html" class="fcard big" style="background-image:url('assets/ocean/ocean.png')">
+      <a href="ocean-silent.html" class="fcard big" style="background-image:url('assets/ocean/ocean.png')" >
         <div class="fcard-overlay"></div>
         <div class="fcard-text">
           <h3>When the Ocean Fell Silent</h3>
@@ -82,7 +87,7 @@
       </a>
 
       <!-- two smaller projects -->
-      <a href="internhrb.html" class="fcard small" style="background-image:url('assets/intern/6.png')">
+      <a href="internhrb.html" class="fcard small" style="background-image:url('assets/internhrb/1.png')">
         <div class="fcard-overlay"></div>
         <div class="fcard-text">
           <h3>HRB Education Internship</h3>
@@ -90,11 +95,11 @@
         </div>
       </a>
 
-      <a href="fragile-bonds.html" class="fcard small" style="background-image:url('assets/fragile/3.png')">
+      <a href="ar.html" class="fcard small" style="background-image:url('assets/VR.png')">
         <div class="fcard-overlay"></div>
         <div class="fcard-text">
-          <h3>Fragile Bonds</h3>
-          <p>Interdisciplinary Installation</p>
+          <h3>EcoVision AR</h3>
+          <p>Unity • AR Foundation</p>
         </div>
       </a>
 
@@ -114,6 +119,7 @@
     </p>
   </footer>
 
+       <script src="script.js"></script>
 </body>
 </html>
 
