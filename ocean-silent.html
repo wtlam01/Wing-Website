@@ -4,69 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>When the Ocean Fell Silent - Wing Tung Lam</title>
-  <meta name="description" content="When the Ocean Fell Silent — an embodied projection installation about ocean noise pollution and whale communication.">
+
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="style2.css"/>
+    <link rel="stylesheet" href="style3.css"/>
+
+  <!-- lightbox js (記得 defer) -->
+   
+  <script src="lightbox.js" defer></script>
 </head>
 
-<body>
+<body class="project">
 
-  <header>
-    <h1>When the Ocean Fell Silent</h1>
-    <p>Embodied Projection Installation — Ocean Noise & Whale Communication</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <!-- ✅ Same nav as homepage -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
 
-  <main class="project-section">
-
-    <!-- Left: text -->
-    <div class="project-info">
-      <h2>Project Overview</h2>
-      <p>
-        <strong>When the Ocean Fell Silent</strong> is an interactive projection prototype designed to help visitors
-        understand how <strong>ocean noise pollution</strong> disrupts whale communication. Visitors’ shadows become
-        whale silhouettes, and the system responds in real time to ambient sound: whales can communicate in quiet
-        conditions, become disrupted under medium noise, and fragment into fossil-like outlines under high noise.
-      </p>
-
-      <h3>Module & Context</h3>
-      <p>
-        <strong>Module:</strong> Interaction Design (Embodied Interactions)<br>
-        <strong>Format:</strong> Embodied installation (shadow + sound input)<br>
-        <strong>Core idea:</strong> Turning an “invisible pollutant” (noise) into a felt, physical experience
-      </p>
-
-      <h3>Key Interaction Logic</h3>
-      <ul>
-        <li><strong>Presence:</strong> visitor shadows appear and morph into whale forms in calm conditions</li>
-        <li><strong>3-tier noise system:</strong> low = stable, medium = disrupted communication, high = fragmentation</li>
-        <li><strong>Fossil stage:</strong> the environment “stops responding” to emphasize damage</li>
-        <li><strong>Recovery:</strong> after ~5–8 seconds of quiet, whales can reform (cooldown prevents instant reset)</li>
-        <li><strong>Hint message:</strong> “Quiet helps the ocean heal.” appears to encourage collective quietness</li>
-      </ul>
-
-      <h3>Tools & Methods</h3>
-      <ul>
-        <li>Unity (prototype build)</li>
-        <li>Shadow-based embodied interaction</li>
-        <li>Microphone / ambient sound as real-time input</li>
-        <li>Iterative prototyping (visual tests, thresholds, timing)</li>
-      </ul>
-
-      <a href="https://youtu.be/wQjYATBBovM" target="_blank" rel="noopener" class="watch-button">
-        ▶ Watch Prototype Walkthrough
-      </a>
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </div>
 
-    <!-- Right: media -->
-    <div class="project-media">
+  <!-- ✅ Project hero (背景圖 + 中間文字) -->
+<header class="project-hero" style="--hero-img:url('assets/ocean/ocean.png')">
+  <div class="project-hero__shade"></div>
+</header>
 
-      <!-- YouTube embed -->
+<section class="project-title">
+  <h1>When the Ocean Fell Silent</h1>
+  <p class="project-sub">
+    Embodied Projection Installation — Ocean Noise & Whale Communication
+  </p>
+</section>
+
+
+  <main class="project-main">
+
+    <!-- Overview -->
+    <section class="project-block">
+       <div class="project-text">
+      <!-- <h2>Project Overview</h2> -->
+      <p>
+       <strong>When the Ocean Fell Silent</strong> is an interactive projection prototype designed to help visitors
+       understand how <strong>ocean noise pollution</strong> disrupts whale communication. Visitors’ shadows become
+       whale silhouettes, and the system responds in real time to ambient sound: whales can communicate in quiet
+       conditions, become disrupted under medium noise, and fragment into fossil-like outlines under high noise.
+     </p>
+
+
+      <!-- <div class="project-meta">
+        <div><strong>Module:</strong> Interaction Design</div>
+        <div><strong>Tools:</strong>After Effect</div>
+        <div><strong>Role:</strong> Concept • Build • Testing</div>
+      </div> -->
+      </div>
+    </section>
+
+    <!-- ✅ Workflow images (click to enlarge) -->
+    <section class="project-block">
+      <h2>Workflow</h2>
+      <p class="muted">Concept sketches, storyboard, interaction tests, and process screenshots.</p>
+
+      <div class="gallery-grid">
+        <!-- 換成你真實圖片檔名 -->
+        <button class="gallery-item" type="button" data-full="assets/ocean/Storyboard.png">
+          <img src="assets/ocean/Storyboard.png" alt="Storyboard">
+        </button>
+
+        <button class="gallery-item" type="button" data-full="assets/ocean/Flow.png">
+          <img src="assets/ocean/Flow.png" alt="Interaction flow test">
+        </button>
+
+        <!-- 你可以再加多幾張 -->
+        <!--
+        <button class="gallery-item" type="button" data-full="assets/ocean/process1.png">
+          <img src="assets/ocean/process1.png" alt="Process screenshot">
+        </button>
+        -->
+      </div>
+    </section>
+
+    <!-- ✅ Video at last -->
+    <section class="project-block">
+      <h2>Final Video</h2>
+
       <div class="video-container">
         <iframe
           src="https://www.youtube.com/embed/wQjYATBBovM"
@@ -77,22 +104,25 @@
         </iframe>
       </div>
 
-      <!-- Images (same column as video) -->
-      <div class="interface-images wm-same-size">
-        <!-- Replace filenames if needed -->
-        <img src="assets/ocean/Storyboard.png" alt="Storyboard / early concept sketches">
-        <img src="assets/ocean/Flow.png" alt="Visual interaction test - shadow to whale">
-      </div>
-
-    </div>
+      <a class="watch-button" href="https://youtu.be/wQjYATBBovM" target="_blank" rel="noopener">
+        ▶ Watch on YouTube
+      </a>
+    </section>
 
   </main>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <!-- ✅ Lightbox -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 

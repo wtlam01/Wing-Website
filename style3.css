@@ -480,3 +480,25 @@ html{
   margin-left: auto;
   margin-right: auto;
 }
+
+
+:root{
+  --nav-h: 72px; /* 你條nav實際高度，之後可微調 68/70/72/76 */
+}
+
+.hero-top{
+  height: var(--nav-h);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9999;
+}
+
+body.project{
+  padding-top: var(--nav-h);
+}
+
+.project-hero{
+  margin-top: 0;
+}
+
+
