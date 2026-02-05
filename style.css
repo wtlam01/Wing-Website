@@ -237,6 +237,11 @@ main{
 /* =========================
    FILTER (Portfolio)
    ========================= */
+
+   body.portfolio{
+  padding-top: 110px;
+}
+
 .filter-wrap{
   padding: 1.5rem 1rem 0.75rem;
 }

@@ -251,11 +251,13 @@ body.home{
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 28px;
+    text-align: center;
 }
 
 .featured-work p{
   color: rgba(184,199,217,0.95);
-  max-width: 72ch;
+  max-width: 720px;
+  margin: 12px auto 48px; /* 上 | 左右自動 | 下 */
 }
 
 .featured-grid{
@@ -318,7 +320,7 @@ body.home{
   right: 18px;
   bottom: 16px;
   z-index: 1;
-
+  text-align: center;
   text-shadow: 0 2px 10px rgba(0,0,0,0.75);
 }
 
@@ -335,6 +337,7 @@ body.home{
 .fcard-text p{
   margin: 6px 0 0;
   font-size: 1rem;
+    text-align: center;
   color: rgba(255,255,255,0.9);
 }
 
@@ -461,4 +464,19 @@ footer{
   margin: 0;
   padding: 24px var(--edge);
   border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+/* Center text horizontally (only for big featured card) */
+.fcard.big .fcard-text{
+  text-align: center;
+}
+
+.fcard.big .fcard-text p{
+  margin-left: auto;
+  margin-right: auto;
 }
