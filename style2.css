@@ -397,7 +397,7 @@ body.project{
 .project-title{
   background: #0b2438;
   text-align: center;
-  padding: 22px 20px 40px;
+  padding: 22px 20px 0px;
   margin-top: -6px;
 }
 
@@ -417,8 +417,9 @@ body.project{
 .project-main{
   max-width: 1100px;
   margin: 0 auto;
-  padding: 48px 22px 80px;
+   padding-top: 8px; 
 }
+
 
 .project-block{
   margin: 0 0 44px;
@@ -527,13 +528,14 @@ body.project .project-block > p.muted{
 .lightbox__panel{
   position: relative;
   z-index: 1;
-  width: min(1000px, 92vw);
-  margin: 6vh auto 0;
-  border-radius: 18px;
-  overflow: hidden;
+  width: min(900px, 90vw);     /* 👈 整體細啲 */
+  margin: 100px auto 0;       /* 👈 關鍵：避開 fixed nav */
+  max-height: calc(100vh - 140px); /* 👈 唔會頂到上面 */
+  overflow: auto;
   background: rgba(10,18,26,0.85);
   box-shadow: 0 18px 50px rgba(0,0,0,0.45);
 }
+
 
 .lightbox__img{
   width: 100%;
@@ -590,3 +592,30 @@ body.project .gallery-item.is-clickable{
 body.project .gallery-item.is-clickable:hover img{
   transform: none !important;
 }
+
+/* single image but same visual size as one image in 2-column grid */
+.gallery-grid--half{
+  max-width: 400px; /* same as one column of 720px grid */
+}
+
+
+
+/* webgame- FIVE DOORS */
+.tech-list {
+  list-style: none;        /* 拎走預設黑點 */
+  padding: 0;
+  margin: 1.5rem 0 0;
+  text-align: center;
+}
+
+.tech-list li {
+  margin: 0.6rem 0;
+  position: relative;
+}
+
+.tech-list li::before {
+  content: "•";
+  margin-right: 0.6rem;
+  color: rgba(255,255,255,0.7);
+}
+

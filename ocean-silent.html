@@ -24,6 +24,7 @@
       <nav class="hero-nav">
         <a href="index.html">Home</a>
         <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -63,18 +64,18 @@
       </div>
     </section>
 
-    <!-- USER FLOW (title + clickable image) -->
+    <!-- USER FLOW (clickable) -->
     <section class="project-block">
       <div class="project-text">
         <h2>User Flow</h2>
         <p class="muted">How the experience progresses across different noise levels.</p>
       </div>
 
-<div class="gallery-grid gallery-grid--single">
-  <button class="gallery-item is-clickable" type="button" data-full="assets/ocean/Flow.png">
-    <img src="assets/ocean/Flow.png" alt="User flow">
-  </button>
-</div>
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button" data-full="assets/ocean/Flow.png" aria-label="Open user flow">
+          <img src="assets/ocean/Flow.png" alt="User flow">
+        </button>
+      </div>
     </section>
 
     <!-- STORYBOARD (clickable) -->
@@ -84,15 +85,14 @@
         <p class="muted">Key moments and transitions for the projection narrative.</p>
       </div>
 
-<div class="gallery-grid gallery-grid--single">
-  <button class="gallery-item is-clickable" type="button" data-full="assets/ocean/Storyboard.png">
-    <img src="assets/ocean/Storyboard.png" alt="Storyboard">
-  </button>
-</div>
-
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button" data-full="assets/ocean/Storyboard.png" aria-label="Open storyboard">
+          <img src="assets/ocean/Storyboard.png" alt="Storyboard">
+        </button>
+      </div>
     </section>
 
-    <!-- VISUAL & INTERACTION TESTS -->
+    <!-- VISUAL & INTERACTION TESTS (NOT clickable) -->
     <section class="project-block">
       <div class="project-text">
         <h2>Visual & Interaction Tests</h2>
@@ -105,9 +105,13 @@
         <p class="muted">Scaling, distortion, and gradual morph from human outline to whale silhouette.</p>
       </div>
 
-      <div class="gallery-grid gallery-grid--tight">
-        <div class="gallery-item"><img src="assets/ocean/1.png" alt=""></div>
-        <div class="gallery-item"><img src="assets/ocean/2.png" alt=""></div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/ocean/1.png" alt="Shadow test 1">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/ocean/2.png" alt="Shadow test 2">
+        </div>
       </div>
 
       <!-- 2) Waveform -->
@@ -116,10 +120,10 @@
         <p class="muted">Colour shift (white → amber → red) and amplitude changes to show disturbance.</p>
       </div>
 
-      <div class="gallery-grid gallery-grid--tight gallery-grid--3">
-        <div class="gallery-item"><img src="assets/ocean/3.png" alt=""></div>
-        <div class="gallery-item"><img src="assets/ocean/4.png" alt=""></div>
-        <div class="gallery-item"><img src="assets/ocean/5.png" alt=""></div>
+      <div class="gallery-grid gallery-grid--3">
+        <div class="gallery-item"><img src="assets/ocean/3.png" alt="Waveform test 1"></div>
+        <div class="gallery-item"><img src="assets/ocean/4.png" alt="Waveform test 2"></div>
+        <div class="gallery-item"><img src="assets/ocean/5.png" alt="Waveform test 3"></div>
       </div>
 
       <!-- 3) Placement -->
@@ -128,22 +132,23 @@
         <p class="muted">Moved from centre to side walls after tutor feedback to reduce distraction.</p>
       </div>
 
-      <div class="gallery-grid gallery-grid--tight">
-        <div class="gallery-item"><img src="assets/ocean/6.png" alt=""></div>
-        <div class="gallery-item"><img src="assets/ocean/7.png" alt=""></div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="assets/ocean/6.png" alt="Placement test 1"></div>
+        <div class="gallery-item"><img src="assets/ocean/7.png" alt="Placement test 2"></div>
       </div>
 
-      <!-- 4) Hint screen -->
-      <div class="project-text">
-        <h3>Hint screen tests</h3>
-        <p class="muted">Opacity, timing and placement for “Quiet helps the ocean heal.”</p>
-      </div>
+<!-- 4) Hint screen -->
+<div class="project-text">
+  <h3>Hint screen tests</h3>
+  <p class="muted">Opacity, timing and placement for “Quiet helps the ocean heal.”</p>
+</div>
 
-      <div class="gallery-grid gallery-grid--single">
-        <div class="gallery-item"><img src="assets/ocean/8.png" alt=""></div>
-      </div>
+<div class="gallery-grid gallery-grid--single gallery-grid--half">
+  <div class="gallery-item">
+    <img src="assets/ocean/8.png" alt="Hint screen test">
+  </div>
+</div>
 
-    </section>
 
     <!-- FINAL VIDEO -->
     <section class="project-block">
@@ -157,16 +162,11 @@
           <iframe
             src="https://www.youtube.com/embed/wQjYATBBovM"
             title="When the Ocean Fell Silent - Prototype Walkthrough"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
         </div>
       </div>
-
-      <!-- <a class="watch-button" href="https://youtu.be/wQjYATBBovM" target="_blank" rel="noopener">
-        ▶ Watch on YouTube
-      </a> -->
     </section>
 
   </main>

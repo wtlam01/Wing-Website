@@ -2,61 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mental Health 3D Web Game</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mental Health 3D Web Game - Wing Tung Lam</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <script src="lightbox.js" defer></script>
 </head>
 
-<body>
+<body class="project">
 
-  <header>
-    <h1>Mental Health 3D Web Game</h1>
-    <p>Explore five emotional worlds created with Three.js and Tone.js</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- Same nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Project hero -->
+  <header class="project-hero" style="--hero-img:url('assets/webgame/game.png')">
+    <div class="project-hero__shade"></div>
   </header>
 
-  <main>
+  <!-- Title -->
+  <section class="project-title">
+    <h1>Mental Health 3D Web Game</h1>
+    <p class="project-sub">Explore five emotional worlds created with Three.js and Tone.js</p>
+  </section>
 
-<!-- 第一個遊戲 -->
-<section class="project-section">
-  <div class="project-info">
-    <h2>Mental Health 3D Web Game</h2>
-    <p>
-      This interactive 3D experience invites users to explore different emotional states—joy, sadness, fear, anger, and calm—through visual and auditory cues.
-    </p>
-    <!-- <a class="play-button" href="https://tdwy9h.csb.app" target="_blank">▶ Play the Game</a> -->
+  <main class="project-main">
 
-    <h3>🔧 Technologies Used</h3>
-    <ul>
-      <li>Three.js – for 3D scenes</li>
-      <li>Tone.js – for generative sound</li>
-      <li>JavaScript / HTML / CSS</li>
-    </ul>
-     <a href="https://tdwy9h.csb.app" target="_blank" class="watch-button">▶ Play the Game</a>
-  </div>
+    <!-- OVERVIEW (same wording) -->
+    <section class="project-block">
+      <div class="project-text">
+        <p>
+          This interactive 3D experience invites users to explore different emotional states—joy, sadness, fear, anger, and calm—through visual and auditory cues.
+        </p>
 
-  <div class="project-media">
-    <img src="assets/webgame/game.png" alt="Mental Health Game Preview" style="max-height:280px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" />
-
-  </div>
-</section>
-
-<hr class="section-divider" />
+<h3>Technologies Used</h3>
+<ul class="tech-list">
+  <li>Three.js – for 3D scenes</li>
+  <li>Tone.js – for generative sound</li>
+  <li>JavaScript / HTML / CSS</li>
+</ul>
 
 
+        <a href="https://tdwy9h.csb.app" target="_blank" rel="noopener" class="watch-button">
+          ▶ Play the Game
+        </a>
+      </div>
+    </section>
+
+    <!-- PREVIEW IMAGE (clickable like ocean-silent) -->
+    <section class="project-block">
+      <!-- <div class="project-text">
+        <h2>Preview</h2>
+        <p class="muted">Click to view full size.</p>
+      </div> -->
+
+            <div class="gallery-grid gallery-grid--3">
+        <div class="gallery-item"><img src="assets/webgame/3.png" alt="Game scene 1"
+     style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="gallery-item"><img src="assets/webgame/4.png" alt="Game scene 1"
+     style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="gallery-item"><img src="assets/webgame/5.png" alt="Game scene 1"
+     style="width:100%; height:100%; object-fit:cover;"></div>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/webgame/game.png"
+          aria-label="Open Mental Health Game Preview">
+          <img src="assets/webgame/game.png" alt="Game scene 1"
+     style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+
+    </section>
 
   </main>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <!-- Lightbox (same as ocean-silent) -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 
