@@ -7,16 +7,14 @@
 
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="style2.css"/>
-    <link rel="stylesheet" href="style3.css"/>
+  <link rel="stylesheet" href="style3.css"/>
 
-  <!-- lightbox js (記得 defer) -->
-   
   <script src="lightbox.js" defer></script>
 </head>
 
 <body class="project">
 
-  <!-- ✅ Same nav as homepage -->
+  <!-- Same nav -->
   <div class="hero-top">
     <div class="hero-top-inner">
       <div class="hero-logo">
@@ -31,87 +29,149 @@
     </div>
   </div>
 
-  <!-- ✅ Project hero (背景圖 + 中間文字) -->
-<header class="project-hero" style="--hero-img:url('assets/ocean/ocean.png')">
-  <div class="project-hero__shade"></div>
-</header>
+  <!-- Project hero -->
+  <header class="project-hero" style="--hero-img:url('assets/ocean/ocean.png')">
+    <div class="project-hero__shade"></div>
+  </header>
 
-<section class="project-title">
-  <h1>When the Ocean Fell Silent</h1>
-  <p class="project-sub">
-    Embodied Projection Installation — Ocean Noise & Whale Communication
-  </p>
-</section>
-
+  <!-- Title -->
+  <section class="project-title">
+    <h1>When the Ocean Fell Silent</h1>
+    <p class="project-sub">
+      Embodied Projection Installation — Ocean Noise & Whale Communication
+    </p>
+  </section>
 
   <main class="project-main">
 
-    <!-- Overview -->
+    <!-- OVERVIEW -->
     <section class="project-block">
-       <div class="project-text">
-      <!-- <h2>Project Overview</h2> -->
-      <p>
-       <strong>When the Ocean Fell Silent</strong> is an interactive projection prototype designed to help visitors
-       understand how <strong>ocean noise pollution</strong> disrupts whale communication. Visitors’ shadows become
-       whale silhouettes, and the system responds in real time to ambient sound: whales can communicate in quiet
-       conditions, become disrupted under medium noise, and fragment into fossil-like outlines under high noise.
-     </p>
-
-
-      <!-- <div class="project-meta">
-        <div><strong>Module:</strong> Interaction Design</div>
-        <div><strong>Tools:</strong>After Effect</div>
-        <div><strong>Role:</strong> Concept • Build • Testing</div>
-      </div> -->
+      <div class="project-text">
+        <p>
+          <strong>When the Ocean Fell Silent</strong> is an interactive projection prototype designed to help visitors
+          understand how <strong>ocean noise pollution</strong> disrupts whale communication.
+          Visitors’ shadows become whale silhouettes, and the system responds in real time to ambient sound.
+        </p>
       </div>
     </section>
 
-    <!-- ✅ Workflow images (click to enlarge) -->
+    <!-- WORKFLOW -->
     <section class="project-block">
-      <h2>Workflow</h2>
-      <p class="muted">Concept sketches, storyboard, interaction tests, and process screenshots.</p>
-
-      <div class="gallery-grid">
-        <!-- 換成你真實圖片檔名 -->
-        <button class="gallery-item" type="button" data-full="assets/ocean/Storyboard.png">
-          <img src="assets/ocean/Storyboard.png" alt="Storyboard">
-        </button>
-
-        <button class="gallery-item" type="button" data-full="assets/ocean/Flow.png">
-          <img src="assets/ocean/Flow.png" alt="Interaction flow test">
-        </button>
-
-        <!-- 你可以再加多幾張 -->
-        <!--
-        <button class="gallery-item" type="button" data-full="assets/ocean/process1.png">
-          <img src="assets/ocean/process1.png" alt="Process screenshot">
-        </button>
-        -->
+      <div class="project-text">
+        <h2>Workflow</h2>
+        <p class="muted">A structured process from interaction logic to visual refinement.</p>
       </div>
     </section>
 
-    <!-- ✅ Video at last -->
+    <!-- USER FLOW (title + clickable image) -->
     <section class="project-block">
-      <h2>Final Video</h2>
-
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/wQjYATBBovM"
-          title="When the Ocean Fell Silent - Prototype Walkthrough"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="project-text">
+        <h2>User Flow</h2>
+        <p class="muted">How the experience progresses across different noise levels.</p>
       </div>
 
-      <a class="watch-button" href="https://youtu.be/wQjYATBBovM" target="_blank" rel="noopener">
+<div class="gallery-grid gallery-grid--single">
+  <button class="gallery-item is-clickable" type="button" data-full="assets/ocean/Flow.png">
+    <img src="assets/ocean/Flow.png" alt="User flow">
+  </button>
+</div>
+    </section>
+
+    <!-- STORYBOARD (clickable) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Storyboard</h2>
+        <p class="muted">Key moments and transitions for the projection narrative.</p>
+      </div>
+
+<div class="gallery-grid gallery-grid--single">
+  <button class="gallery-item is-clickable" type="button" data-full="assets/ocean/Storyboard.png">
+    <img src="assets/ocean/Storyboard.png" alt="Storyboard">
+  </button>
+</div>
+
+    </section>
+
+    <!-- VISUAL & INTERACTION TESTS -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Visual & Interaction Tests</h2>
+        <p class="muted">Individual prototypes tested to refine behaviour and clarity.</p>
+      </div>
+
+      <!-- 1) Shadow -->
+      <div class="project-text">
+        <h3>Shadow transformation tests</h3>
+        <p class="muted">Scaling, distortion, and gradual morph from human outline to whale silhouette.</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--tight">
+        <div class="gallery-item"><img src="assets/ocean/1.png" alt=""></div>
+        <div class="gallery-item"><img src="assets/ocean/2.png" alt=""></div>
+      </div>
+
+      <!-- 2) Waveform -->
+      <div class="project-text">
+        <h3>Noise waveform tests</h3>
+        <p class="muted">Colour shift (white → amber → red) and amplitude changes to show disturbance.</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--tight gallery-grid--3">
+        <div class="gallery-item"><img src="assets/ocean/3.png" alt=""></div>
+        <div class="gallery-item"><img src="assets/ocean/4.png" alt=""></div>
+        <div class="gallery-item"><img src="assets/ocean/5.png" alt=""></div>
+      </div>
+
+      <!-- 3) Placement -->
+      <div class="project-text">
+        <h3>Soundwave placement tests</h3>
+        <p class="muted">Moved from centre to side walls after tutor feedback to reduce distraction.</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--tight">
+        <div class="gallery-item"><img src="assets/ocean/6.png" alt=""></div>
+        <div class="gallery-item"><img src="assets/ocean/7.png" alt=""></div>
+      </div>
+
+      <!-- 4) Hint screen -->
+      <div class="project-text">
+        <h3>Hint screen tests</h3>
+        <p class="muted">Opacity, timing and placement for “Quiet helps the ocean heal.”</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <div class="gallery-item"><img src="assets/ocean/8.png" alt=""></div>
+      </div>
+
+    </section>
+
+    <!-- FINAL VIDEO -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Final Video</h2>
+        <p class="muted">A short walkthrough of the prototype experience.</p>
+      </div>
+
+      <div class="video-small">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/wQjYATBBovM"
+            title="When the Ocean Fell Silent - Prototype Walkthrough"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- <a class="watch-button" href="https://youtu.be/wQjYATBBovM" target="_blank" rel="noopener">
         ▶ Watch on YouTube
-      </a>
+      </a> -->
     </section>
 
   </main>
 
-  <!-- ✅ Lightbox -->
+  <!-- Lightbox -->
   <div class="lightbox" hidden>
     <div class="lightbox__backdrop" data-close></div>
     <figure class="lightbox__panel" role="dialog" aria-modal="true">
@@ -121,7 +181,8 @@
   </div>
 
   <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> |
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
       <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>

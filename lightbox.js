@@ -1,31 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".gallery-item");
   const lightbox = document.querySelector(".lightbox");
-  const img = document.querySelector(".lightbox__img");
-  const closeTargets = document.querySelectorAll("[data-close]");
+  if (!lightbox) return;
 
-  if (!items.length || !lightbox || !img) return;
+  const imgEl = lightbox.querySelector(".lightbox__img");
+  const closeEls = lightbox.querySelectorAll("[data-close]");
 
-  items.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const full = btn.getAttribute("data-full");
-      const alt = btn.querySelector("img")?.getAttribute("alt") || "";
-      img.src = full;
-      img.alt = alt;
+  // ✅ ONLY clickable items
+  const clickableItems = document.querySelectorAll(".gallery-item.is-clickable");
+
+  clickableItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const full = item.getAttribute("data-full");
+      if (!full) return;
+
+      imgEl.src = full;
+      imgEl.alt = item.querySelector("img")?.alt || "Image";
       lightbox.hidden = false;
       document.body.style.overflow = "hidden";
     });
   });
 
-  function close() {
+  function closeLightbox() {
     lightbox.hidden = true;
-    img.src = "";
+    imgEl.src = "";
     document.body.style.overflow = "";
   }
 
-  closeTargets.forEach((el) => el.addEventListener("click", close));
+  closeEls.forEach((el) => el.addEventListener("click", closeLightbox));
 
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !lightbox.hidden) close();
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.hidden && e.key === "Escape") closeLightbox();
   });
 });
