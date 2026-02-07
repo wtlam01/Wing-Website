@@ -2,81 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Emotion Interface</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emotion Interface - Wing Tung Lam</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <script src="lightbox.js" defer></script>
 </head>
 
-<body>
+<body class="project">
 
-  <header>
-    <h1>Emotion Interface</h1>
-    <p>Interactive sound-based experience using physical input and MAX/MSP</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- NAV -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="project-hero" style="--hero-img:url('assets/interface/2.jpeg')">
+    <div class="project-hero__shade"></div>
   </header>
 
-  <main class="project-section">
-    <!-- 左邊：描述 -->
-    <div class="project-info">
-      <h2>Technologies Used</h2>
-      <ul>
-        <li>MAX/MSP – Sound interaction</li>
-        <li>Microphone input (breath / voice)</li>
-        <li>Arduino-based sensors (optional)</li>
-      </ul>
+  <!-- TITLE -->
+  <section class="project-title">
+    <h1>Emotion Interface</h1>
+    <p class="project-sub">
+      Interactive sound-based experience using physical input and MAX/MSP
+    </p>
+  </section>
 
-      <h3>Project Overview</h3>
-      <p>
-        This interactive interface responds to users’ emotional states through physical input, such as breath or touch. By using MAX/MSP to modulate generative sound, the system invites participants to engage in slow breathing and self-awareness through sonic feedback.
-      </p>
+  <main class="project-main">
 
-      <h3>Design Goal</h3>
-      <p>
-        To explore how physical interaction and sound can support emotional regulation, especially for people who struggle with verbal expression.
-      </p>
+    <!-- OVERVIEW -->
+    <section class="project-block">
+      <div class="project-text">
+        <p>
+          This interactive interface responds to users’ emotional states through physical input,
+          such as breath or touch. By using MAX/MSP to modulate generative sound, the system invites
+          participants to engage in slow breathing and self-awareness through sonic feedback.
+        </p>
 
-        <a href="https://www.youtube.com/embed/4cO1kAKi07g" target="_blank" class="watch-button">▶️ Watch on YouTube</a>
+        <h3>Design Goal</h3>
+        <p>
+          To explore how physical interaction and sound can support emotional regulation,
+          especially for people who struggle with verbal expression.
+        </p>
+
+        <h3>Technologies Used</h3>
+        <ul class="tech-list">
+          <li>MAX/MSP – Sound interaction</li>
+          <li>Microphone input (breath / voice)</li>
+          <li>Arduino-based sensors (optional)</li>
+        </ul>
+      </div>
+    </section>
+
+  
+
+    <!-- TECHNOLOGY + PROTOTYPE -->
+    <section class="project-block">
+
+      <!-- MAX/MSP -->
+      <div class="project-text">
+        <h3>MAX/MSP Patch</h3>
+        <p class="muted">Sound interaction logic and sensor-to-audio mapping.</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable"
+                type="button"
+                data-full="assets/interface/3.png"
+                aria-label="Open MAX/MSP patch">
+          <img src="assets/interface/3.png"
+               alt="MAX/MSP patch for sound interaction logic"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+
+      <!-- PHYSICAL PROTOTYPE -->
+      <div class="project-text">
+        <h3>Physical Prototype</h3>
+        <p class="muted">Interface build and interaction testing.</p>
+      </div>
+
+      <div class="gallery-grid">
+         <div class="gallery-item" style="aspect-ratio:16/9;">
+      <img src="assets/interface/1.jpeg"
+           alt="Interface prototype overview"
+           style="width:100%; height:100%; object-fit:cover;">
     </div>
 
-    <!-- 右邊：圖片 or 影片 -->
-<div class="project-media">
+    <div class="gallery-item" style="aspect-ratio:16/9;">
+      <img src="assets/interface/2.jpeg"
+           alt="MAX/MSP patch overview"
+           style="width:100%; height:100%; object-fit:cover;">
+    </div>
+      </div>
 
-  <!-- 嵌入影片 -->
-  <div class="video-container">
-    <iframe
-      src="https://www.youtube.com/embed/4cO1kAKi07g"
-      title="Emotion Interface Demo"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+      <!-- VIDEO -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Demo Video</h2>
+        <p class="muted">A short walkthrough of the interface.</p>
+      </div>
+
+      <div class="video-small">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/4cO1kAKi07g"
+            title="Emotion Interface Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
   </div>
 
-  <!-- 圖片區 -->
-  <div class="interface-images">
-    <img src="assets/interface/1.jpeg" alt="Interface Photo 1" />
-    <img src="assets/interface/2.jpeg" alt="Interface Photo 2" />
-    <img src="assets/interface/3.png" alt="Interface Photo 3" />
-  </div>
-
-</div>
-
-
-
-</main>
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
+
 </body>
-
-
 </html>

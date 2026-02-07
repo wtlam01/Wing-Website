@@ -3,208 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>InMotion App - UX Project</title>
-  <link rel="stylesheet" href="style.css"/>
-  <meta name="description" content="InMotion — a well-being app for students that promotes body positivity and joyful movement. UX/UI case study with research, flows, and wireframes.">
-  <style>
-    /* --- Captions under carousel images --- */
-    .wm-carousel { height: auto; }
-    .wm-carousel-track {
-      align-items: stretch;
-    }
-    .wm-slide {
-      min-width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      background: #fff;
-    }
-    .wm-media {
-      height: 350px; /* image area height */
-      display: grid;
-      place-items: center;
-      background: #fff;
-      padding: 10px;
-    }
-    .wm-media img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-    .wm-caption {
-      font-size: 0.95rem;
-      line-height: 1.4;
-      text-align: center;
-      color: #034d56; /* deep blue-green */
-      background: #fff;
-      border-top: 1px solid rgba(0,0,0,0.06);
-      padding: 8px 10px;
-    }
-  </style>
-</head>
-<body>
+  <title>InMotion App - UX Project - Wing Tung Lam</title>
 
-  <!-- Header -->
-  <header>
-    <h1>InMotion App</h1>
-    <p>UX/UI Design for Body Positivity & Movement</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <meta name="description" content="InMotion — a well-being app for students that promotes body positivity and joyful movement. UX/UI case study with research, flows, and wireframes.">
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <script src="lightbox.js" defer></script>
+</head>
+
+<body class="project">
+
+  <!-- Same nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Project hero -->
+  <header class="project-hero" style="--hero-img:url('assets/figma/cover.png')">
+    <div class="project-hero__shade"></div>
   </header>
 
-  <!-- Main -->
-  <main class="project-section" style="gap: 2rem;">
-    <!-- Left: Text -->
-    <section class="project-info" aria-labelledby="overviewTitle">
-      <h2 id="overviewTitle">Project Overview</h2>
-      <p><strong>InMotion</strong> is a well-being mobile app designed for university students to stay active and boost body positivity. The app encourages users to join movement challenges, track emotions, and celebrate progress.</p>
+  <!-- Title -->
+  <section class="project-title">
+    <h1>InMotion App</h1>
+    <p class="project-sub">UX/UI Design for Body Positivity & Movement</p>
+  </section>
 
-      <h3>Goals</h3>
-      <ul>
-        <li>Enhance body confidence through non-weight-related movement</li>
-        <li>Motivate students to stay active in fun, stress-free ways</li>
-        <li>Promote emotional awareness alongside physical activity</li>
-      </ul>
+  <main class="project-main">
 
-      <h3>Tools Used</h3>
-      <p>Figma, Procreate</p>
+    <!-- OVERVIEW -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Project Overview</h2>
+        <p><strong>InMotion</strong> is a well-being mobile app designed for university students to stay active and boost body positivity. The app encourages users to join movement challenges, track emotions, and celebrate progress.</p>
 
-      <a
-        href="https://www.figma.com/proto/VAbLRs6BFsXkW8dqq9SG2h/Wing-Lam--23070630----Prototype--NEW-?node-id=0-1"
-        target="_blank"
-        rel="noopener"
-        class="watch-button"
-        aria-label="Open the InMotion interactive prototype on Figma"
-      >🔗 View Prototype on Figma</a>
-    </section>
+        <h3>Goals</h3>
+        <ul class="tech-list">
+          <li>Enhance body confidence through non-weight-related movement</li>
+          <li>Motivate students to stay active in fun, stress-free ways</li>
+          <li>Promote emotional awareness alongside physical activity</li>
+        </ul>
 
-    <!-- Right: Images (Vanilla Carousel) -->
-    <section class="project-image" style="flex: 1 1 300px; max-width: 500px;">
-      <div class="wm-carousel" id="figmaCarousel" aria-roledescription="carousel" aria-label="InMotion design slides">
-        <div class="wm-carousel-track">
-          <div class="wm-slide">
-            <div class="wm-media"><img src="assets/figma/cover.png" alt="InMotion project cover"></div>
-            <div class="wm-caption">Project Cover</div>
-          </div>
-          <div class="wm-slide">
-            <div class="wm-media"><img src="assets/figma/brandidentity.png" alt="Brand identity system"></div>
-            <div class="wm-caption">Brand Identity</div>
-          </div>
-          <div class="wm-slide">
-            <div class="wm-media"><img src="assets/figma/data.png" alt="User research data summary"></div>
-            <div class="wm-caption">User Research Data</div>
-          </div>
-          <div class="wm-slide">
-            <div class="wm-media"><img src="assets/figma/desginprocess.png" alt="Design process overview"></div>
-            <div class="wm-caption">Design Process</div>
-          </div>
-          <div class="wm-slide">
-            <div class="wm-media"><img src="assets/figma/userflow1.png" alt="User flow — homepage navigation"></div>
-            <div class="wm-caption">User Flow — Homepage Navigation</div>
-          </div>
-          <div class="wm-slide">
-            <div class="wm-media"><img src="assets/figma/userflow2.png" alt="User flow — task completion"></div>
-            <div class="wm-caption">User Flow — Task Completion</div>
-          </div>
-          <div class="wm-slide">
-            <div class="wm-media"><img src="assets/figma/userjourney.png" alt="User journey map"></div>
-            <div class="wm-caption">User Journey Map</div>
-          </div>
-          <div class="wm-slide">
-            <div class="wm-media"><img src="assets/figma/wireframe.png" alt="Initial wireframe screens"></div>
-            <div class="wm-caption">Initial Wireframe</div>
-          </div>
-        </div>
+        <h3>Tools Used</h3>
+        <p>Figma, Procreate</p>
 
-        <!-- Controls -->
-        <button class="wm-nav wm-prev" aria-label="Previous slide" title="Previous">&#10094;</button>
-        <button class="wm-nav wm-next" aria-label="Next slide" title="Next">&#10095;</button>
-
-        <!-- Dots -->
-        <div class="wm-dots" aria-label="Slide indicators"></div>
+        <a
+          href="https://www.figma.com/proto/VAbLRs6BFsXkW8dqq9SG2h/Wing-Lam--23070630----Prototype--NEW-?node-id=0-1"
+          target="_blank"
+          rel="noopener"
+          class="watch-button"
+          aria-label="Open the InMotion interactive prototype on Figma"
+        >🔗 View Prototype on Figma</a>
       </div>
-      <noscript><p style="text-align:center;margin-top:.5rem;">Enable JavaScript to view the carousel.</p></noscript>
     </section>
+
+    <!-- WORKFLOW / DESIGN PROCESS -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Workflow</h2>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/figma/desginprocess.png"
+          aria-label="Open design process">
+          <img src="assets/figma/desginprocess.png" alt="Design process overview"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+    <!-- BRAND IDENTITY -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Brand Identity</h2>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/figma/brandidentity.png"
+          aria-label="Open brand identity">
+          <img src="assets/figma/brandidentity.png" alt="Brand identity system"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Research</h2>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/figma/data.png"
+          aria-label="Open research data">
+          <img src="assets/figma/data.png" alt="User research data summary"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+    <!-- PERSONAS (optional: add your exported persona images later) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Personas</h2>
+        <p class="muted">Add your exported persona images here (clickable).</p>
+      </div>
+
+ <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/figma/data.png"
+          aria-label="Open research data">
+          <img src="assets/figma/persona.png" alt="User research data summary"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+    <!-- USER JOURNEY -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>User Journey</h2>
+        <p class="muted">Click to view full size.</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/figma/userjourney.png"
+          aria-label="Open user journey map">
+          <img src="assets/figma/userjourney.png" alt="User journey map"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+    <!-- USER FLOW -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>User Flow</h2>
+        <p class="muted">Click to view full size.</p>
+      </div>
+
+      <!-- ocean-silent style: each flow as full-width -->
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/figma/userflow1.png"
+          aria-label="Open user flow 1">
+          <img src="assets/figma/userflow1.png" alt="User flow — homepage navigation"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/figma/userflow2.png"
+          aria-label="Open user flow 2">
+          <img src="assets/figma/userflow2.png" alt="User flow — task completion"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+    <!-- WIREFRAME -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Wireframes</h2>
+        <p class="muted">Click to view full size.</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/figma/wireframe.png"
+          aria-label="Open wireframe">
+          <img src="assets/figma/wireframe.png" alt="Initial wireframe screens"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Footer -->
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <!-- Lightbox (same as your other pages) -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
-  <!-- Vanilla Carousel Script -->
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const carousel = document.querySelector("#figmaCarousel");
-    if (!carousel) return;
 
-    const track = carousel.querySelector(".wm-carousel-track");
-    const slides = Array.from(track.children);
-    const nextButton = carousel.querySelector(".wm-next");
-    const prevButton = carousel.querySelector(".wm-prev");
-    const dotsNav = carousel.querySelector(".wm-dots");
-
-    let currentIndex = 0;
-    let startX = 0;
-    let isDragging = false;
-
-    // Build dots
-    slides.forEach((_, index) => {
-      const dot = document.createElement("button");
-      if (index === 0) dot.classList.add("active");
-      dot.setAttribute("aria-label", "Go to slide " + (index + 1));
-      dotsNav.appendChild(dot);
-      dot.addEventListener("click", () => goToSlide(index));
-    });
-    const dots = Array.from(dotsNav.children);
-
-    function goToSlide(index) {
-      currentIndex = (index + slides.length) % slides.length;
-      track.style.transform = "translateX(-" + (100 * currentIndex) + "%)";
-      dots.forEach(d => d.classList.remove("active"));
-      dots[currentIndex].classList.add("active");
-    }
-
-    const nextSlide = () => goToSlide(currentIndex + 1);
-    const prevSlide = () => goToSlide(currentIndex - 1);
-
-    // Buttons
-    nextButton.addEventListener("click", nextSlide);
-    prevButton.addEventListener("click", prevSlide);
-
-    // Click slide to go next
-    slides.forEach(slide => {
-      slide.addEventListener("click", nextSlide);
-    });
-
-    // Keyboard navigation
-    document.addEventListener("keydown", e => {
-      if (e.key === "ArrowRight") nextSlide();
-      if (e.key === "ArrowLeft") prevSlide();
-    });
-
-    // Touch swipe
-    track.addEventListener("touchstart", e => {
-      startX = e.touches[0].clientX;
-      isDragging = true;
-    }, { passive: true });
-
-    track.addEventListener("touchend", e => {
-      if (!isDragging) return;
-      const dx = e.changedTouches[0].clientX - startX;
-      if (dx > 50) prevSlide();
-      else if (dx < -50) nextSlide();
-      isDragging = false;
-    });
-  });
-  </script>
-  
 </body>
 </html>

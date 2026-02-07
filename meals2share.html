@@ -3,121 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meals 2 Share - Project Details</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Meals 2 Share - Wing Tung Lam</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <script src="lightbox.js" defer></script>
 </head>
-<body>
 
-<header>
-  <h1>Meals 2 Share</h1>
-  <p>Branding • Web Design • Packaging</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<body class="project">
 
-<main>
-  <section class="project-detail">
+  <!-- Same nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
 
-    <!-- Left: text -->
-    <div class="project-text">
-      <h2>Project Overview</h2>
-      <p><strong>Theme:</strong> Pay As You Feel Restaurant</p>
-      <p>This project involved creating a fictional restaurant brand and experience, including:</p>
-      <ul>
-        <li>Logo Design</li>
-        <li>Packaging for Takeaway</li>
-        <li>Menu & Billboard</li>
-        <li>Storefront Mockup</li>
-        <li>Responsive Website</li>
-      </ul>
-      <p><strong>Tools:</strong> Adobe Illustrator, Photoshop, HTML/CSS, GitHub Pages</p>
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
 
-      <p>
-        <a href="https://wtlam01.github.io/Meals-2-Share/" target="_blank" class="project-link">
+  <!-- Project hero -->
+  <header class="project-hero" style="--hero-img:url('assets/restaurant/IMG_4316.PNG')">
+    <div class="project-hero__shade"></div>
+  </header>
+
+  <!-- Title -->
+  <section class="project-title">
+    <h1>Meals 2 Share</h1>
+    <p class="project-sub">Branding • Web Design • Packaging</p>
+  </section>
+
+  <main class="project-main">
+
+    <!-- OVERVIEW (keep your wording) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Project Overview</h2>
+        <p><strong>Theme:</strong> Pay As You Feel Restaurant</p>
+        <p>This project involved creating a fictional restaurant brand and experience, including:</p>
+        <ul class="tech-list">
+          <li>Logo Design</li>
+          <li>Packaging for Takeaway</li>
+          <li>Menu & Billboard</li>
+          <li>Storefront Mockup</li>
+          <li>Responsive Website</li>
+        </ul>
+        <p><strong>Tools:</strong> Adobe Illustrator, Photoshop, HTML/CSS, GitHub Pages</p>
+
+        <a href="https://wtlam01.github.io/Meals-2-Share/" target="_blank" rel="noopener" class="watch-button">
           🔗 Visit Website
         </a>
-      </p>
-    </div>
-
-    <!-- Right: carousel -->
-    <div class="project-image">
-
-  <!-- 單獨顯示 Logo -->
-<div class="project-logo text-center mb-3">
-  <img src="assets/restaurant/Logo1.png" alt="Logo Sign" style="max-width: 60%; height: auto; background: none; box-shadow: none;">
-</div>
-
-
-
-      <div class="wm-carousel" id="mealsCarousel">
-        <div class="wm-carousel-track">
-          <!-- <div class="wm-slide"><img src="assets/restaurant/Logo1.png" alt="Logo Sign"></div> -->
-          <div class="wm-slide"><img src="assets/restaurant/Billboard.jpeg" alt="Billboard"></div>
-          <div class="wm-slide"><img src="assets/restaurant/foodbox.jpeg" alt="Food Box"></div>
-          <div class="wm-slide"><img src="assets/restaurant/Logosign.png" alt="Logo 1"></div>
-          <div class="wm-slide"><img src="assets/restaurant/PaperBag.png" alt="Paper Bag"></div>
-          <div class="wm-slide"><img src="assets/restaurant/Storefront.jpeg" alt="Storefront"></div>
-        </div>
-
-        <button class="wm-nav wm-prev" aria-label="Previous">&#10094;</button>
-        <button class="wm-nav wm-next" aria-label="Next">&#10095;</button>
-        <div class="wm-dots" aria-label="carousel pagination"></div>
       </div>
-    </div>
+    </section>
 
-  </section>
-</main>
+    <!-- LOGO (single, non-clickable) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Logo</h2>
+        <p class="muted">Brand identity mark used across digital and physical touchpoints.</p>
+      </div>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+      <div class="gallery-grid gallery-grid--single">
+        <div class="gallery-item">
+          <img
+            src="assets/restaurant/Logo1.png"
+            alt="Meals 2 Share Logo"
+            style="width:100%; height:auto; object-fit:contain;"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK (clickable gallery like ocean-silent) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Design Outputs</h2>
+        <p class="muted">Branding mockups and packaging outcomes.</p>
+      </div>
+
+      <!-- 2-up rectangle feel: use normal grid (not forced square) + make images cover -->
+      <div class="gallery-grid">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/restaurant/Billboard.jpeg" aria-label="Open Billboard">
+          <img src="assets/restaurant/Billboard.jpeg" alt="Billboard"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/restaurant/Storefront.jpeg" aria-label="Open Storefront">
+          <img src="assets/restaurant/Storefront.jpeg" alt="Storefront"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+
+      <div class="gallery-grid gallery-grid--3" style="margin-top:18px;">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/restaurant/foodbox.jpeg" aria-label="Open Food Box">
+          <img src="assets/restaurant/foodbox.jpeg" alt="Food Box"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/restaurant/PaperBag.png" aria-label="Open Paper Bag">
+          <img src="assets/restaurant/PaperBag.png" alt="Paper Bag"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/restaurant/Logosign.png" aria-label="Open Logo Sign">
+          <img src="assets/restaurant/Logosign.png" alt="Logo Sign"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
-
-<!-- Vanilla Carousel JS -->
-<script>
-(function(){
-  const root = document.getElementById('mealsCarousel');
-  const track = root.querySelector('.wm-carousel-track');
-  const slides = Array.from(root.querySelectorAll('.wm-slide'));
-  const prev = root.querySelector('.wm-prev');
-  const next = root.querySelector('.wm-next');
-  const dotsWrap = root.querySelector('.wm-dots');
-  let index = 0;
-
-  slides.forEach((_, i) => {
-    const b = document.createElement('button');
-    b.setAttribute('aria-label', 'Go to slide ' + (i+1));
-    b.addEventListener('click', () => go(i));
-    dotsWrap.appendChild(b);
-  });
-
-  function update() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    dotsWrap.querySelectorAll('button').forEach((b, i) => {
-      b.classList.toggle('active', i === index);
-    });
-  }
-
-  function go(i) {
-    index = (i + slides.length) % slides.length;
-    update();
-  }
-
-  prev.addEventListener('click', () => go(index - 1));
-  next.addEventListener('click', () => go(index + 1));
-
-  update();
-})();
-</script>
-
-
 
 </body>
 </html>
