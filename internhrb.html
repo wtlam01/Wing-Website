@@ -3,45 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HRB Education Internship - Wing Tung Lam</title>
+  <title>HRB Education Internship | Wing Tung Lam</title>
   <meta name="description" content="Animation internship at HRB Education — educational motion graphics for visual learners.">
+
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <!-- page-only CSS (safe) -->
+  <style>
+    .intern-wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 0 48px;
+    }
+
+    /* TOP: overview + info box */
+    .intern-top{
+      max-width: 900px;
+      /* CHANGED: was margin: 0 auto 34px; -> stop centering the whole block */
+      margin: 0 auto 34px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 18px;
+      align-items: start;
+      padding: 0 18px;
+    }
+
+    @media (max-width: 900px){
+      .intern-top{ grid-template-columns: 1fr; }
+    }
+
+    .intern-box{
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+ padding: 20px 50px;   
+        /* 👇 新增 */
+  margin: 0 auto;        /* 盒本身水平置中 */
+  text-align: left;      /* 保證文字靠左 */
+  max-width: 460px;   
+  
+    }
+
+    .intern-box h3{
+      margin: 0.2rem 0 0.6rem;
+      font-size: 1.05rem;
+    }
+
+    .intern-box ul{
+      margin: 0 0 1rem;
+      padding-left: 18px;
+      opacity: .92;
+    }
+
+    /* LOWER: videos */
+    .intern-showcase{
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: 0 18px;
+      align-items: start;
+    }
+
+    .intern-panel-title{
+      max-width: 900px;
+      margin: 0 0 14px;
+      text-align: left;
+    }
+
+    /* video grid */
+    .video-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    @media (max-width: 700px){
+      .video-grid{ grid-template-columns: 1fr; }
+    }
+
+    .video-box{
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+    }
+    .video-box iframe{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* force left text in this page only */
+    body.project .intern-wrap .project-text{
+      text-align: left;
+      max-width: none;
+    }
+    body.project .intern-wrap .project-text h2{
+      text-align: left;
+    }
+
+    /* Internship page ONLY: paragraphs align left */
+body.project .intern-wrap .project-text p{
+  text-align: left;
+}
+
+  </style>
 </head>
 
-<body>
+<body class="project">
 
-  <header>
-    <h1>Internship - Animation</h1>
-    <p>Educational Animation • Motion Graphics • YouTube Content</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- fixed nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <header class="project-hero" style="--hero-img:url('assets/internhrb/2.png')">
+    <div class="project-hero__shade"></div>
   </header>
 
-  <main class="project-section">
+  <!-- title -->
+  <section class="project-title">
+    <h1>Internship – Animation</h1>
+    <p class="project-sub">Educational animation & motion graphics for visual learners</p>
+  </section>
 
-    <!-- Left: text -->
-      <div class="project-image-grid narrow">
+  <main class="intern-wrap">
 
-        <h2>About the Animation Internship</h2>
-        <p>
-          During my internship at <strong>HRB Education</strong>, I worked as an animation intern creating
-          educational motion graphics for the organisation’s YouTube channel. The videos are designed
-          to support visual learners by explaining complex topics through clear, engaging animation.
-        </p>
+    <!-- OVERVIEW -->
+    <section class="project-block">
+      <div class="intern-top">
 
-        <p>
-          I assisted across the full animation workflow — from early concept development and
-          storyboarding, to asset preparation, animation, and final delivery. The project required
-          careful attention to pacing, clarity, and accessibility to ensure the content remained
-          educational and easy to follow.
-        </p>
+        <!-- left text -->
+        <div class="project-text">
+          <h2>About the Animation Internship</h2>
 
-        <div class="project-info-box">
+          <p>
+            During my internship at <strong>HRB Education</strong>, I worked as an animation intern
+            creating educational motion graphics for the organisation’s YouTube channel.
+            The videos were designed to support visual learners by explaining complex topics
+            through clear and engaging animation.
+          </p>
+
+          <p>
+            I assisted across the full animation workflow — from early concept development
+            and storyboarding, to asset preparation, animation, and final delivery.
+            The work required careful attention to pacing, clarity, and accessibility.
+          </p>
+
+          <p>
+            Below are selected educational videos published during the internship.
+          </p>
+        </div>
+
+        <!-- right info box -->
+        <aside class="intern-box">
           <h3>Company</h3>
           <ul>
             <li>HRB Education</li>
@@ -50,102 +184,58 @@
 
           <h3>Tools Used</h3>
           <ul>
-            <li>Adobe After Effects</li>
-            <li>Adobe Premiere Pro</li>
+            <li>After Effects</li>
+            <li>Premiere Pro</li>
             <li>Procreate</li>
           </ul>
 
-
           <h3>Key Skills</h3>
-          <ul>
-            <li>Motion Graphics & Animation</li>
+          <ul style="margin-bottom:0;">
+            <li>Educational Motion Graphics</li>
             <li>Storyboard-to-Production Workflow</li>
-            <li>Educational Visual Communication</li>
-            <li>Timing, pacing & clarity for learning</li>
+            <li>Visual Explanation Design</li>
+            <li>Timing & Clarity for Learning</li>
           </ul>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- SHOWCASE -->
+    <section class="project-block">
+      <div class="intern-showcase">
+
+        <div class="intern-panel-title">
+          <h2>Published Videos</h2>
+          <p class="muted">Educational animations published on HRB Education’s YouTube channel.</p>
         </div>
 
-    </div>
+        <div class="video-grid">
+          <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/qK5CkfJUwBk"
+              title="Four Types of Volcanoes" allowfullscreen></iframe>
+          </div>
 
-    <!-- Right: media -->
-    <!-- Right: videos -->
-<div class="project-media">
+          <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/h5q5FJZzEJM"
+              title="Primary and Secondary Hazards" allowfullscreen></iframe>
+          </div>
 
-  <h2>Published Videos</h2>
+          <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/nDKzcZ48ZnQ"
+              title="Megacities" allowfullscreen></iframe>
+          </div>
+        </div>
 
-  <div class="video-list">
-
-    <!-- Video 1 -->
-    <div class="video-item">
-      <h3>Four Types of Volcanoes</h3>
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/qK5CkfJUwBk"
-          title="The Four Types of Volcanoes"
-          allowfullscreen>
-        </iframe>
       </div>
-    </div>
-
-    <!-- Video 2 -->
-    <div class="video-item">
-      <h3>Primary and Secondary Hazards of Volcanoes & Earthquakes</h3>
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/h5q5FJZzEJM"
-          title="Primary and Secondary Hazards of Volcanoes & Earthquakes"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-
-
-
-    <!-- 之後照樣加 -->
-
-
-  </div>
-
-</div>
-
+    </section>
 
   </main>
 
-  <!-- ===== Full-width videos (two per row) ===== -->
-<section class="more-videos">
-
-  <h2>More Videos</h2>
-
-  <div class="video-grid-two">
-
-    <!-- Video 3 -->
-    <div class="video-item">
-      <h3>Megacities</h3>
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/nDKzcZ48ZnQ"
-          title="Megacities"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-
-    <!-- Placeholder / Coming soon -->
-    <div class="video-item">
-      <h3>Coming Soon</h3>
-      <div class="video-container placeholder">
-        <div class="coming-soon">More educational videos coming soon</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 
