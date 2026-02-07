@@ -3,75 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crochet — Wing Tung Lam</title>
+  <title>Crochet - Wing Tung Lam</title>
+
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <!-- Page-specific style (match Sewing page structure) -->
   <style>
-    /* Page-specific tweaks (no hover effects) */
-    .gallery-wrap{max-width:1100px;margin:0 auto;padding:1rem 1.25rem 2rem;}
-    .gallery-wrap h2{margin:0 0 .5rem;text-align:center}
-    .gallery-wrap p{max-width:800px;margin:.25rem auto 1.25rem;text-align:center}
-    .crochet-grid{
-      display:grid;
-      gap:14px;
-      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    .gallery{
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
 
-.crochet-grid img {
-  width: 100%;
-  aspect-ratio: 4/4; /* wider rectangle */
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
-}
+    /* center intro text (this page only) */
+    .gallery h2,
+    .gallery p{
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-    /* prevent global hover styles, if any */
-    .crochet-grid img:hover{transform:none;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .gallery p{
+      max-width: 760px;
+      margin: 0 auto 1.25rem;
+    }
+
+    /* 4-in-a-row grid, wide like Sewing */
+    .gallery-grid{
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 1024px){
+      .gallery-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px){
+      .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1400px){
+      .gallery{ max-width: 1600px; }
+    }
+
+    /* square images + no hover effects */
+    .gallery-grid img{
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: none !important;
+      transform: none !important;
+    }
+    .gallery-grid img:hover{
+      transform: none !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
-<body>
 
-<header>
-  <h1>Crochet</h1>
-  <p>Hand-crocheted plushies, accessories, and small gifts</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<body class="project">
 
-<main class="gallery-wrap">
-  <h2>Selected Works</h2>
-  <p>A cosy collection of my crochet pieces — made by hand, loop by loop.</p>
+  <!-- Top nav (same as Sewing page) -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
 
-  <div class="crochet-grid">
-    <img src="assets/crafts/crochet0.jpeg"  alt="Crochet piece 0" loading="lazy">
-    <img src="assets/crafts/crochet00.jpeg" alt="Crochet piece 00" loading="lazy">
-    <img src="assets/crafts/crochet1.jpeg"  alt="Crochet piece 1" loading="lazy">
-    <img src="assets/crafts/crochet2.jpeg"  alt="Crochet piece 2" loading="lazy">
-    <img src="assets/crafts/crochet3.jpeg"  alt="Crochet piece 3" loading="lazy">
-    <img src="assets/crafts/crochet4.jpeg"  alt="Crochet piece 4" loading="lazy">
-    <img src="assets/crafts/crochet5.jpeg"  alt="Crochet piece 5" loading="lazy">
-    <img src="assets/crafts/crochet6.jpeg"  alt="Crochet piece 6" loading="lazy">
-    <img src="assets/crafts/crochet7.jpeg"  alt="Crochet piece 7" loading="lazy">
-    <img src="assets/crafts/crochet8.jpeg"  alt="Crochet piece 8" loading="lazy">
-    <img src="assets/crafts/crochet9.jpeg"  alt="Crochet piece 9" loading="lazy">
-    <img src="assets/crafts/crochet10.jpeg" alt="Crochet piece 10" loading="lazy">
-    <img src="assets/crafts/crochet11.jpeg" alt="Crochet piece 11" loading="lazy">
-    <img src="assets/crafts/crochet12.jpeg" alt="Crochet piece 12" loading="lazy">
-    <img src="assets/crafts/crochet13.jpeg" alt="Crochet piece 13" loading="lazy">
-    <img src="assets/crafts/crochet14.jpeg" alt="Crochet piece 14" loading="lazy">
-    <img src="assets/crafts/crochet15.jpeg" alt="Crochet piece 15" loading="lazy">
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </div>
-</main>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <!-- Hero image (optional, consistent) -->
+  <header class="project-hero" style="--hero-img:url('assets/crafts/crochet13.jpeg')">
+    <div class="project-hero__shade"></div>
+  </header>
+
+  <!-- Title section -->
+  <section class="project-title">
+    <h1>Crochet</h1>
+    <p class="project-sub">Hand-crocheted plushies, accessories, and small gifts</p>
+  </section>
+
+  <main class="gallery">
+  
+
+    <div class="gallery-grid">
+      <img src="assets/crafts/crochet0.jpeg"  alt="Crochet piece 0" loading="lazy">
+      <img src="assets/crafts/crochet00.jpeg" alt="Crochet piece 00" loading="lazy">
+      <img src="assets/crafts/crochet1.jpeg"  alt="Crochet piece 1" loading="lazy">
+      <img src="assets/crafts/crochet2.jpeg"  alt="Crochet piece 2" loading="lazy">
+      <img src="assets/crafts/crochet3.jpeg"  alt="Crochet piece 3" loading="lazy">
+      <img src="assets/crafts/crochet4.jpeg"  alt="Crochet piece 4" loading="lazy">
+      <img src="assets/crafts/crochet5.jpeg"  alt="Crochet piece 5" loading="lazy">
+      <img src="assets/crafts/crochet6.jpeg"  alt="Crochet piece 6" loading="lazy">
+      <img src="assets/crafts/crochet7.jpeg"  alt="Crochet piece 7" loading="lazy">
+      <img src="assets/crafts/crochet8.jpeg"  alt="Crochet piece 8" loading="lazy">
+      <img src="assets/crafts/crochet9.jpeg"  alt="Crochet piece 9" loading="lazy">
+      <img src="assets/crafts/crochet10.jpeg" alt="Crochet piece 10" loading="lazy">
+      <img src="assets/crafts/crochet11.jpeg" alt="Crochet piece 11" loading="lazy">
+      <img src="assets/crafts/crochet12.jpeg" alt="Crochet piece 12" loading="lazy">
+      <img src="assets/crafts/crochet13.jpeg" alt="Crochet piece 13" loading="lazy">
+      <img src="assets/crafts/crochet14.jpeg" alt="Crochet piece 14" loading="lazy">
+      <img src="assets/crafts/crochet15.jpeg" alt="Crochet piece 15" loading="lazy">
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
+
 </body>
 </html>
