@@ -5,119 +5,191 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>3D Robot Modelling - Wing Tung Lam</title>
 
-  <!-- Only your site CSS (no Bootstrap) -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
 
-  <header>
-    <h1>3D Robot Modelling</h1>
-    <p>Hard Surface Modelling in Maya</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <script src="lightbox.js" defer></script>
+
+  <style>
+    /* page-only: big single-row renders (won’t affect other pages) */
+    .gallery-row{
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+      max-width: 920px;
+      margin: 18px auto 0;
+    }
+    .gallery-row::-webkit-scrollbar{ height: 8px; }
+    .gallery-row::-webkit-scrollbar-thumb{
+      background: rgba(255,255,255,0.25);
+      border-radius: 999px;
+    }
+
+    .gallery-row .gallery-item{
+      flex: 0 0 560px;   /* big */
+      height: 340px;
+      scroll-snap-align: start;
+    }
+    .gallery-row .gallery-item img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 700px){
+      .gallery-row .gallery-item{
+        flex-basis: 86vw;
+        height: 300px;
+      }
+    }
+
+    /* ONLY for this page: larger 3-column images */
+.gallery-large{
+  max-width: 1000px;        /* 原本 720px，變闊 */
+}
+
+.gallery-large .gallery-item{
+  height: 220px;            /* 原本 auto / 細，強制高啲 */
+}
+
+.gallery-large .gallery-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+  </style>
+</head>
+
+<body class="project">
+
+  <!-- Same nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Project hero -->
+  <header class="project-hero" style="--hero-img:url('assets/3drobot/render1.jpg')">
+    <div class="project-hero__shade"></div>
   </header>
 
-  <main>
-    <section class="project-detail">
+  <!-- Title -->
+  <section class="project-title">
+    <h1>3D Robot Modelling</h1>
+    <p class="project-sub">Hard Surface Modelling in Maya</p>
+  </section>
 
-      <!-- Left: text -->
+  <main class="project-main">
+
+    <!-- OVERVIEW (keep your wording) -->
+    <section class="project-block">
       <div class="project-text">
-        <h2>Overview</h2>
         <p>
           This project focused on 3D robot modelling using Autodesk Maya. I explored hard-surface
           techniques, clean topology, and simple look-dev, experimenting with materials and lighting.
         </p>
 
         <h3>Key Goals</h3>
-        <ul>
+        <ul class="tech-list">
           <li>Design a unique robot character</li>
           <li>Practice Maya modelling and UV mapping</li>
           <li>Create high-quality renders</li>
         </ul>
 
-        <h3>🛠️ Tools Used</h3>
+        <h3>Tools Used</h3>
         <p>Maya, Arnold Renderer</p>
       </div>
+    </section>
 
-      <!-- Right: carousel + screenshot stacked -->
-      <div class="project-image">
+    <!-- RENDERS (big single-row) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Final Renders</h2>
+        <p class="muted">Rendered views exploring materials, lighting, and form.</p>
+      </div>
 
-        <!-- Vanilla carousel -->
-        <div class="wm-carousel" id="robotCarousel">
-          <div class="wm-carousel-track">
-            <div class="wm-slide"><img src="assets/3drobot/render1.jpg" alt="Robot render 1"></div>
-            <div class="wm-slide"><img src="assets/3drobot/render2.jpg" alt="Robot render 2"></div>
-            <div class="wm-slide"><img src="assets/3drobot/render3.jpg" alt="Robot render 3"></div>
-          </div>
+        <div class="gallery-grid gallery-grid--3 gallery-large">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/3drobot/render1.jpg" aria-label="Open render 1">
+          <img src="assets/3drobot/render1.jpg" alt="Robot render 1">
+        </button>
 
-          <button class="wm-nav wm-prev" aria-label="Previous">&#10094;</button>
-          <button class="wm-nav wm-next" aria-label="Next">&#10095;</button>
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/3drobot/render2.jpg" aria-label="Open render 2">
+          <img src="assets/3drobot/render2.jpg" alt="Robot render 2">
+        </button>
 
-          <div class="wm-dots" aria-label="carousel pagination"></div>
-        </div>
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/3drobot/render3.jpg" aria-label="Open render 3">
+          <img src="assets/3drobot/render3.jpg" alt="Robot render 3">
+        </button>
+      </div>
 
-        <!-- Screenshot under the carousel (still on the right column) -->
-        <div class="storyboard-preview" style="margin-top: 1.25rem;">
-          <h4>Screenshot from Maya</h4>
-          <img src="assets/3drobot/screenshort.jpg" alt="Maya Screenshot" class="storyboard-img">
-        </div>
+      <!-- <div class="gallery-row">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/3drobot/render1.jpg" aria-label="Open render 1">
+          <img src="assets/3drobot/render1.jpg" alt="Robot render 1">
+        </button>
 
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/3drobot/render2.jpg" aria-label="Open render 2">
+          <img src="assets/3drobot/render2.jpg" alt="Robot render 2">
+        </button>
+
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/3drobot/render3.jpg" aria-label="Open render 3">
+          <img src="assets/3drobot/render3.jpg" alt="Robot render 3">
+        </button>
+      </div> -->
+    </section>
+
+    <!-- MAYA SCREENSHOT (single) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Screenshot from Maya</h2>
+        <p class="muted">Viewport screenshot showing the model inside the working scene.</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/3drobot/screenshort.jpg" aria-label="Open Maya screenshot">
+          <img src="assets/3drobot/screenshort.jpg" alt="Maya Screenshot">
+        </button>
       </div>
     </section>
+
   </main>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <!-- Lightbox -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 
-  <!-- Tiny vanilla carousel JS -->
-  <script>
-    (function(){
-      const root = document.getElementById('robotCarousel');
-      const track = root.querySelector('.wm-carousel-track');
-      const slides = Array.from(root.querySelectorAll('.wm-slide'));
-      const prev = root.querySelector('.wm-prev');
-      const next = root.querySelector('.wm-next');
-      const dotsWrap = root.querySelector('.wm-dots');
-
-      let index = 0;
-
-      // build dots
-      slides.forEach((_, i) => {
-        const b = document.createElement('button');
-        b.setAttribute('aria-label', 'Go to slide ' + (i+1));
-        b.addEventListener('click', () => go(i));
-        dotsWrap.appendChild(b);
-      });
-
-      function update() {
-        track.style.transform = `translateX(-${index * 100}%)`;
-        dotsWrap.querySelectorAll('button').forEach((b, i) => {
-          b.classList.toggle('active', i === index);
-        });
-      }
-
-      function go(i) {
-        index = (i + slides.length) % slides.length;
-        update();
-      }
-
-      prev.addEventListener('click', () => go(index - 1));
-      next.addEventListener('click', () => go(index + 1));
-
-      // init
-      update();
-      window.addEventListener('resize', update);
-    })();
-  </script>
-  
 </body>
 </html>

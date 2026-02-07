@@ -4,164 +4,271 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital Drawing - Wing Tung Lam</title>
+
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
 
+  <!-- page-only styles (won't affect other pages) -->
   <style>
-    /* small additions for captions + lightbox */
-    .gallery-grid { column-count: 3; column-gap: 1.2rem; }
-    @media (max-width:900px){ .gallery-grid{ column-count:2; } }
-    @media (max-width:560px){ .gallery-grid{ column-count:1; } }
-
-    .gallery-grid figure{ break-inside: avoid; margin:0 0 1.2rem 0; }
-    .gallery-grid img{ width:100%; border-radius:8px; display:block; }
-    .gallery-grid figcaption{ font-size:.9rem; color:#365; margin-top:.4rem; }
-
-    /* lightbox */
-    .lb {
-      position: fixed; inset:0; background:rgba(0,0,0,.7);
-      display:none; align-items:center; justify-content:center; z-index:9999;
-      padding:1rem;
+    /* Masonry grid ONLY for this page */
+    .dd-grid{
+      column-count: 3;
+      column-gap: 1.2rem;
+      max-width: 980px;
+      margin: 18px auto 0;
     }
-    .lb.open{ display:flex; }
-    .lb-inner{
-      max-width:min(1000px, 96vw); max-height:90vh; background:#fff; border-radius:10px;
-      box-shadow:0 10px 30px rgba(0,0,0,.25); overflow:hidden;
+    @media (max-width:900px){ .dd-grid{ column-count:2; } }
+    @media (max-width:560px){ .dd-grid{ column-count:1; } }
+
+    .dd-grid figure{
+      break-inside: avoid;
+      margin: 0 0 1.2rem 0;
     }
-    .lb-img{ display:block; max-height:75vh; width:auto; max-width:100%; margin:auto; }
-    .lb-caption{ padding:.75rem 1rem; color:#034d56; font-size:.95rem; }
-    .lb-close{ position:absolute; top:14px; right:16px; border:0; background:transparent; color:#fff; font-size:28px; cursor:pointer; }
+
+    .dd-item{
+      border: 0;
+      padding: 0;
+      width: 100%;
+      background: transparent;
+      cursor: zoom-in;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+    }
+
+    .dd-item img{
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-radius: 0; /* match your project style */
+    }
+
+    .dd-grid figcaption{
+      font-size: .95rem;
+      opacity: .75;
+      margin-top: .45rem;
+      text-align: center;
+    }
+
+    /* Lightbox (page-only) */
+    .dd-lb{
+      position: fixed;
+      inset: 0;
+      z-index: 4000;
+      display: none;
+    }
+    .dd-lb.open{ display:block; }
+
+    .dd-lb__backdrop{
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.78);
+      backdrop-filter: blur(6px);
+    }
+
+    .dd-lb__panel{
+      position: relative;
+      z-index: 1;
+      width: min(980px, 92vw);
+      margin: 100px auto 0;
+      max-height: calc(100vh - 140px);
+      overflow: auto;
+      background: rgba(10,18,26,0.85);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+    }
+
+    .dd-lb__img{
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .dd-lb__cap{
+      padding: 12px 14px;
+      text-align: center;
+      opacity: .8;
+    }
+
+    .dd-lb__close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.35);
+      color: #fff;
+      cursor: pointer;
+      z-index: 2;
+    }
   </style>
 </head>
-<body>
 
-<header>
-  <h1>Digital Drawing</h1>
-  <p>Personal Illustrations & Fellowship Design Works</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<body class="project">
 
-<main>
+  <!-- Same nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
 
-  <!-- Personal IG work -->
-  <section class="project-detail">
-    <div class="project-text">
-      <h2>Personal Illustrations</h2>
-      <p>
-        A selection of my digital artworks made for
-        <a class="inline-link" href="https://www.instagram.com/chestnut.nutsss" target="_blank" rel="noopener">Instagram (@chestnut.nutsss)</a> —
-        little stories about emotions, daily life, and playful characters.
-      </p>
-      <p><strong>Tools:</strong> Procreate, Photoshop</p>
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </div>
+
+  <!-- Title -->
+  <section class="project-title">
+    <h1>Digital Drawing</h1>
+    <p class="project-sub">Personal Illustrations & Fellowship Design Works</p>
   </section>
 
-  <section class="gallery">
-    <div id="personalGrid" class="gallery-grid"></div>
-  </section>
+  <main class="project-main">
 
-  <!-- Fellowship design -->
-  <section class="project-detail">
-    <div class="project-text">
-      <h2>Fellowship Designs</h2>
-      <p>
-        Posters and social graphics designed for my fellowship — event promos, series artwork and seasonal reflections.  
-        Focus on clarity, warmth and a consistent visual voice.
-      </p>
-    </div>
-  </section>
+    <!-- Personal -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Personal Illustrations</h2>
+        <p>
+          A selection of my digital artworks shared on
+          <a class="inline-link" href="https://www.instagram.com/chestnut.nutsss" target="_blank" rel="noopener">
+            Instagram (@chestnut.nutsss)
+          </a>
+          — little stories about emotions, daily life, and playful characters.
+        </p>
+        <p><strong>Tools:</strong> Procreate</p>
+      </div>
 
-  <section class="gallery">
-    <div id="fellowshipGrid" class="gallery-grid"></div>
-  </section>
+      <div id="personalGrid" class="dd-grid"></div>
+    </section>
 
-  <section class="highlight">
-    <p>
-      See more sketches and process clips on
-      <a class="inline-link" href="https://www.instagram.com/chestnut.nutsss" target="_blank" rel="noopener">Instagram</a>.
-    </p>
-  </section>
+    <!-- Fellowship -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Fellowship Designs</h2>
+        <p>
+          Posters and social graphics designed for my fellowship — event promos, series artwork and seasonal reflections.
+          Focus on clarity, warmth and a consistent visual voice.
+        </p>
+      </div>
 
-</main>
+      <div id="fellowshipGrid" class="dd-grid"></div>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+      <div class="project-text" style="margin-top:22px;">
+        <p class="muted">
+          See more sketches and process clips on
+          <a class="inline-link" href="https://www.instagram.com/chestnut.nutsss" target="_blank" rel="noopener">Instagram</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div id="ddLightbox" class="dd-lb" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+    <div class="dd-lb__backdrop" data-close></div>
+    <figure class="dd-lb__panel">
+      <button class="dd-lb__close" type="button" data-close aria-label="Close">✕</button>
+      <img id="ddLbImg" class="dd-lb__img" alt="">
+      <figcaption id="ddLbCap" class="dd-lb__cap"></figcaption>
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 
-<!-- Lightbox -->
-<div id="lightbox" class="lb" role="dialog" aria-modal="true" aria-label="Image preview">
-  <button class="lb-close" aria-label="Close preview" onclick="closeLB()">×</button>
-  <div class="lb-inner">
-    <img id="lbImg" class="lb-img" alt="">
-    <div id="lbCap" class="lb-caption"></div>
-  </div>
-</div>
+  <script>
+    // ====== filenames ======
+    // If your real files are personal_01.PNG ... personal_08.PNG etc, this will work.
+    const personalFiles   = Array.from({length: 8},  (_,i)=>`personal_${String(i+1).padStart(2,'0')}.PNG`);
+    const fellowshipFiles = Array.from({length: 18}, (_,i)=>`fellowship_${String(i+1).padStart(2,'0')}.PNG`);
 
-<script>
-  // ====== configure filenames ======
-  const personalFiles   = Array.from({length: 8}, (_,i)=>`personal_${String(i+1).padStart(2,'0')}.PNG`);
-  const fellowshipFiles = Array.from({length:18}, (_,i)=>`fellowship_${String(i+1).padStart(2,'0')}.PNG`);
+    // Optional captions map (key without extension)
+    const CAPTIONS = {
+      // personal_01: "Quiet morning coffee",
+      // fellowship_01: "Event poster — ...",
+    };
 
-  // (optional) write nicer captions here; fallback uses filename
-  const CAPTIONS = {
-    // personal_01: "Quiet morning coffee",
-    // personal_02: "Night study mood",
-    // // ...add more if you want
-    // fellowship_01: "Poster",
-    // fellowship_02: "Worship night visual",
-    // // etc.
-  };
+    function niceCaption(key){
+      if (CAPTIONS[key]) return CAPTIONS[key];
+      // fallback: personal_01 -> Personal #01
+      const [group, num] = key.split('_');
+      const g = group ? group.charAt(0).toUpperCase() + group.slice(1) : 'Work';
+      return num ? `${g} #${num}` : key;
+    }
 
-  function makeGrid(containerId, files, folder){
-    const wrap = document.getElementById(containerId);
-    files.forEach(name=>{
-      const key = name.replace('.PNG','');
-      const cap = CAPTIONS[key] || key.replace('_',' #');
-      const fig = document.createElement('figure');
+    function makeGrid(containerId, files){
+      const wrap = document.getElementById(containerId);
 
-      const img = document.createElement('img');
-      img.loading = 'lazy';
-      img.src = `assets/digital/${name}`;
-      img.alt = cap;
-      img.addEventListener('click', ()=>openLB(img.src, cap));
+      files.forEach(name=>{
+        const key = name.replace(/\.[^.]+$/, ''); // remove extension
+        const cap = niceCaption(key);
 
-      const fc = document.createElement('figcaption');
-      fc.textContent = cap;
+        const fig = document.createElement('figure');
 
-      fig.appendChild(img);
-      fig.appendChild(fc);
-      wrap.appendChild(fig);
+        const btn = document.createElement('button');
+        btn.className = 'dd-item';
+        btn.type = 'button';
+        btn.setAttribute('aria-label', 'Open ' + cap);
+
+        const img = document.createElement('img');
+        img.loading = 'lazy';
+        img.src = `assets/digital/${name}`;
+        img.alt = cap;
+
+        btn.appendChild(img);
+        btn.addEventListener('click', ()=>openLB(img.src, cap));
+
+        const fc = document.createElement('figcaption');
+        fc.textContent = cap;
+
+        fig.appendChild(btn);
+        fig.appendChild(fc);
+        wrap.appendChild(fig);
+      });
+    }
+
+    const lb = document.getElementById('ddLightbox');
+    const lbImg = document.getElementById('ddLbImg');
+    const lbCap = document.getElementById('ddLbCap');
+
+    function openLB(src, cap){
+      lbImg.src = src;
+      lbImg.alt = cap;
+      lbCap.textContent = cap;
+      lb.hidden = false;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLB(){
+      lb.classList.remove('open');
+      lb.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    lb.addEventListener('click', (e)=>{
+      if (e.target.matches('[data-close]')) closeLB();
     });
-  }
 
-  function openLB(src, cap){
-    document.getElementById('lbImg').src = src;
-    document.getElementById('lbImg').alt = cap;
-    document.getElementById('lbCap').textContent = cap;
-    document.getElementById('lightbox').classList.add('open');
-  }
-  function closeLB(){
-    document.getElementById('lightbox').classList.remove('open');
-  }
-  document.getElementById('lightbox').addEventListener('click', (e)=>{
-    if(e.target.id === 'lightbox') closeLB();
-  });
-  document.addEventListener('keydown', (e)=>{
-    if(e.key === 'Escape') closeLB();
-  });
+    document.addEventListener('keydown', (e)=>{
+      if (!lb.hidden && e.key === 'Escape') closeLB();
+    });
 
-  // build the two sections
-  makeGrid('personalGrid', personalFiles,   'personal');
-  makeGrid('fellowshipGrid', fellowshipFiles,'fellowship');
-</script>
+    // build both sections
+    makeGrid('personalGrid', personalFiles);
+    makeGrid('fellowshipGrid', fellowshipFiles);
+  </script>
 
 </body>
 </html>

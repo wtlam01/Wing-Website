@@ -1,80 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Immersive Unity World</title>
+  <title>Immersive Unity World - Wing Tung Lam</title>
+
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <script src="lightbox.js" defer></script>
+
+  <style>
+        /* ONLY for this page: larger 3-column images */
+.gallery-large{
+  max-width: 1000px;        /* 原本 720px，變闊 */
+}
+
+.gallery-large .gallery-item{
+  height: 220px;            /* 原本 auto / 細，強制高啲 */
+}
+
+.gallery-large .gallery-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  </style>
 </head>
-<body>
 
-<header>
-  <h1>Immersive Unity World</h1>
-  <p>Pirate-themed island • custom Maya assets • light interactions</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<body class="project">
 
-<main>
-
-  <!-- Intro: text + video (same layout as other project pages) -->
-  <section class="project-detail">
-    <div class="project-text">
-      <h2>Overview</h2>
-      <p>
-        A small third-person Unity scene set on a playful pirate island. I handled
-        level layout, simple interactions, and imported three low-poly Maya assets
-        (<strong>vessel</strong>, <strong>box</strong>, <strong>fruit</strong>) into the world.
-      </p>
-
-      <h3>Role & Tools</h3>
-      <ul>
-        <li>Level dressing, triggers, UI cues</li>
-        <li>Maya (model + UV), Unity import</li>
-        <li>Cinemachine for a short intro fly-through</li>
-      </ul>
-
-      <!-- <p><strong>Controls:</strong> WASD move · Mouse look · Space jump · E interact</p> -->
-    </div>
-
-    <div class="project-media">
-      <!-- YouTube demo -->
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/XPVFaDCmAoE"
-          title="Unity World Demo"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
+  <!-- Same nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
       </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </div>
+
+  <!-- Project hero (換成你想用嘅 banner 圖) -->
+  <header class="project-hero" style="--hero-img:url('assets/unity/1.png')">
+    <div class="project-hero__shade"></div>
+  </header>
+
+  <!-- Title -->
+  <section class="project-title">
+    <h1>Immersive Unity World</h1>
+    <p class="project-sub">Pirate-themed island • custom Maya assets • light interactions</p>
   </section>
 
-  <!-- Simple gallery: models + renders -->
-  <section class="project-gallery">
-    <h2 style="text-align:center;">Models & Renders</h2>
-    <div class="gallery-grid">
-      <img src="assets/unity/vessel.png" alt="Maya model — vessel">
-      <img src="assets/unity/render-vessel.jpg" alt="Rendered vessel in scene">
-      <img src="assets/unity/box.png" alt="Maya model — box">
-      <img src="assets/unity/render-box.jpg" alt="Rendered box in scene">
-      <img src="assets/unity/fruit.png" alt="Maya model — fruit">
-      <img src="assets/unity/render-fruit.jpg" alt="Rendered fruit in scene">
-    </div>
-  </section>
+  <main class="project-main">
 
-</main>
+    <!-- OVERVIEW -->
+    <section class="project-block">
+      <div class="project-text">
+        <p>
+          A small third-person Unity scene set on a playful pirate island. I handled level layout,
+          simple interactions, and imported three low-poly Maya assets
+          (<strong>vessel</strong>, <strong>box</strong>, <strong>fruit</strong>) into the world.
+        </p>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+        <h3>Role & Tools</h3>
+        <ul class="tech-list">
+          <li>Level dressing, triggers, UI cues</li>
+          <li>Maya (model + UV) → Unity import pipeline</li>
+          <li>Cinemachine for a short intro fly-through</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- GALLERY -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Models & Renders</h2>
+        <p class="muted">Click any image to view full size.</p>
+      </div>
+
+<!-- Rendered assets (3-column) -->
+ <div class="gallery-grid gallery-grid--3 gallery-large">
+  <button class="gallery-item is-clickable" type="button"
+    data-full="assets/unity/render-vessel.jpg">
+    <img src="assets/unity/render-vessel.jpg" alt="Rendered vessel"
+         style="width:100%; height:100%; object-fit:cover;">
+  </button>
+
+  <button class="gallery-item is-clickable" type="button"
+    data-full="assets/unity/render-box.jpg">
+    <img src="assets/unity/render-box.jpg" alt="Rendered box"
+         style="width:100%; height:100%; object-fit:cover;">
+  </button>
+
+  <button class="gallery-item is-clickable" type="button"
+    data-full="assets/unity/render-fruit.jpg">
+    <img src="assets/unity/render-fruit.jpg" alt="Rendered fruit"
+         style="width:100%; height:100%; object-fit:cover;">
+  </button>
+</div>
+
+
+      <!-- 3-column -->
+       <div class="gallery-grid gallery-grid--3 gallery-large">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/unity/vessel.png" aria-label="Open Maya model vessel">
+          <img src="assets/unity/vessel.png" alt="Maya model — vessel"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/unity/box.png" aria-label="Open Maya model box">
+          <img src="assets/unity/box.png" alt="Maya model — box"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/unity/fruit.png" aria-label="Open Maya model fruit">
+          <img src="assets/unity/fruit.png" alt="Maya model — fruit"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+
+    <!-- VIDEO -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Demo Video</h2>
+        <p class="muted">A short walkthrough of the Unity world and interactions.</p>
+      </div>
+
+      <div class="video-small">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/XPVFaDCmAoE"
+            title="Unity World Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
+
 </body>
 </html>

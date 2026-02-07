@@ -4,60 +4,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dream Pillow - Wing Tung Lam</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
 
-  <header>
-    <h1>Dream Pillow</h1>
-    <p>Interactive Object Design</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <script src="lightbox.js" defer></script>
+</head>
+
+<body class="project">
+
+  <!-- Same nav as other project pages -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Project hero -->
+  <header class="project-hero" style="--hero-img:url('assets/video/1.png')">
+    <div class="project-hero__shade"></div>
   </header>
 
-  <main class="project-section">
-    <!-- Left side: Description -->
-    <div class="project-info">
-      <h2>Project Overview</h2>
-      <p>
-        The Dream Pillow is an interactive concept object designed to help users relax and prepare for sleep. 
-        Inspired by the idea of combining comfort with light and sound elements, this pillow responds to touch and creates a calming bedtime environment.
-      </p>
+  <!-- Title -->
+  <section class="project-title">
+    <h1>Dream Pillow</h1>
+    <p class="project-sub">Interactive Object Design</p>
+  </section>
 
-      <h3>Tools Used</h3>
-      <p>
-        Ideation Sketching, Photography, Adobe After Effect, Adobe Premiere Pro
-      </p>
+  <main class="project-main">
 
-      <a href="https://youtu.be/0prdcgCq6Fs" target="_blank" class="watch-button">▶ Watch on YouTube</a>
-    </div>
+    <!-- OVERVIEW (keep your wording) -->
+    <section class="project-block">
+      <div class="project-text">
+        <p>
+          The Dream Pillow is an interactive concept object designed to help users relax and prepare for sleep.
+          Inspired by the idea of combining comfort with light and sound elements, this pillow responds to touch and creates a calming bedtime environment.
+        </p>
 
- <!-- Right: Media -->
-    <div class="project-media">
-      <!-- YouTube video -->
-      <iframe width="100%" height="315" src="https://www.youtube.com/embed/0prdcgCq6Fs"
-        title="Dream Pillow Project" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+        <h3>Tools Used</h3>
+        <p>Ideation Sketching, Photography, Adobe After Effect, Adobe Premiere Pro</p>
 
-      <!-- Shotlist image -->
-      <div class="storyboard-preview">
-        <img src="assets/video/shotlist.png" alt="Dream Pillow Shotlist" class="storyboard-img">
       </div>
-    </div>
+    </section>
+
+
+    <!-- SHOTLIST (clickable like your other pages) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Shotlist</h2>
+        <p class="muted">Planning sheet for filming and edit structure.</p>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/video/shotlist.png"
+          aria-label="Open Dream Pillow shotlist">
+          <img src="assets/video/shotlist.png" alt="Dream Pillow Shotlist">
+        </button>
+      </div>
+    </section>
+
+        <!-- VIDEO -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Video</h2>
+        <p class="muted">A short walkthrough of the concept and interaction.</p>
+      </div>
+
+      <div class="video-small">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/0prdcgCq6Fs"
+            title="Dream Pillow Project"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- Lightbox -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
 
-
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 

@@ -2,97 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fragile Bonds</title>
-  <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="style2.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fragile Bonds - Wing Tung Lam</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <script src="lightbox.js" defer></script>
+
+    <style>
+        /* ONLY for this page: larger 3-column images */
+.gallery-large{
+  max-width: 1000px;        /* 原本 720px，變闊 */
+}
+
+.gallery-large .gallery-item{
+  height: 220px;            /* 原本 auto / 細，強制高啲 */
+}
+
+.gallery-large .gallery-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  </style>
 </head>
 
-<body>
+<body class="project">
 
-  <header>
-    <h1>Fragile Bonds</h1>
-    <p>Interdisciplinary installation combining art, physics and sociology</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- Same nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Project hero (choose 1 image as banner) -->
+  <header class="project-hero" style="--hero-img:url('assets/fragile/3.png')">
+    <div class="project-hero__shade"></div>
   </header>
 
-  <!-- Same layout as Emotion Interface -->
-  <main class="project-section">
+  <!-- Title -->
+  <section class="project-title">
+    <h1>Fragile Bonds</h1>
+    <p class="project-sub">Interdisciplinary installation combining art, physics and sociology</p>
+  </section>
 
-    <!-- Left: project text -->
-    <div class="project-info">
-      <h2>Project Overview</h2>
-      <p>
-        <strong>Fragile Bonds</strong> is an interdisciplinary installation that merges
-        visual art, physics, and sociology. Through the metaphor of burning candles
-        (parents) and rising bubbles (children), the work explores the tension between
-        support, expectations, and emotional pressure in family relationships.
-      </p>
+  <main class="project-main">
 
-      <h3>Concept</h3>
-      <p>
-        A dark background enhances the brightness of the flames, while bubbles rise
-        through warm air and burst unpredictably. This visual language represents the
-        delicate emotional reality between parents and children, especially in cultures
-        where high expectations and emotional blackmail silently create pressure.
-      </p>
+    <section class="project-block">
+      <div class="project-text">
+        <p>
+          <strong>Fragile Bonds</strong> is an interdisciplinary installation that merges
+          visual art, physics, and sociology. Through the metaphor of burning candles
+          (parents) and rising bubbles (children), the work explores the tension between
+          support, expectations, and emotional pressure in family relationships.
+        </p>
 
-      <h3>Technical Setup</h3>
-      <p>
-        The installation uses a box structure made from transparent plastic sheets
-        wrapped in black paper. Around fifty candles are arranged with safe spacing,
-        creating enough heat for convection to lift the bubbles. This transforms a
-        simple physical phenomenon into a meaningful emotional metaphor.
-      </p>
+        <h3>Concept</h3>
+        <p>
+          A dark background enhances the brightness of the flames, while bubbles rise
+          through warm air and burst unpredictably. This visual language represents the
+          delicate emotional reality between parents and children, especially in cultures
+          where high expectations and emotional blackmail silently create pressure.
+        </p>
 
-      <h3>Reflection</h3>
-      <p>
-        The piece aims to encourage reflection on emotional manipulation, “helicopter
-        parenting”, and the psychological impact on young people. The slow movement of
-        candles and bubbles invites the audience to pause and consider their own
-        experiences and family expectations.
-      </p>
+        <h3>Technical Setup</h3>
+        <p>
+          The installation uses a box structure made from transparent plastic sheets
+          wrapped in black paper. Around fifty candles are arranged with safe spacing,
+          creating enough heat for convection to lift the bubbles. This transforms a
+          simple physical phenomenon into a meaningful emotional metaphor.
+        </p>
 
-      <a href="https://www.youtube.com/watch?v=MPkZ3g2pN78"
-         target="_blank" class="watch-button"> Watch on YouTube</a>
-    </div>
+        <h3>Reflection</h3>
+        <p>
+          The piece aims to encourage reflection on emotional manipulation, “helicopter
+          parenting”, and the psychological impact on young people. The slow movement of
+          candles and bubbles invites the audience to pause and consider their own
+          experiences and family expectations.
+        </p>
 
-    <!-- Right: video + photos -->
-    <div class="project-media">
 
-      <!-- YouTube video -->
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/MPkZ3g2pN78"
-          title="Fragile Bonds Demo"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
       </div>
 
-      <!-- Photos -->
-      <div class="interface-images">
-        <img src="assets/fragile/1.png" alt="Fragile Bonds photo 1" />
-        <img src="assets/fragile/2.png" alt="Fragile Bonds photo 2" />
-        <img src="assets/fragile/3.png" alt="Fragile Bonds photo 3" />
-        <img src="assets/fragile/4.png" alt="Fragile Bonds photo 4" />
+            <!-- Photos (click to open) -->
+      <div class="project-text" style="margin-top:26px;">
+        <h2>Photos</h2>
+        <p class="muted">Installation details and atmosphere shots.</p>
       </div>
 
-    </div>
+ <div class="gallery-grid gallery-grid--3 gallery-large">
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/fragile/1.png" aria-label="Open photo 1">
+          <img src="assets/fragile/1.png" alt="Fragile Bonds photo 1"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/fragile/2.png" aria-label="Open photo 2">
+          <img src="assets/fragile/2.png" alt="Fragile Bonds photo 2"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+
+        <button class="gallery-item is-clickable" type="button"
+          data-full="assets/fragile/3.png" aria-label="Open photo 3">
+          <img src="assets/fragile/3.png" alt="Fragile Bonds photo 3"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+
+
+      <!-- Video -->
+      <div class="video-small" style="margin-top:18px;">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/MPkZ3g2pN78"
+            title="Fragile Bonds Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+
+    </section>
   </main>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <!-- Lightbox -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
+
 </body>
 </html>

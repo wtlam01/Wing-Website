@@ -10,6 +10,22 @@
   <link rel="stylesheet" href="style3.css"/>
 
   <script src="lightbox.js" defer></script>
+    <style>
+        /* ONLY for this page: larger 3-column images */
+.gallery-large{
+  max-width: 1000px;        /* 原本 720px，變闊 */
+}
+
+.gallery-large .gallery-item{
+  height: 180px;            /* 原本 auto / 細，強制高啲 */
+}
+
+.gallery-large .gallery-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+  </style>
 </head>
 
 <body class="project">
@@ -71,7 +87,7 @@
         <p class="muted">Click to view full size.</p>
       </div> -->
 
-            <div class="gallery-grid gallery-grid--3">
+ <div class="gallery-grid gallery-grid--3 gallery-large">
         <div class="gallery-item"><img src="assets/webgame/3.png" alt="Game scene 1"
      style="width:100%; height:100%; object-fit:cover;"></div>
         <div class="gallery-item"><img src="assets/webgame/4.png" alt="Game scene 1"

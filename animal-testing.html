@@ -4,66 +4,144 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Animal Testing Animation - Wing Tung Lam</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
 
-  <header>
-    <h1>Animal Testing Animation</h1>
-    <p>Awareness Through 2D Motion Graphics</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <!-- reuse your lightbox -->
+  <script src="lightbox.js" defer></script>
+</head>
+
+<body class="project">
+
+  <!-- Same nav -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Project hero (change to your banner) -->
+  <header class="project-hero" style="--hero-img:url('assets/animal/2.png')">
+    <div class="project-hero__shade"></div>
   </header>
 
-  <main class="project-section">
-    <!-- 左邊：描述 -->
-    <div class="project-info">
-      <h2>Project Overview</h2>
-      <p>
-        This animated video aims to raise awareness about the ethical concerns of animal testing. 
-        It opens with a thought-provoking role-reversal scenario and transitions into real-world data, laws, and encouragement to support cruelty-free options.
-      </p>
+  <!-- Title -->
+  <section class="project-title">
+    <h1>Animal Testing Animation</h1>
+    <p class="project-sub">Awareness Through 2D Motion Graphics</p>
+  </section>
 
-      <h3>Message</h3>
-      <p>
-        To encourage critical reflection on animal cruelty in science and inspire viewers to consider more ethical alternatives.
-      </p>
+  <main class="project-main">
 
-      <h3>Tools Used</h3>
-      <p>
-        Procreate (Illustration), Adobe After Effects (Animation), Adobe Illustrator (Infographics), Audacity (Sound Editing)
-      </p>
+    <!-- OVERVIEW -->
+    <section class="project-block">
+      <div class="project-text">
+        <p>
+          This animated video raises awareness about the ethical concerns of animal testing.
+          It begins with a thought-provoking role-reversal concept, then transitions into key facts, legislation shifts,
+          and a call-to-action encouraging cruelty-free choices.
+        </p>
 
-      <a href="https://youtube.com/embed/WfCijEPbtuk" target="_blank" class="watch-button">▶️ Watch on YouTube</a>
-    </div>
+        <h3>Message</h3>
+        <p>
+          Encourage critical reflection on animal cruelty in scientific testing, and promote more ethical alternatives.
+        </p>
 
-   <!-- 右邊：YouTube影片 + Storyboard -->
-<div class="project-media">
-  <iframe width="100%" height="315" src="https://www.youtube.com/embed/WfCijEPbtuk"
-    title="Animal Testing Animation" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen></iframe>
+        <h3>Tools Used</h3>
+        <ul class="tech-list">
+          <li>Procreate — Illustration</li>
+          <li>Adobe After Effects — Animation</li>
+          <li>Adobe Illustrator — Infographics</li>
+          <li>Audacity — Sound Editing</li>
+        </ul>
 
-  <!-- Storyboard 圖片 + 下載按鈕 -->
-  <div class="storyboard-preview">
-    <img src="assets/animal/storyboard.png" alt="Storyboard" class="storyboard-img">
-  </div>
-</div>
+      </div>
+    </section>
 
 
-</section>
+    <!-- WORKFLOW / PROCESS -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Workflow</h2>
+        <p class="muted">
+          From ideation to storyboard and shot planning (based on my production report).
+        </p>
+
+        <ul class="tech-list">
+          <li>Ideation mindmap + research direction</li>
+          <li>Moodboard to lock visual tone</li>
+          <li>Voice-over script drafts to control pacing</li>
+          <li>Storyboard to plan narrative flow</li>
+          <li>Shot list to organise scenes and timing</li>
+        </ul>
+
+        <!-- If you don't have it in assets, remove this button or change the path -->
+      </div>
+    </section>
+
+    <!-- STORYBOARD (clickable) -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Storyboard</h2>
+      </div>
+
+      <div class="gallery-grid gallery-grid--single">
+        <button class="gallery-item is-clickable"
+                type="button"
+                data-full="assets/animal/storyboard.png"
+                aria-label="Open storyboard in full size">
+          <img src="assets/animal/storyboard.png"
+               alt="Storyboard preview"
+               style="width:100%; height:100%; object-fit:cover;">
+        </button>
+      </div>
+    </section>
+
+
+    <!-- VIDEO -->
+    <section class="project-block">
+      <div class="project-text">
+        <h2>Final Animation</h2>
+      </div>
+
+      <div class="video-small">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/WfCijEPbtuk"
+            title="Animal Testing Animation"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
 
   </main>
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+  <!-- Lightbox -->
+  <div class="lightbox" hidden>
+    <div class="lightbox__backdrop" data-close></div>
+    <figure class="lightbox__panel" role="dialog" aria-modal="true">
+      <button class="lightbox__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="lightbox__img" alt="">
+    </figure>
+  </div>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 

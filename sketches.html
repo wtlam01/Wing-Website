@@ -4,47 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sketchbook - Wing Tung Lam</title>
+
   <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <!-- Page-only CSS (safe) -->
+  <style>
+    .sketchbook-wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.2rem 3rem;
+    }
+
+    .sketchbook-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    /* First image = hero */
+    .sketchbook-grid .featured-grid-img{
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+    }
+
+    .sketchbook-grid img{
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+    }
+
+    @media (max-width: 900px){
+      .sketchbook-grid{
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sketchbook-grid .featured-grid-img{
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 560px){
+      .sketchbook-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body>
 
-  <header>
+<body class="project">
+
+  <!-- SAME NAV AS OTHER PROJECT PAGES -->
+  <div class="hero-top">
+    <div class="hero-top-inner">
+      <div class="hero-logo">
+        <a href="index.html">Wing's Website</a>
+      </div>
+
+      <nav class="hero-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <section class="project-title">
     <h1>My Childhood Sketchbook</h1>
-    <p>Drawings from my primary school years — full of imagination and memories!</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-<main>
-  <section class="gallery-grid">
-    
-    <!-- 第一張特別大 -->
-    <img src="assets/sketchbook/1.jpeg" alt="Sketch 1" class="featured-grid-img">
-
-    <!-- 其他圖片正常 -->
-    <img src="assets/sketchbook/2.jpeg" alt="Sketch 2">
-    <img src="assets/sketchbook/3.jpeg" alt="Sketch 3">
-    <img src="assets/sketchbook/4.jpeg" alt="Sketch 4">
-    <img src="assets/sketchbook/5.jpeg" alt="Sketch 5">
-    <img src="assets/sketchbook/6.jpeg" alt="Sketch 6">
-    <img src="assets/sketchbook/7.jpeg" alt="Sketch 7">
-    <img src="assets/sketchbook/8.jpeg" alt="Sketch 8">
-    <img src="assets/sketchbook/9.jpeg" alt="Sketch 9">
-    <img src="assets/sketchbook/10.jpeg" alt="Sketch 10">
-    <img src="assets/sketchbook/11.jpeg" alt="Sketch 11">
+    <p class="project-sub">
+      Drawings from my primary school years — full of imagination and memories
+    </p>
   </section>
-</main>
 
+  <!-- CONTENT -->
+  <main class="sketchbook-wrap">
+    <section class="sketchbook-grid">
 
-    <footer>
-    <p>© 2026 Wing Tung Lam | <a href="mailto:wingtung0101@gmail.com">Email</a> | 
-      <a href="https://www.linkedin.com/in/winglwt" target="_blank">LinkedIn</a>  
-      <!-- <a href="https://www.youtube.com/@Coco-corner0" target="_blank">YouTube</a> | 
-      <a href="https://www.instagram.com/chestnut.nutsss" target="_blank">Instagram</a> -->
+      <!-- Featured -->
+      <img src="assets/sketchbook/1.jpeg"
+           alt="Sketchbook featured page"
+           class="featured-grid-img">
+
+      <!-- Others -->
+      <img src="assets/sketchbook/2.jpeg" alt="Sketch 2">
+      <img src="assets/sketchbook/3.jpeg" alt="Sketch 3">
+      <img src="assets/sketchbook/4.jpeg" alt="Sketch 4">
+      <img src="assets/sketchbook/5.jpeg" alt="Sketch 5">
+      <img src="assets/sketchbook/6.jpeg" alt="Sketch 6">
+      <img src="assets/sketchbook/7.jpeg" alt="Sketch 7">
+      <img src="assets/sketchbook/8.jpeg" alt="Sketch 8">
+      <img src="assets/sketchbook/9.jpeg" alt="Sketch 9">
+      <img src="assets/sketchbook/10.jpeg" alt="Sketch 10">
+      <img src="assets/sketchbook/11.jpeg" alt="Sketch 11">
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Wing Tung Lam |
+      <a href="mailto:wingtung0101@gmail.com">Email</a> |
+      <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
 
