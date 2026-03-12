@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Wing Tung Lam</title>
 
   <link rel="stylesheet" href="style.css" />
@@ -12,10 +12,8 @@
   <style>
     /* =========================
        ABOUT PAGE ONLY
-       (won't affect other pages)
        ========================= */
 
-    /* keep the same project-page baseline */
     body.project{
       background: #0b2438;
       color: #fff;
@@ -28,24 +26,23 @@
       padding: 0 20px 72px;
     }
 
-    /* intro (photo + short bio) */
-    .about-intro{
-      margin: 28px auto 56px;
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 28px;
-      align-items: center;
-      max-width: 920px;
-    }
+   .about-intro{
+  margin: 32px auto 50px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: center;
+  max-width: 920px;
+}
 
-    .about-intro img{
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.16);
-      box-shadow: 0 14px 34px rgba(0,0,0,0.35);
-    }
+.about-intro img{
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+}
 
     .about-intro p{
       margin: 0;
@@ -54,7 +51,6 @@
       color: rgba(230,240,255,0.9);
     }
 
-    /* two-column layout (no boxes) */
     .about-layout{
       display: grid;
       grid-template-columns: 1.35fr 1fr;
@@ -74,7 +70,7 @@
 
     .about-layout ul{
       margin: 0;
-      padding-left: 20px; /* bullets */
+      padding-left: 20px;
     }
 
     .about-layout li{
@@ -87,7 +83,6 @@
       color: rgba(255,255,255,0.98);
     }
 
-    /* sub-bullets inside experience */
     .about-layout li ul{
       margin-top: 10px;
       padding-left: 18px;
@@ -98,21 +93,17 @@
       color: rgba(184,199,217,0.95);
     }
 
-    .muted{
-      opacity: 0.8;
-    }
-
-    /* CV row (clean, optional) */
     .cv-row{
       max-width: 920px;
-      margin: 0 auto 22px;
+      margin: 0 auto 28px;
       display: flex;
       gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    .cv-row a, .cv-row button{
+    .cv-row a,
+    .cv-row button{
       border: 1px solid rgba(230,240,255,0.14);
       background: rgba(255,255,255,0.04);
       color: rgba(230,240,255,0.95);
@@ -123,12 +114,12 @@
       cursor: pointer;
     }
 
-    .cv-row a:hover, .cv-row button:hover{
+    .cv-row a:hover,
+    .cv-row button:hover{
       opacity: 0.9;
       transform: translateY(-1px);
     }
 
-    /* modal (same as your style2, but safe here) */
     .cv-modal{
       position: fixed;
       inset: 0;
@@ -138,7 +129,10 @@
       padding: 1rem;
       z-index: 5000;
     }
-    .cv-modal[hidden]{ display:none; }
+
+    .cv-modal[hidden]{
+      display: none;
+    }
 
     .cv-modal__dialog{
       width: min(100%, 1200px);
@@ -202,52 +196,144 @@
       text-decoration: none;
     }
 
-    /* responsive */
-    @media (max-width: 900px){
-      .about-layout{ grid-template-columns: 1fr; gap: 34px; }
+    .cv-wrap{
+      max-width: 920px;
+      margin: 0 auto 30px;
     }
+
+    @media (max-width: 900px){
+      .about-layout{
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
     @media (max-width: 768px){
       .about-intro{
         grid-template-columns: 1fr;
         text-align: center;
       }
+
       .about-intro img{
         margin: 0 auto;
       }
     }
+
+    .about-bio p{
+  margin-bottom: 14px;
+}
+
+.cv-download{
+  display: inline-block;
+  padding: 12px 22px;   /* 👈 按鈕變大 */
+  font-size: 1.05rem;   /* 👈 字大一點 */
+  border-radius: 15px;
+  border: 1px solid rgba(230,240,255,0.2);
+  color: rgba(230,240,255,0.95);
+  text-decoration: none;
+  background: rgba(255,255,255,0.05);
+  transition: all .2s ease;
+}
+.cv-download:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.08);
+}
+
+ .software-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 16px;
+  margin-top: 12px;
+}
+
+.software-item{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+}
+
+.software-item img{
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  /* border-radius: 10px; */
+  display: block;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.software-item span{
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  font-size: 0.92rem;
+  color: rgba(230,240,255,0.95);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+/* hover 顯示名稱 */
+.software-item:hover span{
+  opacity: 1;
+  transform: translateX(-50%) translateY(18px);
+}
+
+.software-item:hover img{
+  transform: translateY(-6px);
+}
+
+@media (max-width: 768px){
+  .software-grid{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-sub-rotating{
+  margin-top: 16px;
+  height: 52px;              /* 控制可視高度 */
+  overflow: hidden;
+  position: relative;
+}
+
+.rolling-text{
+  display:flex;
+  flex-direction:column;
+  animation: rollUp 12s infinite;
+}
+
+.rolling-text span{
+  height: 52px;
+  line-height: 52px;
+  font-size: 2rem;           /* 👈 大啲 */
+  font-weight: 700;
+  color: rgba(230,240,255,0.92);
+  text-align: center;
+}
+
+/* 5個字句，每句停1秒左右 */
+@keyframes rollUp{
+
+  0%, 20% { transform: translateY(0); }
+
+  25%, 45% { transform: translateY(-52px); }
+
+  50%, 70% { transform: translateY(-104px); }
+
+  75%, 95% { transform: translateY(-156px); }
+
+  100% { transform: translateY(0); }
+
+}
   </style>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('cvModal');
-      const openBtn = document.querySelector('.view-cv');
-      if (!modal || !openBtn) return;
-
-      const closeBtn = modal.querySelector('.cv-close');
-
-      function openModal(e){
-        e?.preventDefault();
-        modal.removeAttribute('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeModal(){
-        modal.setAttribute('hidden','');
-        document.body.style.overflow = '';
-      }
-
-      openBtn.addEventListener('click', openModal);
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-      document.addEventListener('keydown', (e) => {
-        if (!modal.hasAttribute('hidden') && e.key === 'Escape') closeModal();
-      });
-    });
-  </script>
 </head>
 
 <body class="project">
 
-  <!-- fixed nav (same as project pages) -->
+  <!-- fixed nav -->
   <div class="hero-top">
     <div class="hero-top-inner">
       <div class="hero-logo">
@@ -263,36 +349,50 @@
     </div>
   </div>
 
-  <!-- title (same style as project pages) -->
+  <!-- title -->
   <section class="project-title">
     <h1>About Me</h1>
-    <p class="project-sub">Creative Technologies Designer | Interactive Storytelling</p>
+   <div class="project-sub project-sub-rotating">
+  <div class="rolling-text">
+    <span>Creative Technologies Designer</span>
+    <span>Interactive Storyteller</span>
+    <span>UX/UI Designer</span>
+    <span>Motion Graphics Designer</span>
+  </div>
+</div>
   </section>
 
   <main class="about-wrap">
 
-    <!-- intro with photo -->
-    <section class="about-intro">
-      <img src="assets/photo2.png" alt="Portrait of Wing Tung Lam">
-      <p>
-        I’m a Digital Media designer focused on interactive storytelling, animation, and UX/UI.
-        I enjoy building experiences that combine emotional narratives with creative technologies.
-      </p>
-    </section>
+    <!-- intro -->
+<section class="about-intro">
 
-    <!-- optional: CV buttons -->
-    <!-- <div class="cv-row">
-      <button class="view-cv" aria-haspopup="dialog" aria-controls="cvModal">View CV</button>
-      <a href="assets/WingTungLam_CV.pdf" download>Download CV</a>
-      <a href="assets/WingTungLam_CV.pdf" target="_blank" rel="noopener">Open CV</a>
-    </div> -->
+  <img src="assets/photo2.png" alt="Wing Tung Lam">
+
+  <div class="about-bio">
+    <p>
+      I’m a Digital Media designer focused on interactive storytelling,
+      animation, and UX/UI. I enjoy building experiences that combine
+      emotional narratives with creative technologies.
+    </p>
+
+    <a class="cv-download"
+       href="assets/WingTungLam_CV.pdf"
+       target="_blank">
+       Download CV
+    </a>
+  </div>
+
+</section>
+
+
+    <!-- optional CV card -->
 
     <!-- two-column content -->
     <div class="about-layout">
 
       <!-- LEFT -->
       <div class="about-left">
-
         <section>
           <h2>Experience</h2>
           <ul>
@@ -354,30 +454,27 @@
           </ul>
         </section>
 
-<section>
-  <h2>Certifications & Trainings</h2>
-  <ul>
-    <li>Adobe Animate Essential Training (Oct 2025).</li>
-    <li>Moving from Blender to Maya: Layered Animation Workflow (Oct 2025).</li>
-    <li>Unity 2023 Essential Training (Oct 2025).</li>
-    <li>Unity Certified Associate – Game Developer (UI & 2D Games) (Oct 2025).</li>
-    <li>After Effects CC 2023 Essential Training (Feb 2025).</li>
-    <li>Premiere Pro Essential Training 2022–2024 (Feb 2025).</li>
-    <li>Photoshop 2024 Essential Training (Feb 2025).</li>
-    <li>InDesign 2022 Essential Training (Feb 2025).</li>
-    <li>Figma Essential Training: The Basics (Feb 2025).</li>
-    <li>Figma for UX Design (Feb 2025).</li>
-    <li>User Experience for Web Design (Jan 2026).</li>
-    <li>Learning Procreate (Jan 2026).</li>
-  </ul>
-</section>
-
-
+        <section>
+          <h2>Certifications & Trainings</h2>
+          <ul>
+            <li>Adobe Animate Essential Training (Oct 2025).</li>
+            <li>Moving from Blender to Maya: Layered Animation Workflow (Oct 2025).</li>
+            <li>Unity 2023 Essential Training (Oct 2025).</li>
+            <li>Unity Certified Associate – Game Developer (UI & 2D Games) (Oct 2025).</li>
+            <li>After Effects CC 2023 Essential Training (Feb 2025).</li>
+            <li>Premiere Pro Essential Training 2022–2024 (Feb 2025).</li>
+            <li>Photoshop 2024 Essential Training (Feb 2025).</li>
+            <li>InDesign 2022 Essential Training (Feb 2025).</li>
+            <li>Figma Essential Training: The Basics (Feb 2025).</li>
+            <li>Figma for UX Design (Feb 2025).</li>
+            <li>User Experience for Web Design (Jan 2026).</li>
+            <li>Learning Procreate (Jan 2026).</li>
+          </ul>
+        </section>
       </div>
 
       <!-- RIGHT -->
       <div class="about-right">
-
         <section>
           <h2>Education</h2>
           <ul>
@@ -386,10 +483,89 @@
           </ul>
         </section>
 
+<section>
+  <h2>Software</h2>
+
+  <div class="software-grid">
+
+    <div class="software-item">
+      <img src="assets/software/Asset 1.jpg">
+      <span>Photoshop</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 2.jpg">
+      <span>Illustrator</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 3.jpg">
+      <span>Premiere Pro</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 4.jpg">
+      <span>After Effects</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 5.jpg">
+      <span>JavaScript</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 6.jpg">
+      <span>VS Code</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 7.jpg">
+      <span>InDesign</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 8.jpg">
+      <span>Figma</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 9.jpg">
+      <span>Canva</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 10.jpg">
+      <span>Blender</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 14.jpg">
+      <span>Maya</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Asset 19.jpg">
+      <span>Unity</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/AdobeXD.svg.png">
+      <span>Adobe XD</span>
+    </div>
+
+    <div class="software-item">
+      <img src="assets/software/Procreate_icon.png">
+      <span>Procreate</span>
+    </div>
+
+  </div>
+</section>
+
+
         <section>
           <h2>Skills</h2>
           <ul>
-            <li><strong>Creative Tools:</strong> Premiere Pro, After Effects, Photoshop, Illustrator, InDesign, Animate, Figma, Adobe XD, Procreate, Canva, Maya, Blender, Unity.</li>
+            <!-- <li><strong>Creative Tools:</strong> Premiere Pro, After Effects, Photoshop, Illustrator, InDesign, Animate, Figma, Adobe XD, Procreate, Canva, Maya, Blender, Unity.</li> -->
             <li><strong>Technical:</strong> Video Editing; 2D/3D Animation; UX/UI Design; Graphic & Web Design; Coding (HTML, CSS, JavaScript); Modelling.</li>
             <li><strong>Soft:</strong> Team Collaboration; Visual Storytelling; Time Management; Cross-Cultural Communication.</li>
           </ul>
@@ -411,25 +587,11 @@
             <li>Grade 8 Piano (ABRSM).</li>
           </ul>
         </section>
-
       </div>
-    </div>
 
+    </div>
   </main>
 
-  <!-- CV Modal -->
-  <div class="cv-modal" id="cvModal" role="dialog" aria-modal="true" aria-label="CV preview" hidden>
-    <div class="cv-modal__dialog">
-      <button class="cv-close" aria-label="Close CV preview">×</button>
-      <div class="cv-frame">
-        <embed src="assets/WingTungLam_CV.pdf" type="application/pdf" />
-      </div>
-      <div class="cv-modal__bar">
-        <a href="assets/WingTungLam_CV.pdf" download>Download PDF</a>
-        <a href="assets/WingTungLam_CV.pdf" target="_blank" rel="noopener">Open in new tab</a>
-      </div>
-    </div>
-  </div>
 
   <footer>
     <p>© 2026 Wing Tung Lam |
@@ -437,6 +599,7 @@
       <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
+
 
 </body>
 </html>
