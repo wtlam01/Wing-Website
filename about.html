@@ -26,29 +26,46 @@
       padding: 0 20px 72px;
     }
 
-   .about-intro{
-  margin: 32px auto 50px;
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 32px;
-  align-items: center;
-  max-width: 920px;
-}
+    .about-intro{
+      margin: 32px auto 50px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      align-items: center;
+      max-width: 920px;
+    }
 
-.about-intro img{
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.16);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.35);
-}
+    .about-intro img{
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+    }
 
-    .about-intro p{
-      margin: 0;
+    .about-bio p{
+      margin: 0 0 14px;
       line-height: 1.75;
       font-size: 1.05rem;
       color: rgba(230,240,255,0.9);
+    }
+
+    .cv-download{
+      display: inline-block;
+      padding: 12px 22px;
+      font-size: 1.05rem;
+      border-radius: 15px;
+      border: 1px solid rgba(230,240,255,0.2);
+      color: rgba(230,240,255,0.95);
+      text-decoration: none;
+      background: rgba(255,255,255,0.05);
+      transition: all .2s ease;
+    }
+
+    .cv-download:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.08);
     }
 
     .about-layout{
@@ -83,122 +100,115 @@
       color: rgba(255,255,255,0.98);
     }
 
-    .about-layout li ul{
-      margin-top: 10px;
+    /* Experience special layout */
+    .exp-list{
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .exp-item{
+      margin: 0 0 34px;
+    }
+
+    .exp-title{
+      font-size: 1.55rem;
+      font-weight: 800;
+      line-height: 1.25;
+      color: rgba(255,255,255,0.98);
+      margin-bottom: 6px;
+    }
+
+    .exp-meta{
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #8ecbff;
+      margin-bottom: 10px;
+    }
+
+    .exp-item ul{
+      margin-top: 0;
       padding-left: 18px;
     }
 
-    .about-layout li ul li{
-      margin: 0 0 10px;
-      color: rgba(184,199,217,0.95);
+    .exp-item ul li{
+      margin: 0 0 8px;
+      line-height: 1.6;
+      color: rgba(230,240,255,0.92);
     }
 
-    .cv-row{
-      max-width: 920px;
-      margin: 0 auto 28px;
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cv-row a,
-    .cv-row button{
-      border: 1px solid rgba(230,240,255,0.14);
-      background: rgba(255,255,255,0.04);
-      color: rgba(230,240,255,0.95);
-      font-weight: 800;
-      padding: 10px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .cv-row a:hover,
-    .cv-row button:hover{
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-
-    .cv-modal{
-      position: fixed;
-      inset: 0;
+    .software-grid{
       display: grid;
-      place-items: center;
-      background: rgba(0,0,0,0.55);
-      padding: 1rem;
-      z-index: 5000;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px 16px;
+      margin-top: 12px;
     }
 
-    .cv-modal[hidden]{
-      display: none;
-    }
-
-    .cv-modal__dialog{
-      width: min(100%, 1200px);
-      height: 92vh;
-      background: rgba(12,25,40,0.98);
-      border-radius: 14px;
-      border: 1px solid rgba(230,240,255,0.12);
-      box-shadow: 0 18px 44px rgba(0,0,0,0.55);
-      overflow: hidden;
+    .software-item{
+      position: relative;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 90px;
+    }
+
+    .software-item img{
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .software-item span{
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      font-size: 0.92rem;
+      color: rgba(230,240,255,0.95);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .software-item:hover span{
+      opacity: 1;
+      transform: translateX(-50%) translateY(18px);
+    }
+
+    .software-item:hover img{
+      transform: translateY(-6px);
+    }
+
+    .project-sub-rotating{
+      margin-top: 16px;
+      height: 52px;
+      overflow: hidden;
       position: relative;
     }
 
-    .cv-close{
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
-      z-index: 2;
-      width: 36px;
-      height: 36px;
-      border-radius: 999px;
-      border: 1px solid rgba(230,240,255,0.16);
-      cursor: pointer;
-      background: rgba(0,0,0,0.45);
-      color: rgba(230,240,255,0.95);
-      font-size: 22px;
-      line-height: 36px;
-    }
-
-    .cv-frame{
-      flex: 1;
-      background: rgba(255,255,255,0.02);
-      display: block;
-      height: 100%;
-      padding: 0;
-    }
-
-    .cv-frame embed{
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .cv-modal__bar{
+    .rolling-text{
       display: flex;
-      justify-content: flex-end;
-      gap: 0.6rem;
-      padding: 0.8rem;
-      border-top: 1px solid rgba(230,240,255,0.10);
-      background: rgba(255,255,255,0.03);
+      flex-direction: column;
+      animation: rollUp 12s infinite;
     }
 
-    .cv-modal__bar a{
-      border: 1px solid rgba(230,240,255,0.14);
-      background: rgba(255,255,255,0.04);
-      color: rgba(230,240,255,0.95);
-      font-weight: 800;
-      padding: 10px 14px;
-      border-radius: 999px;
-      text-decoration: none;
+    .rolling-text span{
+      height: 52px;
+      line-height: 52px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #f1d9a6;
+      text-align: center;
     }
 
-    .cv-wrap{
-      max-width: 920px;
-      margin: 0 auto 30px;
+    @keyframes rollUp{
+      0%, 20% { transform: translateY(0); }
+      25%, 45% { transform: translateY(-52px); }
+      50%, 70% { transform: translateY(-104px); }
+      75%, 95% { transform: translateY(-156px); }
+      100% { transform: translateY(0); }
     }
 
     @media (max-width: 900px){
@@ -217,117 +227,11 @@
       .about-intro img{
         margin: 0 auto;
       }
+
+      .software-grid{
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
-
-    .about-bio p{
-  margin-bottom: 14px;
-}
-
-.cv-download{
-  display: inline-block;
-  padding: 12px 22px;   /* 👈 按鈕變大 */
-  font-size: 1.05rem;   /* 👈 字大一點 */
-  border-radius: 15px;
-  border: 1px solid rgba(230,240,255,0.2);
-  color: rgba(230,240,255,0.95);
-  text-decoration: none;
-  background: rgba(255,255,255,0.05);
-  transition: all .2s ease;
-}
-.cv-download:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.08);
-}
-
- .software-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px 16px;
-  margin-top: 12px;
-}
-
-.software-item{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 90px;
-}
-
-.software-item img{
-  width: 54px;
-  height: 54px;
-  object-fit: contain;
-  /* border-radius: 10px; */
-  display: block;
-  transition: transform 0.18s ease, opacity 0.18s ease;
-}
-
-.software-item span{
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  font-size: 0.92rem;
-  color: rgba(230,240,255,0.95);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-}
-
-/* hover 顯示名稱 */
-.software-item:hover span{
-  opacity: 1;
-  transform: translateX(-50%) translateY(18px);
-}
-
-.software-item:hover img{
-  transform: translateY(-6px);
-}
-
-@media (max-width: 768px){
-  .software-grid{
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.project-sub-rotating{
-  margin-top: 16px;
-  height: 52px;              /* 控制可視高度 */
-  overflow: hidden;
-  position: relative;
-}
-
-.rolling-text{
-  display:flex;
-  flex-direction:column;
-  animation: rollUp 12s infinite;
-}
-
-.rolling-text span{
-  height: 52px;
-  line-height: 52px;
-  font-size: 2rem;           /* 👈 大啲 */
-  font-weight: 700;
-  color: rgba(230,240,255,0.92);
-  text-align: center;
-}
-
-/* 5個字句，每句停1秒左右 */
-@keyframes rollUp{
-
-  0%, 20% { transform: translateY(0); }
-
-  25%, 45% { transform: translateY(-52px); }
-
-  50%, 70% { transform: translateY(-104px); }
-
-  75%, 95% { transform: translateY(-156px); }
-
-  100% { transform: translateY(0); }
-
-}
   </style>
 </head>
 
@@ -352,41 +256,33 @@
   <!-- title -->
   <section class="project-title">
     <h1>About Me</h1>
-   <div class="project-sub project-sub-rotating">
-  <div class="rolling-text">
-    <span>Creative Technologies Designer</span>
-    <span>Interactive Storyteller</span>
-    <span>UX/UI Designer</span>
-    <span>Motion Graphics Designer</span>
-  </div>
-</div>
+    <div class="project-sub project-sub-rotating">
+      <div class="rolling-text">
+        <span>Creative Technologies Designer</span>
+        <span>Interactive Storyteller</span>
+        <span>UX/UI Designer</span>
+        <span>Motion Graphics Designer</span>
+      </div>
+    </div>
   </section>
 
   <main class="about-wrap">
 
     <!-- intro -->
-<section class="about-intro">
+    <section class="about-intro">
+      <img src="assets/photo2.png" alt="Wing Tung Lam">
 
-  <img src="assets/photo2.png" alt="Wing Tung Lam">
+      <div class="about-bio">
+        <p>
+          I’m a Digital Media designer focused on interactive storytelling, animation, and UX/UI.
+          I enjoy building experiences that combine emotional narratives with creative technologies.
+        </p>
 
-  <div class="about-bio">
-    <p>
-      I’m a Digital Media designer focused on interactive storytelling,
-      animation, and UX/UI. I enjoy building experiences that combine
-      emotional narratives with creative technologies.
-    </p>
-
-    <a class="cv-download"
-       href="assets/WingTungLam_CV.pdf"
-       target="_blank">
-       Download CV
-    </a>
-  </div>
-
-</section>
-
-
-    <!-- optional CV card -->
+        <a class="cv-download" href="assets/WingTungLam_CV.pdf" target="_blank" rel="noopener">
+          Download CV
+        </a>
+      </div>
+    </section>
 
     <!-- two-column content -->
     <div class="about-layout">
@@ -395,196 +291,214 @@
       <div class="about-left">
         <section>
           <h2>Experience</h2>
-          <ul>
-            <li>
-              <strong>Animation Intern</strong> — HRB Education, London (Nov 2025 – Feb 2026)
+          <ul class="exp-list">
+
+            <li class="exp-item">
+              <div class="exp-title">Animation Intern</div>
+              <div class="exp-meta">Nov 2025 – Feb 2026 |  HRB Education, London, UK</div>
               <ul>
-                <li>Produced educational animations for HRB Education’s YouTube channel.</li>
-                <li>Contributed across the workflow: storyboard, asset prep, animation, delivery.</li>
+                <li>Produced educational animations for HRB Education’s YouTube channel</li>
+                <li>Contributed across the workflow: storyboard, asset prep, animation, delivery</li>
               </ul>
             </li>
 
-            <li>
-              <strong>Adobe Student Ambassador</strong> — Global (Nov 2025 – Present)
+            <li class="exp-item">
+              <div class="exp-title">Adobe Student Ambassador</div>
+              <div class="exp-meta">Nov 2025 – Present | Global</div>
               <ul>
-                <li>Promoted Adobe Express through workshops and events.</li>
-                <li>Created digital content to support student creativity and engagement.</li>
+                <li>Promoted Adobe Express through workshops and events</li>
+                <li>Created digital content to support student creativity and engagement</li>
               </ul>
             </li>
 
-            <li>
-              <strong>Animation & Marketing Summer Intern</strong> — Moor Beer Company, Bristol (May – Aug 2025)
+            <li class="exp-item">
+              <div class="exp-title">Animation & Marketing Summer Intern</div>
+              <div class="exp-meta">May 2025 – Aug 2025 | Moor Beer Company, Bristol, UK</div>
               <ul>
-                <li>Produced animated promotional videos and branded social assets.</li>
-                <li>Supported event/product visuals and content workflows.</li>
+                <li>Produced animated promotional videos and branded social assets</li>
+                <li>Supported event and product visuals and content workflows</li>
               </ul>
             </li>
 
-            <li>
-              <strong>Student Ambassador & Student Representative</strong> — UWE Bristol (2025 – Present)
+            <li class="exp-item">
+              <div class="exp-title">Student Ambassador & Student Representative</div>
+              <div class="exp-meta">2025 – Present | UWE Bristol, Bristol, UK</div>
               <ul>
-                <li>Led campus tours and outreach; supported talks and workshops.</li>
-                <li>Liaised between students and staff to improve learning experience.</li>
+                <li>Led campus tours and outreach and supported talks and workshops</li>
+                <li>Liaised between students and staff to improve learning experience</li>
               </ul>
             </li>
 
-            <li>
-              <strong>Auditing Project Student Intern</strong> — UWE Bristol (Oct 2025 – Present)
+            <li class="exp-item">
+              <div class="exp-title">Auditing Project Student Intern</div>
+              <div class="exp-meta">Oct 2025 – Present | UWE Bristol, Bristol, UK</div>
               <ul>
-                <li>Evaluated internal digital communications and provided UX insights.</li>
-                <li>Contributed to reports with actionable recommendations.</li>
+                <li>Evaluated internal digital communications and provided UX insights</li>
+                <li>Contributed to reports with actionable recommendations</li>
               </ul>
             </li>
 
-            <li>
-              <strong>Design Assistant</strong> — CommMiniBus, Northamptonshire (Jan 2024 – May 2025)
+            <li class="exp-item">
+              <div class="exp-title">Design Assistant | CommMiniBus</div>
+              <div class="exp-meta">Jan 2024 – May 2025 | Northamptonshire, UK</div>
               <ul>
-                <li>Designed digital and print marketing materials to support campaigns.</li>
-                <li>Coordinated with stakeholders to meet timelines and brand standards.</li>
+                <li>Designed digital and print marketing materials to support campaigns</li>
+                <li>Coordinated with stakeholders to meet timelines and brand standards</li>
               </ul>
             </li>
 
-            <li>
-              <strong>Social Media Designer</strong> — BCCC, Living Water Fellowship, Bristol (2024 – Present)
+            <li class="exp-item">
+              <div class="exp-title">Social Media Designer</div>
+              <div class="exp-meta">2024 – Present | BCCC, Living Water Fellowship, Bristol, UK</div>
               <ul>
-                <li>Created graphics and motion assets for events.</li>
-                <li>Maintained cohesive brand tone and supported content scheduling.</li>
+                <li>Created graphics and motion assets for events</li>
+                <li>Maintained cohesive brand tone and supported content scheduling</li>
               </ul>
             </li>
+
           </ul>
         </section>
 
         <section>
           <h2>Certifications & Trainings</h2>
           <ul>
-            <li>Adobe Animate Essential Training (Oct 2025).</li>
-            <li>Moving from Blender to Maya: Layered Animation Workflow (Oct 2025).</li>
-            <li>Unity 2023 Essential Training (Oct 2025).</li>
-            <li>Unity Certified Associate – Game Developer (UI & 2D Games) (Oct 2025).</li>
-            <li>After Effects CC 2023 Essential Training (Feb 2025).</li>
-            <li>Premiere Pro Essential Training 2022–2024 (Feb 2025).</li>
-            <li>Photoshop 2024 Essential Training (Feb 2025).</li>
-            <li>InDesign 2022 Essential Training (Feb 2025).</li>
-            <li>Figma Essential Training: The Basics (Feb 2025).</li>
-            <li>Figma for UX Design (Feb 2025).</li>
-            <li>User Experience for Web Design (Jan 2026).</li>
-            <li>Learning Procreate (Jan 2026).</li>
+            <li>Adobe Animate Essential Training (Oct 2025)</li>
+            <li>Moving from Blender to Maya: Layered Animation Workflow (Oct 2025)</li>
+            <li>Unity 2023 Essential Training (Oct 2025)</li>
+            <li>Unity Certified Associate – Game Developer (UI & 2D Games) (Oct 2025)</li>
+            <li>After Effects CC 2023 Essential Training (Feb 2025)</li>
+            <li>Premiere Pro Essential Training 2022–2024 (Feb 2025)</li>
+            <li>Photoshop 2024 Essential Training (Feb 2025)</li>
+            <li>InDesign 2022 Essential Training (Feb 2025)</li>
+            <li>Figma Essential Training: The Basics (Feb 2025)</li>
+            <li>Figma for UX Design (Feb 2025)</li>
+            <li>User Experience for Web Design (Jan 2026)</li>
+            <li>Learning Procreate (Jan 2026)</li>
           </ul>
         </section>
       </div>
 
       <!-- RIGHT -->
       <div class="about-right">
-        <section>
-          <h2>Education</h2>
-          <ul>
-            <li><strong>BSc (Hons) Digital Media</strong> — UWE Bristol (2023–2026).</li>
-            <li><strong>BSc Creative Media</strong> — City University of Hong Kong (2022–2023).</li>
-          </ul>
-        </section>
-
 <section>
-  <h2>Software</h2>
+  <h2>Education</h2>
 
-  <div class="software-grid">
+  <ul class="exp-list">
 
-    <div class="software-item">
-      <img src="assets/software/Asset 1.jpg">
-      <span>Photoshop</span>
-    </div>
+    <li class="exp-item">
+      <div class="exp-title">BSc (Hons) Digital Media</div>
+      <div class="exp-meta">UWE Bristol | 2023–2026</div>
+    </li>
 
-    <div class="software-item">
-      <img src="assets/software/Asset 2.jpg">
-      <span>Illustrator</span>
-    </div>
+    <li class="exp-item">
+      <div class="exp-title">BSc Creative Media</div>
+      <div class="exp-meta">City University of Hong Kong | 2022–2023</div>
+    </li>
 
-    <div class="software-item">
-      <img src="assets/software/Asset 3.jpg">
-      <span>Premiere Pro</span>
-    </div>
+  </ul>
 
-    <div class="software-item">
-      <img src="assets/software/Asset 4.jpg">
-      <span>After Effects</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Asset 5.jpg">
-      <span>JavaScript</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Asset 6.jpg">
-      <span>VS Code</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Asset 7.jpg">
-      <span>InDesign</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Asset 8.jpg">
-      <span>Figma</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Asset 9.jpg">
-      <span>Canva</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Asset 10.jpg">
-      <span>Blender</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Asset 14.jpg">
-      <span>Maya</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Asset 19.jpg">
-      <span>Unity</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/AdobeXD.svg.png">
-      <span>Adobe XD</span>
-    </div>
-
-    <div class="software-item">
-      <img src="assets/software/Procreate_icon.png">
-      <span>Procreate</span>
-    </div>
-
-  </div>
 </section>
 
+        <section>
+          <h2>Software</h2>
+          <div class="software-grid">
+
+                 <div class="software-item">
+              <img src="assets/software/Asset 4.jpg" alt="After Effects icon">
+              <span>After Effects</span>
+            </div>
+
+                 <div class="software-item">
+              <img src="assets/software/Asset 3.jpg" alt="Premiere Pro icon">
+              <span>Premiere Pro</span>
+            </div>
+
+                <div class="software-item">
+              <img src="assets/software/AdobeXD.svg.png" alt="Adobe XD icon">
+              <span>Adobe XD</span>
+            </div>
+
+            <div class="software-item">
+              <img src="assets/software/Asset 1.jpg" alt="Photoshop icon">
+              <span>Photoshop</span>
+            </div>
+
+            <div class="software-item">
+              <img src="assets/software/Asset 2.jpg" alt="Illustrator icon">
+              <span>Illustrator</span>
+            </div>
+
+             <div class="software-item">
+              <img src="assets/software/Asset 7.jpg" alt="InDesign icon">
+              <span>InDesign</span>
+            </div>
+       
+            <div class="software-item">
+              <img src="assets/software/Asset 5.jpg" alt="JavaScript icon">
+              <span>JavaScript</span>
+            </div>
+
+            <div class="software-item">
+              <img src="assets/software/Asset 6.jpg" alt="VS Code icon">
+              <span>VS Code</span>
+            </div>
+
+            <div class="software-item">
+              <img src="assets/software/Asset 8.jpg" alt="Figma icon">
+              <span>Figma</span>
+            </div>
+
+            <div class="software-item">
+              <img src="assets/software/Asset 9.jpg" alt="Canva icon">
+              <span>Canva</span>
+            </div>
+
+            <div class="software-item">
+              <img src="assets/software/Asset 10.jpg" alt="Blender icon">
+              <span>Blender</span>
+            </div>
+
+            <div class="software-item">
+              <img src="assets/software/Asset 14.jpg" alt="Maya icon">
+              <span>Maya</span>
+            </div>
+
+            <div class="software-item">
+              <img src="assets/software/Asset 19.jpg" alt="Unity icon">
+              <span>Unity</span>
+            </div>
+
+
+            <div class="software-item">
+              <img src="assets/software/Procreate_icon.png" alt="Procreate icon">
+              <span>Procreate</span>
+            </div>
+
+          </div>
+        </section>
 
         <section>
           <h2>Skills</h2>
           <ul>
-            <!-- <li><strong>Creative Tools:</strong> Premiere Pro, After Effects, Photoshop, Illustrator, InDesign, Animate, Figma, Adobe XD, Procreate, Canva, Maya, Blender, Unity.</li> -->
-            <li><strong>Technical:</strong> Video Editing; 2D/3D Animation; UX/UI Design; Graphic & Web Design; Coding (HTML, CSS, JavaScript); Modelling.</li>
-            <li><strong>Soft:</strong> Team Collaboration; Visual Storytelling; Time Management; Cross-Cultural Communication.</li>
+            <li><strong>Technical:</strong> Video Editing; 2D/3D Animation; UX/UI Design; Graphic & Web Design; Coding (HTML, CSS, JavaScript); Modelling</li>
+            <li><strong>Soft:</strong> Team Collaboration; Visual Storytelling; Time Management; Cross-Cultural Communication</li>
           </ul>
         </section>
 
         <section>
           <h2>Languages</h2>
           <ul>
-            <li>Cantonese — Native</li>
-            <li>Mandarin — Fluent</li>
-            <li>English — Fluent</li>
+            <li>Cantonese</li>
+            <li>Mandarin</li>
+            <li>English</li>
           </ul>
         </section>
 
         <section>
           <h2>Additional Qualifications</h2>
           <ul>
-            <li>Emergency First Aid Certificate (May 2025).</li>
-            <li>Grade 8 Piano (ABRSM).</li>
+            <li>Emergency First Aid Certificate (May 2025)</li>
+            <li>Grade 8 Piano (ABRSM)</li>
           </ul>
         </section>
       </div>
@@ -592,14 +506,12 @@
     </div>
   </main>
 
-
   <footer>
     <p>© 2026 Wing Tung Lam |
       <a href="mailto:wingtung0101@gmail.com">Email</a> |
       <a href="https://www.linkedin.com/in/winglwt" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </footer>
-
 
 </body>
 </html>
