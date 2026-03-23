@@ -369,6 +369,33 @@ body.project{
 /* Hero */
 .project-hero{
   position: relative;
+  height: 50vh;
+  min-height: 320px;
+  width: 100%;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center 45%;
+  background-repeat: no-repeat;
+  background-color: #0b2438;
+  overflow: hidden;
+  border: 0;
+
+  animation: heroFloat 12s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0% {
+    background-position: center 45%;
+  }
+  50% {
+    background-position: center 55%;
+  }
+  100% {
+    background-position: center 45%;
+  }
+}
+/* .project-hero{
+  position: relative;
   height: 32vh;
   width: 100%;
   background-image: var(--hero-img);
@@ -379,7 +406,7 @@ body.project{
   border: 0;
   box-shadow: none;
   outline: 0;
-}
+} */
 
 .project-hero__shade{
   position: absolute;
