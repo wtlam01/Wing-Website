@@ -232,6 +232,45 @@
         grid-template-columns: repeat(3, 1fr);
       }
     }
+
+    .accordion-list details{
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding: 0 0 18px;
+}
+
+.accordion-list summary{
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding-right: 30px;
+}
+
+.accordion-list summary::-webkit-details-marker{
+  display: none;
+}
+
+.accordion-list summary::after{
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 4px;
+  font-size: 1.4rem;
+  color: #4fd1c5;
+  font-weight: 700;
+}
+
+.accordion-list details[open] summary::after{
+  content: "−";
+}
+
+.accordion-list .exp-title,
+.accordion-list .exp-meta{
+  display: block;
+}
+
+.accordion-list details ul{
+  margin-top: 12px;
+}
   </style>
 </head>
 
@@ -290,115 +329,300 @@
       <!-- LEFT -->
       <div class="about-left">
         <section>
+  <section>
   <h2>Experience</h2>
 
-  <ul class="exp-list">
+  <ul class="exp-list accordion-list">
 
     <li class="exp-item">
-      <div class="exp-title">Youth Content Creator</div>
-      <div class="exp-meta">Jul 2026 – Present | Creative Youth Network, Bristol, UK</div>
-      <ul>
-        <li>Produced long-form video content on issues affecting young people across Bristol.</li>
-        <li>Created social media content with the Digital Content Coordinator to increase audience engagement.</li>
-        <li>Researched, planned and edited multimedia content through ethical digital storytelling.</li>
-      </ul>
+      <details open>
+        <summary>
+          <span class="exp-title">Youth Content Creator</span>
+          <span class="exp-meta">Jul 2026 – Present | Creative Youth Network, Bristol, UK</span>
+        </summary>
+        <ul>
+          <li>Produce long-form digital content to amplify the voices and experiences of young people across Bristol.</li>
+          <li>Research, plan, film and edit multimedia content from concept to final delivery.</li>
+          <li>Create supporting short-form social media content to extend audience reach.</li>
+          <li>Apply ethical storytelling, safeguarding, and consent processes.</li>
+        </ul>
+      </details>
     </li>
-    
-<li class="exp-item">
-  <div class="exp-title">Freelance Media Producer</div>
-  <div class="exp-meta">University of the West of England, Bristol | Jul 2026 – Present</div>
 
-  <ul class="exp-points">
-    <li>Produce promotional and documentary-style videos, managing filming, interviews, editing, and post-production.</li>
-    <li>Create original characters, motion graphics, illustrations, and visual assets for digital storytelling.</li>
-    <li>Collaborate with university staff to create engaging content for outreach, marketing, and student engagement.</li>
-  </ul>
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Freelance Media Producer</span>
+          <span class="exp-meta">Jul 2026 – Present | University of the West of England, Bristol</span>
+        </summary>
+        <ul>
+          <li>Produce promotional and documentary-style videos, managing filming, interviews, editing, and post-production.</li>
+          <li>Create original characters, motion graphics, illustrations, and visual assets for digital storytelling.</li>
+          <li>Collaborate with university staff to deliver engaging content for outreach, marketing, and student engagement.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Summer Media Production Intern</span>
+          <span class="exp-meta">Jul 2026 – Present | Creative Technology Lab, UWE Bristol</span>
+        </summary>
+        <ul>
+          <li>Supported the New Normal Day workshop exploring Generative AI and professional practice.</li>
+          <li>Assisted with camera operation, lighting setup, and on-site filming.</li>
+          <li>Managed post-production using Premiere Pro and After Effects.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+  <details>
+    <summary>
+      <span class="exp-title">Freelance Event Marshal</span>
+      <span class="exp-meta">Jul 2026 – Present | ATW Events</span>
+    </summary>
+
+    <ul>
+      <li>
+        Support live sporting events by directing and encouraging athletes
+        along designated course routes.
+      </li>
+
+      <li>
+        Follow event briefings and safety procedures to support smooth and
+        efficient event delivery.
+      </li>
+
+      <li>
+        Communicate with athletes, event staff, and the public in fast-paced
+        outdoor environments.
+      </li>
+
+      <li>
+        Develop teamwork, situational awareness, and confidence in live event
+        operations.
+      </li>
+    </ul>
+  </details>
 </li>
 
     <li class="exp-item">
-      <div class="exp-title">Summer Media Production Intern</div>
-      <div class="exp-meta">Jul 2026 – Present | Creative Technology Lab, UWE Bristol, UK</div>
-      <ul>
-        <li>Supported the planning and delivery of the <strong>New Normal Day</strong> workshop exploring the impact of Generative AI.</li>
-        <li>Assisted with video production, including camera operation, lighting setup and on-site filming.</li>
-        <li>Edited documentary-style event videos using Adobe Premiere Pro and After Effects.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Administrative & Media Intern</span>
+          <span class="exp-meta">Jan 2026 – Present | Alpha, Hong Kong</span>
+        </summary>
+        <ul>
+          <li>Supported media and administrative tasks across social media, websites, and digital resources.</li>
+          <li>Created visuals, video materials, slides, and branded Canva templates.</li>
+          <li>Assisted with digital content for Alpha programmes and platform guidance.</li>
+        </ul>
+      </details>
     </li>
 
     <li class="exp-item">
-      <div class="exp-title">Administrative & Media Intern</div>
-      <div class="exp-meta">Jan 2026 – Present | Alpha, Hong Kong</div>
-      <ul>
-        <li>Supported media and administrative tasks across social media, websites and digital resources.</li>
-        <li>Created visual assets and short-form video content for online communication.</li>
-        <li>Applied design and visual communication principles to improve clarity, consistency and engagement.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Adobe Product Testing Participant</span>
+          <span class="exp-meta">Feb 2026 – Mar 2026 | Adobe Prerelease Programme</span>
+        </summary>
+        <ul>
+          <li>Tested prerelease digital learning tools in academic contexts.</li>
+          <li>Provided structured feedback on usability, workflow clarity, and learning support.</li>
+          <li>Recognised by Adobe Education for clear and useful product feedback.</li>
+        </ul>
+      </details>
     </li>
 
     <li class="exp-item">
-      <div class="exp-title">Animation Intern</div>
-      <div class="exp-meta">Nov 2025 – Present | HRB Education, London, UK</div>
-      <ul>
-        <li>Produced educational animation videos for HRB Education's YouTube channel.</li>
-        <li>Worked across the full animation workflow, including storyboarding, asset preparation, animation and delivery.</li>
-        <li>Created motion graphics in Adobe After Effects to communicate complex topics clearly.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Animation Intern</span>
+          <span class="exp-meta">Nov 2025 – Jul 2026 | HRB Education, London</span>
+        </summary>
+        <ul>
+          <li>Produced educational animation videos for HRB Education’s YouTube channel.</li>
+          <li>Worked across concept, storyboard, asset preparation, animation, and final delivery.</li>
+          <li>Used After Effects and motion graphics to communicate educational content clearly.</li>
+        </ul>
+      </details>
     </li>
 
     <li class="exp-item">
-      <div class="exp-title">Adobe Student Ambassador</div>
-      <div class="exp-meta">Nov 2025 – Present | Adobe (Global)</div>
-      <ul>
-        <li>Promoted Adobe Express through workshops, campus events and peer engagement.</li>
-        <li>Created digital content to support student creativity and strengthen brand visibility.</li>
-        <li>Collaborated with Adobe's education team and fellow ambassadors on creative initiatives.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Adobe Student Ambassador</span>
+          <span class="exp-meta">Nov 2025 – Present | Adobe Global</span>
+        </summary>
+        <ul>
+          <li>Promoted Adobe Express through workshops, campus events, and peer engagement.</li>
+          <li>Created digital content to support student creativity and brand visibility.</li>
+          <li>Collaborated with Adobe’s education team and fellow ambassadors.</li>
+        </ul>
+      </details>
     </li>
 
     <li class="exp-item">
-      <div class="exp-title">Animation & Marketing Summer Intern</div>
-      <div class="exp-meta">May 2025 – Aug 2025 | Moor Beer Company, Bristol, UK</div>
-      <ul>
-        <li>Produced animated promotional videos and social media assets.</li>
-        <li>Collaborated with the marketing team to develop event and product visuals.</li>
-        <li>Supported content planning and video production workflows.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Freelance Designer</span>
+          <span class="exp-meta">Nov 2025 | MJP Electrical, Bristol</span>
+        </summary>
+        <ul>
+          <li>Redesigned the company’s 2026 Partner Overview document.</li>
+          <li>Improved image quality, layout clarity, emotional messaging, and visual hierarchy.</li>
+          <li>Delivered a polished brand document based on client requirements.</li>
+        </ul>
+      </details>
     </li>
 
     <li class="exp-item">
-      <div class="exp-title">Student Ambassador & Student Representative</div>
-      <div class="exp-meta">2025 – Present | UWE Bristol, Bristol, UK</div>
-      <ul>
-        <li>Led campus tours and outreach events for prospective students.</li>
-        <li>Represented students and worked with academic staff to improve the learning experience.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Auditing Project Student Intern</span>
+          <span class="exp-meta">Oct 2025 – Jun 2026 | UWE Bristol</span>
+        </summary>
+        <ul>
+          <li>Evaluated internal digital communication systems and student-facing resources.</li>
+          <li>Provided UX insights and recommendations to improve clarity and accessibility.</li>
+          <li>Contributed to audit reports using qualitative and quantitative analysis.</li>
+        </ul>
+      </details>
     </li>
 
     <li class="exp-item">
-      <div class="exp-title">Auditing Project Student Intern</div>
-      <div class="exp-meta">Oct 2025 – Present | UWE Bristol, Bristol, UK</div>
-      <ul>
-        <li>Evaluated internal digital communications and student-facing resources.</li>
-        <li>Provided UX recommendations supported by qualitative and quantitative analysis.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Class Assistant</span>
+          <span class="exp-meta">Oct 2025 – Present | Kumon, Bristol</span>
+        </summary>
+        <ul>
+          <li>Supported children with Maths and English exercises.</li>
+          <li>Marked work and gave feedback to build confidence and independent study habits.</li>
+        </ul>
+      </details>
     </li>
 
     <li class="exp-item">
-      <div class="exp-title">Design Assistant</div>
-      <div class="exp-meta">Jan 2024 – May 2025 | CommMiniBus, Northamptonshire, UK</div>
-      <ul>
-        <li>Designed digital and print marketing materials, including posters and promotional graphics.</li>
-        <li>Worked with stakeholders to maintain brand consistency and meet project deadlines.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Animation & Marketing Summer Intern</span>
+          <span class="exp-meta">May 2025 – Aug 2025 | Moor Beer Company, Bristol</span>
+        </summary>
+        <ul>
+          <li>Produced animated promotional videos and branded social media assets.</li>
+          <li>Designed event and product visuals with the marketing team.</li>
+          <li>Created 3D product adverts using Maya, After Effects, and Premiere Pro.</li>
+        </ul>
+      </details>
     </li>
 
     <li class="exp-item">
-      <div class="exp-title">Social Media Designer</div>
-      <div class="exp-meta">2024 – Present | BCCC, Living Water Fellowship, Bristol, UK</div>
-      <ul>
-        <li>Created graphics and motion assets for church events and social media.</li>
-        <li>Maintained a consistent visual identity across digital content.</li>
-      </ul>
+      <details>
+        <summary>
+          <span class="exp-title">Student Ambassador</span>
+          <span class="exp-meta">Jan 2025 – Present | UWE Bristol</span>
+        </summary>
+        <ul>
+          <li>Represented UWE at outreach events, campus tours, and course talks.</li>
+          <li>Supported creative workshops and Q&A sessions for visiting students.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Student Representative</span>
+          <span class="exp-meta">Sept 2025 – Jun 2026 | UWE Bristol</span>
+        </summary>
+        <ul>
+          <li>Acted as a liaison between Digital Media students and academic staff.</li>
+          <li>Represented student feedback in meetings and course discussions.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Independent Media & Chinese Language Instructor</span>
+          <span class="exp-meta">Jul 2025 – Present | Cubbies Language Learning Centre, Bristol</span>
+        </summary>
+        <ul>
+          <li>Delivered Chinese lessons using visual storytelling, games, and interactive activities.</li>
+          <li>Designed teaching aids, posters, and multimedia materials.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Social Media Team Leader</span>
+          <span class="exp-meta">2024 – 2026 | BCCC, Living Water Fellowship, Bristol</span>
+        </summary>
+        <ul>
+          <li>Led the social media design team in creating graphics and motion visuals.</li>
+          <li>Delegated workloads and ensured timely delivery of visual content.</li>
+          <li>Maintained cohesive visual identity across platforms.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Secretary</span>
+          <span class="exp-meta">2025 – 2026 | BCCC, Living Water Fellowship, Bristol</span>
+        </summary>
+        <ul>
+          <li>Recorded meeting minutes and supported team communication.</li>
+          <li>Coordinated logistics for fellowship events and activities.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Design Assistant</span>
+          <span class="exp-meta">Jan 2024 – May 2025 | CommMiniBus, Northamptonshire</span>
+        </summary>
+        <ul>
+          <li>Designed digital and print marketing materials, posters, and product visuals.</li>
+          <li>Contributed to UX/UI design for an in-bus display interface.</li>
+          <li>Worked with stakeholders to maintain project timelines and brand standards.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Promotion Secretary</span>
+          <span class="exp-meta">2022 – 2023 | The Climbing Society, City University of Hong Kong</span>
+        </summary>
+        <ul>
+          <li>Designed event posters and managed social media promotion.</li>
+          <li>Supported event communication, logistics, and student community engagement.</li>
+        </ul>
+      </details>
+    </li>
+
+    <li class="exp-item">
+      <details>
+        <summary>
+          <span class="exp-title">Athletics Assistant Coach</span>
+          <span class="exp-meta">2022 – 2023 | Private Employer, Hong Kong</span>
+        </summary>
+        <ul>
+          <li>Coached children aged 4–10 in running techniques and physical fitness.</li>
+          <li>Created age-appropriate activities to encourage teamwork and confidence.</li>
+        </ul>
+      </details>
     </li>
 
   </ul>
