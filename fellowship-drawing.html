@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Fellowship Design Works - Wing Tung Lam</title>
+
+  <meta
+    name="description"
+    content="Fellowship poster, social media and digital illustration work by Wing Tung Lam."
+  />
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style2.css"/>
+  <link rel="stylesheet" href="style3.css"/>
+
+  <style>
+
+    /* =========================================
+       FELLOWSHIP DRAWING PAGE ONLY
+       ========================================= */
+
+    .fellowship-intro{
+      max-width: 720px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .fellowship-intro p{
+      color: var(--text-muted);
+    }
+
+
+    /* =========================
+       MASONRY GALLERY
+       ========================= */
+
+    .fd-grid{
+      column-count: 3;
+      column-gap: 1.2rem;
+
+      max-width: 980px;
+      margin: 18px auto 0;
+    }
+
+    .fd-grid figure{
+      break-inside: avoid;
+      margin: 0 0 1.5rem;
+    }
+
+    .fd-item{
+      width: 100%;
+      padding: 0;
+      border: 0;
+
+      display: block;
+
+      background: transparent;
+      cursor: zoom-in;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 10px 26px rgba(0,0,0,0.22);
+    }
+
+    .fd-item img{
+      width: 100%;
+      height: auto;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition: transform .25s ease;
+    }
+
+    .fd-item:hover img{
+      transform: scale(1.02);
+    }
+
+
+    /* captions */
+
+    .fd-grid figcaption{
+      margin-top: .5rem;
+
+      text-align: center;
+
+      font-size: .9rem;
+
+      color: rgba(184,199,217,.8);
+    }
+
+
+    /* =========================
+       OTHER WORK LINK
+       ========================= */
+
+    .other-work{
+      max-width: 720px;
+
+      margin: 70px auto 30px;
+
+      padding-top: 35px;
+
+      border-top:
+        1px solid rgba(255,255,255,.12);
+
+      text-align: center;
+    }
+
+    .other-work h2{
+      margin-bottom: 10px;
+    }
+
+    .other-work p{
+      margin-top: 0;
+
+      color: var(--text-muted);
+    }
+
+    .other-work-btn{
+      display: inline-block;
+
+      margin-top: 12px;
+
+      padding: 11px 20px;
+
+      border-radius: 999px;
+
+      border:
+        1px solid rgba(255,255,255,.18);
+
+      background:
+        rgba(79,209,197,.15);
+
+      color: #fff;
+
+      text-decoration: none;
+
+      font-weight: 700;
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+    }
+
+    .other-work-btn:hover{
+      transform: translateY(-2px);
+
+      background:
+        rgba(79,209,197,.25);
+    }
+
+
+    /* =========================
+       LIGHTBOX
+       ========================= */
+
+    .fd-lb{
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 4000;
+
+      display: none;
+    }
+
+    .fd-lb.open{
+      display: block;
+    }
+
+    .fd-lb__backdrop{
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        rgba(0,0,0,.82);
+
+      backdrop-filter: blur(6px);
+    }
+
+    .fd-lb__panel{
+      position: relative;
+
+      z-index: 1;
+
+      width:
+        min(900px, 90vw);
+
+      margin:
+        95px auto 0;
+
+      max-height:
+        calc(100vh - 130px);
+
+      overflow: auto;
+
+      background:
+        rgba(10,18,26,.9);
+
+      box-shadow:
+        0 18px 50px rgba(0,0,0,.5);
+    }
+
+    .fd-lb__img{
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+    .fd-lb__cap{
+      padding: 12px 15px;
+
+      text-align: center;
+
+      color:
+        rgba(255,255,255,.8);
+    }
+
+    .fd-lb__close{
+      position: absolute;
+
+      top: 10px;
+      right: 10px;
+
+      width: 40px;
+      height: 40px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(255,255,255,.3);
+
+      background:
+        rgba(0,0,0,.55);
+
+      color: white;
+
+      font-size: 18px;
+
+      cursor: pointer;
+
+      z-index: 2;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (max-width: 900px){
+
+      .fd-grid{
+        column-count: 2;
+      }
+
+    }
+
+    @media (max-width: 560px){
+
+      .fd-grid{
+        column-count: 1;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body class="project">
+
+
+  <!-- =========================
+       NAV
+       ========================= -->
+
+  <div class="hero-top">
+
+    <div class="hero-top-inner">
+
+      <div class="hero-logo">
+        <a href="index.html">
+          Wing's Website
+        </a>
+      </div>
+
+      <nav class="hero-nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="portfolio.html">
+          Projects
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       TITLE
+       ========================= -->
+
+  <section class="project-title">
+
+    <h1>Fellowship Design Works</h1>
+
+    <p class="project-sub">
+      Illustration · Social Media · Event Promotion
+    </p>
+
+  </section>
+
+
+
+  <!-- =========================
+       MAIN
+       ========================= -->
+
+  <main class="project-main">
+
+
+    <!-- INTRO -->
+
+    <section class="project-block">
+
+      <div class="fellowship-intro">
+
+        <h2>Designing for Community</h2>
+
+        <p>
+          A collection of illustrations, posters and social media
+          graphics created for fellowship events, activities and
+          seasonal messages.
+        </p>
+
+        <p>
+          The designs explore playful illustration and visual
+          storytelling while maintaining a warm and consistent
+          visual identity across different communications.
+        </p>
+
+        <p>
+          <strong>Tools:</strong>
+          Procreate · Adobe Photoshop · Canva
+        </p>
+
+      </div>
+
+
+      <!-- GALLERY -->
+
+      <div
+        id="fellowshipGrid"
+        class="fd-grid">
+      </div>
+
+    </section>
+
+
+
+    <!-- OTHER ILLUSTRATION WORK -->
+
+    <section class="other-work">
+
+      <h2>Personal Illustrations</h2>
+
+      <p>
+        I also create personal digital illustrations exploring
+        everyday moments, emotions and playful characters.
+      </p>
+
+      <a
+        class="other-work-btn"
+        href="digital-drawing.html">
+
+        View Personal Illustrations →
+
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       LIGHTBOX
+       ========================= -->
+
+  <div
+    id="fdLightbox"
+    class="fd-lb"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image preview"
+    hidden>
+
+    <div
+      class="fd-lb__backdrop"
+      data-close>
+    </div>
+
+
+    <figure class="fd-lb__panel">
+
+      <button
+        class="fd-lb__close"
+        type="button"
+        data-close
+        aria-label="Close">
+
+        ✕
+
+      </button>
+
+
+      <img
+        id="fdLbImg"
+        class="fd-lb__img"
+        alt="">
+
+
+      <figcaption
+        id="fdLbCap"
+        class="fd-lb__cap">
+      </figcaption>
+
+    </figure>
+
+  </div>
+
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <p>
+
+      © 2026 Wing Tung Lam |
+
+      <a href="mailto:wingtung0101@gmail.com">
+        Email
+      </a>
+
+      |
+
+      <a
+        href="https://www.linkedin.com/in/winglwt"
+        target="_blank"
+        rel="noopener">
+
+        LinkedIn
+
+      </a>
+
+    </p>
+
+  </footer>
+
+
+
+  <!-- =========================
+       SCRIPT
+       ========================= -->
+
+  <script>
+
+    /* -----------------------------------------
+       Fellowship images
+
+       fellowship_01.PNG
+       fellowship_02.PNG
+       ...
+       fellowship_18.PNG
+       ----------------------------------------- */
+
+    const fellowshipFiles =
+      Array.from(
+        { length: 18 },
+        (_, i) =>
+          `fellowship_${String(i + 1).padStart(2,'0')}.PNG`
+      );
+
+
+    /* Optional custom captions */
+
+    const CAPTIONS = {
+
+      // Examples:
+      // fellowship_01: "Christmas Fellowship Poster",
+      // fellowship_02: "Weekly Gathering Promotion",
+      // fellowship_03: "Bible Study Social Graphic"
+
+    };
+
+
+    function niceCaption(key){
+
+      if(CAPTIONS[key]){
+        return CAPTIONS[key];
+      }
+
+      const number =
+        key.split('_')[1];
+
+      return `Fellowship Design #${number}`;
+    }
+
+
+
+    /* -----------------------------------------
+       CREATE GALLERY
+       ----------------------------------------- */
+
+    function makeGrid(){
+
+      const wrap =
+        document.getElementById(
+          'fellowshipGrid'
+        );
+
+
+      fellowshipFiles.forEach(name => {
+
+        const key =
+          name.replace(/\.[^.]+$/, '');
+
+        const caption =
+          niceCaption(key);
+
+
+        const figure =
+          document.createElement(
+            'figure'
+          );
+
+
+        const button =
+          document.createElement(
+            'button'
+          );
+
+        button.className =
+          'fd-item';
+
+        button.type =
+          'button';
+
+        button.setAttribute(
+          'aria-label',
+          'Open ' + caption
+        );
+
+
+        const image =
+          document.createElement(
+            'img'
+          );
+
+        image.loading =
+          'lazy';
+
+        image.src =
+          `assets/digital/${name}`;
+
+        image.alt =
+          caption;
+
+
+        button.appendChild(
+          image
+        );
+
+
+        button.addEventListener(
+          'click',
+          () => {
+
+            openLightbox(
+              image.src,
+              caption
+            );
+
+          }
+        );
+
+
+        const figcaption =
+          document.createElement(
+            'figcaption'
+          );
+
+        figcaption.textContent =
+          caption;
+
+
+        figure.appendChild(
+          button
+        );
+
+        figure.appendChild(
+          figcaption
+        );
+
+        wrap.appendChild(
+          figure
+        );
+
+      });
+
+    }
+
+
+
+    /* -----------------------------------------
+       LIGHTBOX
+       ----------------------------------------- */
+
+    const lightbox =
+      document.getElementById(
+        'fdLightbox'
+      );
+
+    const lightboxImage =
+      document.getElementById(
+        'fdLbImg'
+      );
+
+    const lightboxCaption =
+      document.getElementById(
+        'fdLbCap'
+      );
+
+
+    function openLightbox(
+      src,
+      caption
+    ){
+
+      lightboxImage.src =
+        src;
+
+      lightboxImage.alt =
+        caption;
+
+      lightboxCaption.textContent =
+        caption;
+
+      lightbox.hidden =
+        false;
+
+      lightbox.classList.add(
+        'open'
+      );
+
+      document.body.style.overflow =
+        'hidden';
+
+    }
+
+
+    function closeLightbox(){
+
+      lightbox.classList.remove(
+        'open'
+      );
+
+      lightbox.hidden =
+        true;
+
+      document.body.style.overflow =
+        '';
+
+    }
+
+
+    lightbox.addEventListener(
+      'click',
+      event => {
+
+        if(
+          event.target.matches(
+            '[data-close]'
+          )
+        ){
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      'keydown',
+      event => {
+
+        if(
+          !lightbox.hidden &&
+          event.key === 'Escape'
+        ){
+
+          closeLightbox();
+
+        }
+
+      }
+    );
+
+
+    /* BUILD */
+
+    makeGrid();
+
+  </script>
+
+
+</body>
+</html>
