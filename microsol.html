@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Microsol Website Redesign - Wing Tung Lam</title>
+
+  <meta
+    name="description"
+    content="Microsol website redesign — UX research, user testing, UI design and Squarespace development by Wing Tung Lam."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="style3.css" />
+
+  <!-- =========================================================
+       MICROSOL PAGE ONLY
+       These styles will not affect your other project pages.
+  ========================================================== -->
+  <style>
+
+    /* =========================================================
+       PAGE
+    ========================================================== */
+
+    body.microsol-page{
+      margin:0;
+      background:#102a43;
+      color:#fff;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================== */
+
+    .microsol-hero{
+      position:relative;
+
+      width:100%;
+      height:55vh;
+      min-height:400px;
+
+      background-image:url("assets/microsol/hero.png");
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+
+      overflow:hidden;
+    }
+
+    .microsol-hero::after{
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(5,18,30,.08),
+          rgba(5,18,30,.72)
+        );
+    }
+
+
+    /* =========================================================
+       MAIN LAYOUT
+    ========================================================== */
+
+    .micro-main{
+      width:100%;
+      max-width:1100px;
+
+      margin:0 auto;
+
+      padding:
+        0 28px 100px;
+
+      box-sizing:border-box;
+    }
+
+    .micro-section{
+      padding:90px 0;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.10);
+    }
+
+    .micro-text{
+      width:100%;
+      max-width:720px;
+
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .micro-text h1{
+      margin:
+        0 0 18px;
+
+      font-size:
+        clamp(2.8rem,6vw,5rem);
+
+      line-height:1.05;
+
+      color:#fff;
+    }
+
+    .micro-text h2{
+      margin:
+        0 0 20px;
+
+      font-size:
+        clamp(2rem,4vw,3rem);
+
+      line-height:1.15;
+
+      color:#fff;
+    }
+
+    .micro-text h3{
+      margin:
+        0 0 14px;
+
+      font-size:
+        clamp(1.35rem,2vw,1.7rem);
+
+      color:#fff;
+    }
+
+    .micro-text p{
+      margin:
+        0 0 16px;
+
+      color:#b8c7d9;
+
+      font-size:1rem;
+      line-height:1.75;
+    }
+
+
+    /* =========================================================
+       SECTION LABEL
+    ========================================================== */
+
+    .micro-label{
+      display:block;
+
+      margin-bottom:12px;
+
+      color:#4fd1c5;
+
+      font-size:.8rem;
+      font-weight:800;
+
+      letter-spacing:1.5px;
+
+      text-transform:uppercase;
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================== */
+
+    .micro-intro{
+      padding-top:80px;
+    }
+
+    .micro-subtitle{
+      margin-bottom:28px !important;
+
+      color:#7cc7ff !important;
+
+      font-size:1.15rem !important;
+      font-weight:700;
+    }
+
+
+    /* =========================================================
+       PROJECT INFO
+    ========================================================== */
+
+    .micro-info{
+      width:100%;
+      max-width:900px;
+
+      margin:
+        45px auto 0;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap:20px;
+
+      padding:
+        25px 0;
+
+      border-top:
+        1px solid rgba(255,255,255,.12);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.12);
+    }
+
+    .micro-info div{
+      display:flex;
+      flex-direction:column;
+
+      gap:6px;
+    }
+
+    .micro-info span{
+      color:#7cc7ff;
+
+      font-size:.76rem;
+      font-weight:700;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+    }
+
+    .micro-info strong{
+      color:#fff;
+
+      font-size:.95rem;
+      line-height:1.45;
+    }
+
+
+    /* =========================================================
+       IMAGES
+    ========================================================== */
+
+    .micro-image{
+      width:100%;
+      max-width:900px;
+
+      margin:
+        40px auto 0;
+    }
+
+    .micro-image img{
+      display:block;
+
+      width:100%;
+      height:auto;
+
+      box-shadow:
+        0 14px 35px rgba(0,0,0,.25);
+    }
+
+
+    /* TWO IMAGE GRID */
+
+    .micro-image-grid{
+      width:100%;
+      max-width:900px;
+
+      margin:
+        40px auto 0;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+      gap:18px;
+
+      align-items:start;
+    }
+
+    .micro-image-grid figure{
+      margin:0;
+    }
+
+    .micro-image-grid img{
+      display:block;
+
+      width:100%;
+      height:auto;
+
+      box-shadow:
+        0 14px 35px rgba(0,0,0,.25);
+    }
+
+    .micro-caption{
+      margin-top:10px;
+
+      color:#9fb4c9;
+
+      font-size:.88rem;
+
+      text-align:center;
+    }
+
+
+    /* =========================================================
+       SUBSECTION
+    ========================================================== */
+
+    .micro-subsection{
+      margin-top:65px;
+    }
+
+
+    /* =========================================================
+       CHALLENGE CARDS
+    ========================================================== */
+
+    .micro-problems{
+      width:100%;
+      max-width:900px;
+
+      margin:
+        45px auto 0;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:16px;
+    }
+
+    .micro-problem{
+      padding:26px;
+
+      background:#143454;
+
+      border:
+        1px solid rgba(255,255,255,.08);
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,.12);
+    }
+
+    .micro-problem > span{
+      color:#4fd1c5;
+
+      font-size:.8rem;
+      font-weight:800;
+    }
+
+    .micro-problem h3{
+      margin:
+        12px 0 10px;
+
+      color:#fff;
+
+      font-size:1.15rem;
+    }
+
+    .micro-problem p{
+      margin:0;
+
+      color:#b8c7d9;
+
+      font-size:.92rem;
+      line-height:1.6;
+    }
+
+
+    /* =========================================================
+       UX PROCESS
+    ========================================================== */
+
+    .micro-process{
+      width:100%;
+      max-width:950px;
+
+      margin:
+        55px auto 0;
+
+      display:flex;
+
+      justify-content:center;
+      align-items:center;
+
+      flex-wrap:wrap;
+
+      gap:12px;
+    }
+
+    .micro-process div{
+      padding:
+        10px 17px;
+
+      border:
+        1px solid rgba(79,209,197,.4);
+
+      border-radius:999px;
+
+      background:
+        rgba(79,209,197,.08);
+
+      color:#fff;
+
+      font-size:.9rem;
+      font-weight:700;
+    }
+
+    .micro-process span{
+      color:#4fd1c5;
+
+      font-size:1.1rem;
+      font-weight:800;
+    }
+
+
+    /* =========================================================
+       RESEARCH INSIGHTS
+    ========================================================== */
+
+    .research-insights{
+      width:100%;
+      max-width:900px;
+
+      margin:
+        45px auto 0;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:16px;
+    }
+
+    .research-insight{
+      padding:24px;
+
+      border-left:
+        3px solid #4fd1c5;
+
+      background:
+        rgba(20,52,84,.7);
+    }
+
+    .research-insight strong{
+      display:block;
+
+      margin-bottom:8px;
+
+      color:#fff;
+    }
+
+    .research-insight p{
+      margin:0;
+
+      color:#b8c7d9;
+
+      font-size:.9rem;
+      line-height:1.6;
+    }
+
+
+    /* =========================================================
+       TESTING NUMBERS
+    ========================================================== */
+
+    .testing-stats{
+      width:100%;
+      max-width:700px;
+
+      margin:
+        40px auto;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:16px;
+    }
+
+    .testing-stat{
+      padding:
+        27px 15px;
+
+      text-align:center;
+
+      background:#143454;
+
+      border:
+        1px solid rgba(255,255,255,.08);
+    }
+
+    .testing-stat strong{
+      display:block;
+
+      margin-bottom:7px;
+
+      color:#4fd1c5;
+
+      font-size:2.6rem;
+      line-height:1;
+    }
+
+    .testing-stat span{
+      color:#b8c7d9;
+
+      font-size:.88rem;
+    }
+
+
+    /* =========================================================
+       TESTING FINDING -> DESIGN RESPONSE
+    ========================================================== */
+
+    .micro-changes{
+      width:100%;
+      max-width:900px;
+
+      margin:
+        45px auto 0;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:16px;
+    }
+
+    .micro-change{
+      padding:26px;
+
+      background:#143454;
+
+      border:
+        1px solid rgba(255,255,255,.08);
+    }
+
+    .micro-change small{
+      display:block;
+
+      margin-bottom:8px;
+
+      color:#7cc7ff;
+
+      font-size:.72rem;
+      font-weight:800;
+
+      letter-spacing:.8px;
+
+      text-transform:uppercase;
+    }
+
+    .micro-change p{
+      margin:
+        0 0 18px;
+
+      color:#b8c7d9;
+
+      font-size:.92rem;
+      line-height:1.55;
+    }
+
+    .micro-change .arrow{
+      margin-bottom:18px;
+
+      color:#4fd1c5;
+
+      font-size:1.4rem;
+      font-weight:800;
+    }
+
+    .micro-change strong{
+      color:#fff;
+
+      font-size:.95rem;
+      line-height:1.5;
+    }
+
+
+    /* =========================================================
+       ITERATION FLOW
+    ========================================================== */
+
+    .iteration-flow{
+      width:100%;
+      max-width:950px;
+
+      margin:
+        50px auto 0;
+
+      display:flex;
+
+      justify-content:center;
+      align-items:center;
+
+      flex-wrap:wrap;
+
+      gap:12px;
+    }
+
+    .iteration-flow div{
+      padding:
+        13px 18px;
+
+      background:#143454;
+
+      border:
+        1px solid rgba(255,255,255,.10);
+
+      color:#fff;
+
+      font-size:.9rem;
+      font-weight:700;
+    }
+
+    .iteration-flow span{
+      color:#4fd1c5;
+
+      font-size:1.2rem;
+      font-weight:800;
+    }
+
+
+    /* =========================================================
+       BEFORE / AFTER
+    ========================================================== */
+
+    .result-block{
+      margin-top:55px;
+    }
+
+    .result-title{
+      width:100%;
+      max-width:900px;
+
+      margin:
+        0 auto 18px;
+
+      display:flex;
+
+      align-items:center;
+      justify-content:space-between;
+
+      gap:20px;
+    }
+
+    .result-title h3{
+      margin:0;
+
+      color:#fff;
+    }
+
+    .result-title span{
+      color:#4fd1c5;
+
+      font-size:.75rem;
+      font-weight:800;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+    }
+
+
+    /* =========================================================
+       CASE STUDY CTA
+    ========================================================== */
+
+    .full-case-study{
+      width:100%;
+      max-width:800px;
+
+      box-sizing:border-box;
+
+      margin:
+        90px auto 0;
+
+      padding:
+        55px 38px;
+
+      text-align:center;
+
+      background:#143454;
+
+      border:
+        1px solid rgba(79,209,197,.28);
+
+      box-shadow:
+        0 16px 40px rgba(0,0,0,.25);
+    }
+
+    .full-case-study .micro-label{
+      margin-bottom:12px;
+    }
+
+    .full-case-study h2{
+      margin:
+        0 0 16px;
+
+      color:#fff;
+
+      font-size:
+        clamp(1.8rem,3vw,2.5rem);
+    }
+
+    .full-case-study p{
+      width:100%;
+      max-width:600px;
+
+      margin:
+        0 auto 27px;
+
+      color:#b8c7d9;
+
+      line-height:1.7;
+    }
+
+    .case-study-btn{
+      display:inline-block;
+
+      padding:
+        13px 25px;
+
+      border-radius:999px;
+
+      background:#4fd1c5;
+
+      color:#0b1f33;
+
+      text-decoration:none;
+
+      font-weight:800;
+
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+    }
+
+    .case-study-btn:hover{
+      transform:
+        translateY(-2px);
+
+      background:#65ddd2;
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,.25);
+    }
+
+
+    /* =========================================================
+       BACK TO PROJECTS
+    ========================================================== */
+
+    /* .back-projects{
+      margin-top:65px;
+
+      text-align:center;
+    }
+
+    .back-projects a{
+      color:#7cc7ff;
+
+      text-decoration:none;
+
+      font-weight:700;
+    }
+
+    .back-projects a:hover{
+      color:#4fd1c5;
+    } */
+
+
+    /* =========================================================
+       IMAGE ZOOM
+    ========================================================== */
+
+    .zoomable{
+      cursor:zoom-in;
+    }
+
+
+    /* =========================================================
+       LIGHTBOX
+    ========================================================== */
+
+    .micro-lightbox{
+      position:fixed;
+
+      inset:0;
+
+      z-index:99999;
+
+      display:none;
+
+      align-items:center;
+      justify-content:center;
+
+      padding:40px;
+
+      background:
+        rgba(0,0,0,.88);
+
+      backdrop-filter:
+        blur(6px);
+
+      box-sizing:border-box;
+    }
+
+    .micro-lightbox.open{
+      display:flex;
+    }
+
+    .micro-lightbox img{
+      display:block;
+
+      max-width:92vw;
+      max-height:88vh;
+
+      width:auto;
+      height:auto;
+
+      object-fit:contain;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,.5);
+    }
+
+    .micro-lightbox-close{
+      position:fixed;
+
+      top:25px;
+      right:30px;
+
+      width:45px;
+      height:45px;
+
+      border:
+        1px solid rgba(255,255,255,.3);
+
+      border-radius:50%;
+
+      background:
+        rgba(0,0,0,.4);
+
+      color:#fff;
+
+      font-size:1.4rem;
+
+      cursor:pointer;
+
+      z-index:100000;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================== */
+
+    @media(max-width:850px){
+
+      .micro-info{
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .micro-problems,
+      .micro-changes,
+      .research-insights{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+
+    @media(max-width:650px){
+
+      .microsol-hero{
+        height:42vh;
+        min-height:300px;
+      }
+
+      .micro-main{
+        padding:
+          0 20px 80px;
+      }
+
+      .micro-section{
+        padding:
+          65px 0;
+      }
+
+      .micro-intro{
+        padding-top:65px;
+      }
+
+      .micro-image-grid{
+        grid-template-columns:1fr;
+      }
+
+      .testing-stats{
+        grid-template-columns:1fr;
+      }
+
+      .micro-process,
+      .iteration-flow{
+        flex-direction:column;
+      }
+
+      .micro-process span,
+      .iteration-flow span{
+        transform:
+          rotate(90deg);
+      }
+
+      .full-case-study{
+        padding:
+          42px 22px;
+      }
+
+      .result-title{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:5px;
+      }
+
+    }
+
+
+    @media(max-width:480px){
+
+      .micro-info{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="microsol-page">
+
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================== -->
+
+  <div class="hero-top">
+
+    <div class="hero-top-inner">
+
+      <div class="hero-logo">
+
+        <a href="index.html">
+          Wing's Website
+        </a>
+
+      </div>
+
+
+      <nav class="hero-nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="portfolio.html">
+          Projects
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       HERO
+  ========================================================== -->
+
+  <section
+    class="microsol-hero"
+    aria-label="Microsol website redesign">
+  </section>
+
+
+
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
+
+  <main class="micro-main">
+
+
+    <!-- =======================================================
+         INTRODUCTION
+    ======================================================== -->
+
+    <section class="micro-section micro-intro">
+
+      <div class="micro-text">
+
+        <span class="micro-label">
+          Client UX/UI Project
+        </span>
+
+        <h1>
+          Microsol Website Redesign
+        </h1>
+
+        <p class="micro-subtitle">
+          UX/UI Design · User Research · Figma · Squarespace
+        </p>
+
+        <p>
+          A research-led redesign of Microsol Science's website,
+          improving how scientific and business audiences understand
+          the company's technology, services and expertise.
+        </p>
+
+        <p>
+          Working with a real client, the project followed a complete
+          UX/UI process — from understanding users and restructuring
+          information to usability testing, design iteration and
+          implementation within Squarespace.
+        </p>
+
+      </div>
+
+
+      <div class="micro-info">
+
+        <div>
+
+          <span>
+            Role
+          </span>
+
+          <strong>
+            UX/UI Designer
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            Team
+          </span>
+
+          <strong>
+            2 Designers
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            Project
+          </span>
+
+          <strong>
+            Client Website Redesign
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            Tools
+          </span>
+
+          <strong>
+            Figma · Squarespace
+          </strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         01 — CHALLENGE
+    ======================================================== -->
+
+    <section class="micro-section">
+
+      <div class="micro-text">
+
+        <span class="micro-label">
+          01 — Define
+        </span>
+
+        <h2>
+          The Challenge
+        </h2>
+
+        <p>
+          Microsol is an aerosol technology startup supporting the
+          development of orally inhaled and nasal drug products.
+        </p>
+
+        <p>
+          The project focused on restructuring its existing website
+          to create a more accessible and intuitive experience for
+          pharmaceutical companies, biotech clients, investors,
+          partners and potential funders.
+        </p>
+
+        <p>
+          This meant the challenge was not simply visual.
+          The website needed to communicate complex scientific
+          information while helping different audiences find the
+          content most relevant to them.
+        </p>
+
+      </div>
+
+
+      <div class="micro-problems">
+
+
+        <div class="micro-problem">
+
+          <span>
+            01
+          </span>
+
+          <h3>
+            Complex Information
+          </h3>
+
+          <p>
+            Scientific information needed to remain credible while
+            becoming easier for visitors to understand and scan.
+          </p>
+
+        </div>
+
+
+        <div class="micro-problem">
+
+          <span>
+            02
+          </span>
+
+          <h3>
+            Content Structure
+          </h3>
+
+          <p>
+            Existing and new content needed to be reorganised into
+            a clearer information hierarchy.
+          </p>
+
+        </div>
+
+
+        <div class="micro-problem">
+
+          <span>
+            03
+          </span>
+
+          <h3>
+            Multiple Audiences
+          </h3>
+
+          <p>
+            Scientific, business and partnership users approached
+            the website with different goals and expectations.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         02 — RESEARCH
+    ======================================================== -->
+
+    <section class="micro-section">
+
+      <div class="micro-text">
+
+        <span class="micro-label">
+          02 — Research
+        </span>
+
+        <h2>
+          Understanding the Users
+        </h2>
+
+        <p>
+          The UX process began by identifying Microsol's main
+          audience groups and understanding what each type of user
+          needed from the website.
+        </p>
+
+        <p>
+          Two personas represented the project's key audiences:
+          a scientific user seeking technical credibility and
+          capabilities, and a business-focused user looking for
+          company value, partnerships and opportunities.
+        </p>
+
+      </div>
+
+
+
+      <!-- PERSONAS -->
+
+      <div class="micro-image-grid">
+
+        <figure>
+
+          <img
+            class="zoomable"
+            src="assets/microsol/persona-john.png"
+            alt="John scientific user persona"
+          >
+
+          <figcaption class="micro-caption">
+            John — Scientific User
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            class="zoomable"
+            src="assets/microsol/persona-emma.png"
+            alt="Emma business user persona"
+          >
+
+          <figcaption class="micro-caption">
+            Emma — Business User
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+
+      <!-- USER JOURNEY -->
+
+      <div class="micro-text micro-subsection">
+
+        <h3>
+          Mapping the User Experience
+        </h3>
+
+        <p>
+          User journeys were developed for both personas to explore
+          how they would move from discovering Microsol to evaluating
+          its expertise and deciding whether to make contact.
+        </p>
+
+        <p>
+          Mapping these journeys helped reveal where clearer content,
+          stronger navigation and better communication could support
+          the experience.
+        </p>
+
+      </div>
+
+
+      <div class="micro-image-grid">
+
+        <figure>
+
+          <img
+            class="zoomable"
+            src="assets/microsol/user-journey-john.png"
+            alt="John scientific user journey"
+          >
+
+          <figcaption class="micro-caption">
+            Scientific User Journey
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            class="zoomable"
+            src="assets/microsol/user-journey-emma.png"
+            alt="Emma business user journey"
+          >
+
+          <figcaption class="micro-caption">
+            Business User Journey
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+
+      <!-- COMPETITOR RESEARCH -->
+
+      <div class="micro-text micro-subsection">
+
+        <h3>
+          Competitor Analysis
+        </h3>
+
+        <p>
+          Competitor and SWOT analysis was used to understand how
+          comparable scientific organisations communicate complex
+          technology, services and credibility online.
+        </p>
+
+        <p>
+          This research helped identify opportunities for Microsol
+          to create clearer navigation and stronger visual
+          communication while maintaining a professional scientific
+          identity.
+        </p>
+
+      </div>
+
+
+      <div class="micro-image">
+
+        <img
+          class="zoomable"
+          src="assets/microsol/swot.png"
+          alt="Microsol competitor and SWOT analysis"
+        >
+
+      </div>
+
+
+
+      <!-- CARD SORTING -->
+
+      <div class="micro-text micro-subsection">
+
+        <h3>
+          Restructuring the Content
+        </h3>
+
+        <p>
+          Card sorting was used to organise existing and proposed
+          website content into logical groups.
+        </p>
+
+        <p>
+          The resulting structure informed the information
+          architecture and helped determine how users could move
+          through the redesigned website more efficiently.
+        </p>
+
+      </div>
+
+
+      <div class="micro-image">
+
+        <img
+          class="zoomable"
+          src="assets/microsol/card-sorting.png"
+          alt="Microsol website card sorting"
+        >
+
+      </div>
+
+
+
+      <!-- WIREFRAMES -->
+
+      <div class="micro-text micro-subsection">
+
+        <h3>
+          From Structure to Wireframes
+        </h3>
+
+        <p>
+          The research and content structure were translated into
+          wireframes before visual styling was introduced.
+        </p>
+
+        <p>
+          This allowed the layout and hierarchy to be evaluated
+          around user needs before moving into higher-fidelity
+          interface design.
+        </p>
+
+      </div>
+
+
+      <div class="micro-image">
+
+        <img
+          class="zoomable"
+          src="assets/microsol/wireframes.png"
+          alt="Microsol website wireframes"
+        >
+
+      </div>
+
+
+
+      <!-- PROCESS -->
+
+      <div class="micro-process">
+
+        <div>
+          Personas
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Journey Maps
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Competitor Research
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Card Sorting
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Wireframes
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         03 — USER TESTING
+    ======================================================== -->
+
+    <section class="micro-section">
+
+      <div class="micro-text">
+
+        <span class="micro-label">
+          03 — Test
+        </span>
+
+        <h2>
+          User Testing
+        </h2>
+
+        <p>
+          User testing was carried out with six participants,
+          representing both scientific and business-focused
+          audiences.
+        </p>
+
+        <p>
+          Participants completed realistic tasks such as finding
+          services, scientific capabilities, partnership information
+          and contact routes.
+        </p>
+
+      </div>
+
+
+
+      <!-- TESTING STATS -->
+
+      <div class="testing-stats">
+
+
+        <div class="testing-stat">
+
+          <strong>
+            6
+          </strong>
+
+          <span>
+            Participants
+          </span>
+
+        </div>
+
+
+        <div class="testing-stat">
+
+          <strong>
+            3
+          </strong>
+
+          <span>
+            Scientific Users
+          </span>
+
+        </div>
+
+
+        <div class="testing-stat">
+
+          <strong>
+            3
+          </strong>
+
+          <span>
+            Business Users
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- TEST RESULTS -->
+
+      <div class="micro-image">
+
+        <img
+          class="zoomable"
+          src="assets/microsol/testing-results.png"
+          alt="Microsol user testing results"
+        >
+
+      </div>
+
+
+
+      <!-- FINDINGS -->
+
+      <div class="micro-text micro-subsection">
+
+        <h3>
+          Turning Findings into Design Decisions
+        </h3>
+
+        <p>
+          Testing showed that users generally viewed the website as
+          professional, but some participants found it difficult to
+          quickly understand what Microsol offered or locate specific
+          information.
+        </p>
+
+        <p>
+          These findings were used to guide the next design
+          iteration rather than treating testing as the end of
+          the process.
+        </p>
+
+      </div>
+
+
+      <div class="micro-changes">
+
+
+        <!-- FINDING 1 -->
+
+        <div class="micro-change">
+
+          <small>
+            Finding
+          </small>
+
+          <p>
+            The company's purpose was not immediately clear
+            to every user.
+          </p>
+
+          <div class="arrow">
+            ↓
+          </div>
+
+          <small>
+            Design Response
+          </small>
+
+          <strong>
+            Strengthen the homepage value proposition.
+          </strong>
+
+        </div>
+
+
+
+        <!-- FINDING 2 -->
+
+        <div class="micro-change">
+
+          <small>
+            Finding
+          </small>
+
+          <p>
+            Important content could require too many steps
+            to locate.
+          </p>
+
+          <div class="arrow">
+            ↓
+          </div>
+
+          <small>
+            Design Response
+          </small>
+
+          <strong>
+            Simplify navigation and information structure.
+          </strong>
+
+        </div>
+
+
+
+        <!-- FINDING 3 -->
+
+        <div class="micro-change">
+
+          <small>
+            Finding
+          </small>
+
+          <p>
+            Technical information could feel dense when users
+            were scanning the website.
+          </p>
+
+          <div class="arrow">
+            ↓
+          </div>
+
+          <small>
+            Design Response
+          </small>
+
+          <strong>
+            Introduce stronger visual hierarchy and clearer content.
+          </strong>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         04 — FIGMA / ITERATION
+    ======================================================== -->
+
+    <section class="micro-section">
+
+      <div class="micro-text">
+
+        <span class="micro-label">
+          04 — Design & Iterate
+        </span>
+
+        <h2>
+          From Research to Interface
+        </h2>
+
+        <p>
+          The research findings and wireframes were developed into
+          higher-fidelity interface designs in Figma.
+        </p>
+
+        <p>
+          The design was refined through multiple iterations,
+          incorporating client feedback, content requirements,
+          usability findings and practical development constraints.
+        </p>
+
+      </div>
+
+
+
+      <!-- FIGMA V1 + V2 -->
+
+      <div class="micro-image-grid">
+
+        <figure>
+
+          <img
+            class="zoomable"
+            src="assets/microsol/figma-v1.png"
+            alt="Initial Microsol Figma design"
+          >
+
+          <figcaption class="micro-caption">
+            Figma — Initial Design
+          </figcaption>
+
+        </figure>
+
+
+        <figure>
+
+          <img
+            class="zoomable"
+            src="assets/microsol/figma-v2.png"
+            alt="Refined Microsol Figma design"
+          >
+
+          <figcaption class="micro-caption">
+            Figma — Refined Design
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+
+
+      <!-- ITERATION FLOW -->
+
+      <div class="iteration-flow">
+
+        <div>
+          Research
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Wireframes
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Figma V1
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Client Feedback
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Testing
+        </div>
+
+        <span>
+          →
+        </span>
+
+        <div>
+          Final Design
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         05 — FINAL WEBSITE
+    ======================================================== -->
+
+    <section class="micro-section">
+
+      <div class="micro-text">
+
+        <span class="micro-label">
+          05 — Build & Deliver
+        </span>
+
+        <h2>
+          From Figma to Squarespace
+        </h2>
+
+        <p>
+          Following the design stage, the new website structure
+          and interface were implemented within Microsol's existing
+          Squarespace environment.
+        </p>
+
+        <p>
+          The final design aimed to maintain Microsol's scientific
+          credibility while improving navigation, content hierarchy,
+          readability and communication across the site.
+        </p>
+
+      </div>
+
+
+
+      <!-- HOME BEFORE / AFTER -->
+
+      <div class="result-block">
+
+        <div class="result-title">
+
+          <h3>
+            Homepage
+          </h3>
+
+          <span>
+            Before → After
+          </span>
+
+        </div>
+
+
+        <div class="micro-image">
+
+          <img
+            class="zoomable"
+            src="assets/microsol/home-before&after.png"
+            alt="Microsol homepage before and after redesign"
+          >
+
+        </div>
+
+      </div>
+
+
+
+      <!-- OUR SCIENCE BEFORE / AFTER -->
+
+      <div class="result-block">
+
+        <div class="result-title">
+
+          <h3>
+            Our Science
+          </h3>
+
+          <span>
+            Before → After
+          </span>
+
+        </div>
+
+
+        <div class="micro-image">
+
+          <img
+            class="zoomable"
+            src="assets/microsol/ourscience-before&after.png"
+            alt="Microsol Our Science page before and after redesign"
+          >
+
+        </div>
+
+      </div>
+
+
+
+      <!-- RESPONSIVE -->
+
+      <div class="micro-text micro-subsection">
+
+        <h3>
+          Responsive Design
+        </h3>
+
+        <p>
+          The final layouts were also reviewed at mobile sizes to
+          maintain readability, hierarchy and navigation across
+          different screen sizes.
+        </p>
+
+      </div>
+
+
+      <div class="micro-image">
+
+        <img
+          class="zoomable"
+          src="assets/microsol/mobile-final.png"
+          alt="Final responsive Microsol website designs"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         OUTCOME
+    ======================================================== -->
+
+    <section class="micro-section">
+
+      <div class="micro-text">
+
+        <span class="micro-label">
+          Outcome
+        </span>
+
+        <h2>
+          What This Project Demonstrates
+        </h2>
+
+        <p>
+          Microsol allowed me to work through a complete client-led
+          UX/UI process rather than focusing only on the final visual
+          design.
+        </p>
+
+        <p>
+          The project developed from user research and information
+          architecture into wireframing, testing, iteration and
+          final implementation within a real website platform.
+        </p>
+
+      </div>
+
+
+      <div class="research-insights">
+
+
+        <div class="research-insight">
+
+          <strong>
+            Research
+          </strong>
+
+          <p>
+            Personas, user journeys and competitor analysis.
+          </p>
+
+        </div>
+
+
+        <div class="research-insight">
+
+          <strong>
+            UX Strategy
+          </strong>
+
+          <p>
+            Card sorting, information architecture and wireframing.
+          </p>
+
+        </div>
+
+
+        <div class="research-insight">
+
+          <strong>
+            Validation
+          </strong>
+
+          <p>
+            User testing, client feedback and iterative design.
+          </p>
+
+        </div>
+
+
+        <div class="research-insight">
+
+          <strong>
+            UI Design
+          </strong>
+
+          <p>
+            Figma interface design and responsive layouts.
+          </p>
+
+        </div>
+
+
+        <div class="research-insight">
+
+          <strong>
+            Development
+          </strong>
+
+          <p>
+            Squarespace implementation and practical web constraints.
+          </p>
+
+        </div>
+
+
+        <div class="research-insight">
+
+          <strong>
+            Client Work
+          </strong>
+
+          <p>
+            Professional communication, feedback and final delivery.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         FULL CANVA CASE STUDY
+    ======================================================== -->
+
+    <section class="full-case-study">
+
+      <span class="micro-label">
+        Full Project Documentation
+      </span>
+
+      <h2>
+        Explore the Complete UX Process
+      </h2>
+
+      <p>
+        View the full case study for detailed personas,
+        competitor research, user journeys, user flows,
+        card sorting, testing results, design iterations
+        and development documentation.
+      </p>
+
+
+      <a
+        class="case-study-btn"
+        href="https://canva.link/e41avmlrqhkg8di"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Full UX Case Study ↗
+      </a>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         BACK
+    ======================================================== -->
+
+    <!-- <div class="back-projects">
+
+      <a href="portfolio.html">
+        ← Back to Projects
+      </a>
+
+    </div> -->
+
+
+  </main>
+
+
+
+  <!-- =========================================================
+       LIGHTBOX
+  ========================================================== -->
+
+  <div
+    id="microLightbox"
+    class="micro-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image preview"
+  >
+
+    <button
+      id="microLightboxClose"
+      class="micro-lightbox-close"
+      type="button"
+      aria-label="Close image preview"
+    >
+      ✕
+    </button>
+
+
+    <img
+      id="microLightboxImage"
+      src=""
+      alt=""
+    >
+
+  </div>
+
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <p>
+
+      © 2026 Wing Tung Lam |
+
+      <a href="mailto:wingtung0101@gmail.com">
+        Email
+      </a>
+
+      |
+
+      <a
+        href="https://www.linkedin.com/in/winglwt"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn
+      </a>
+
+    </p>
+
+  </footer>
+
+
+
+  <!-- =========================================================
+       IMAGE LIGHTBOX SCRIPT
+  ========================================================== -->
+
+  <script>
+
+    const zoomImages =
+      document.querySelectorAll('.zoomable');
+
+    const lightbox =
+      document.getElementById('microLightbox');
+
+    const lightboxImage =
+      document.getElementById('microLightboxImage');
+
+    const lightboxClose =
+      document.getElementById('microLightboxClose');
+
+
+    /* OPEN IMAGE */
+
+    zoomImages.forEach(image => {
+
+      image.addEventListener('click', () => {
+
+        lightboxImage.src =
+          image.src;
+
+        lightboxImage.alt =
+          image.alt;
+
+        lightbox.classList.add('open');
+
+        document.body.style.overflow =
+          'hidden';
+
+      });
+
+    });
+
+
+    /* CLOSE */
+
+    function closeMicroLightbox(){
+
+      lightbox.classList.remove('open');
+
+      document.body.style.overflow =
+        '';
+
+      setTimeout(() => {
+
+        lightboxImage.src = '';
+
+      }, 200);
+
+    }
+
+
+    lightboxClose.addEventListener(
+      'click',
+      closeMicroLightbox
+    );
+
+
+    /* CLICK BACKGROUND TO CLOSE */
+
+    lightbox.addEventListener(
+      'click',
+      event => {
+
+        if(event.target === lightbox){
+
+          closeMicroLightbox();
+
+        }
+
+      }
+    );
+
+
+    /* ESC TO CLOSE */
+
+    document.addEventListener(
+      'keydown',
+      event => {
+
+        if(
+          event.key === 'Escape' &&
+          lightbox.classList.contains('open')
+        ){
+
+          closeMicroLightbox();
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</body>
+
+</html>
